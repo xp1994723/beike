@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <style>
+        li{
+            margin-top: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <nav>
+        <li class="active">1</li>
+        <li>2</li>
+        <li>3</li>
+        <li>4</li>
+        <li>5</li>
+    </nav>
+    <script>
+    // document.querySelector 查询选择器 根据CSS选择器获取元素 返回符合条件的第一个元素
+    var active = document.querySelector('.active');
+    active.style.color = "red";
+    //如果想给所有li都设置颜色可以获取所有的li
+    var lis = document.querySelectorAll('li');
+    for (var i = 0; i < lis.length; i++) {
+        lis[i].style.backgroundColor = 'green';
+    }
+    </script>
+</body>
+
+</html>

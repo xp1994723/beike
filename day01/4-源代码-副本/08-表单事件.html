@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<form action="#">
+		选择分数<input type="range" id="range"><output id="score">分数:0</output>
+		名字：<input type="text" name="" id="username" required>
+		<input type="submit" value="提交"> 
+	</form>
+	<script>
+		//需求 实现拖动滑块 获取滑块上的value值设置到分数上
+		//1. 给滑块添加滑块拖动事件
+		//2. 在事件里面获取滑块的value值
+		//3. 把value值拼接到分数的标签里面
+		var range = document.querySelector('#range');
+		var score = document.querySelector('#score');
+		/*change事件是在滑块滑动完松手后才触发 不会在滑动的时候触发*/
+		// range.addEventListener('change', function () {
+		// 	console.log(range.value);
+		// });
+		/*input事件是在表单进行输入的时候就会触发*/
+		range.addEventListener('input',function () {
+			score.innerHTML = '分数:'+range.value;
+		});
+		var username = document.querySelector('#username');
+		/*invalid是在表单验证失败会触发例如requied不输入内容提交就会触发*/
+		username.addEventListener('invalid',function () {
+			// this.setCustomValidity('要修改的提示信息') 可以修改默认的提示内容
+			this.setCustomValidity('请填写姓名');
+		});
+	</script>
+</body>
+</html>

@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+    nav {
+        height: 50px;
+    }
+    
+    .item {
+        width: 100px;
+        height: 50px;
+        background-color: hotpink;
+        border-left: 1px solid #0f0;
+        float: left;
+        text-align: center;
+        line-height: 50px;
+        list-style: none;
+    }
+    
+    .item a {
+        display: block;
+        color: #fff;
+        text-decoration: none;
+    }
+    
+    .item.active a {
+        background-color: #ff0;
+        color: hotpink;
+        text-decoration: none;
+    }
+    
+    main section {
+        display: none;
+    }
+    
+    main section.active {
+        display: block;
+    }
+    </style>
+</head>
+
+<body>
+    <nav>
+        <ul>
+        		<!-- 定义一个自定义属性data-target指定当前导航控制的是哪个新闻面板 这里使用id选择器来关联也可以用类名 -->
+            <li class="item active" data-target="#news01"><a href="#" >全部新闻</a></li>
+            <li class="item" data-target="#news02"><a href="#">国内新闻</a></li>
+            <li class="item" data-target="#news03"><a href="#">国际新闻</a></li>
+            <li class="item" data-target="#news04"><a href="#">体育新闻</a></li>
+        </ul>
+    </nav>
+    <main>
+        <section class="active" id="news01">
+            <p> 全部新闻</p>
+            <p> 全部新闻</p>
+            <p> 全部新闻</p>
+            <p> 全部新闻</p>
+            <p> 全部新闻</p>
+            <p> 全部新闻</p>
+            <p> 全部新闻</p>
+            <p> 全部新闻</p>
+            <p> 全部新闻</p>
+            <p> 全部新闻</p>
+        </section>
+        <section id="news02">
+            <p> 国内新闻</p>
+            <p> 国内新闻</p>
+            <p> 国内新闻</p>
+            <p> 国内新闻</p>
+            <p> 国内新闻</p>
+            <p> 国内新闻</p>
+            <p> 国内新闻</p>
+            <p> 国内新闻</p>
+            <p> 国内新闻</p>
+            <p> 国内新闻</p>
+        </section>
+        <section id="news03">
+            <p> 国际新闻</p>
+            <p> 国际新闻</p>
+            <p> 国际新闻</p>
+            <p> 国际新闻</p>
+            <p> 国际新闻</p>
+            <p> 国际新闻</p>
+            <p> 国际新闻</p>
+            <p> 国际新闻</p>
+            <p> 国际新闻</p>
+            <p> 国际新闻</p>
+        </section>
+        <section id="news04">
+            <p> 体育新闻</p>
+            <p> 体育新闻</p>
+            <p> 体育新闻</p>
+            <p> 体育新闻</p>
+            <p> 体育新闻</p>
+            <p> 体育新闻</p>
+            <p> 体育新闻</p>
+            <p> 体育新闻</p>
+            <p> 体育新闻</p>
+            <p> 体育新闻</p>
+        </section>
+    </main>
+    <script>
+    var lis = document.querySelectorAll('nav ul li');
+    var news = document.querySelectorAll('main section');
+    for (var i = 0; i < lis.length; i++) {
+    	//给所有li添加一个Index索引
+        // lis[i].index = i;
+        lis[i].addEventListener('click', function() {
+            for (var i = 0; i < lis.length; i++) {
+                lis[i].classList.remove('active');
+            }
+            this.classList.add('active');
+            for (var i = 0; i < news.length; i++) {
+                news[i].classList.remove('active');
+            }
+            // 通过选中news[this.index]选中当前li索引对应的section添加active类名
+            // news[this.index].classList.add('active');
+            //通过获取当前li的data-target存储的选择器对应的元素(就是当前li对应的新闻块)添加 active类名
+            document.querySelector(this.dataset['target']).classList.add('active');
+        });
+    }
+    </script>
+</body>
+
+</html>

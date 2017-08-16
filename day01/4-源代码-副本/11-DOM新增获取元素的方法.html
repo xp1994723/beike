@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+    .box {
+        width: 100px;
+        height: 100px;
+    }
+    </style>
+</head>
+
+<body>
+    <div class="box" id="box"></div>
+    <ul>
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+        <li>4</li>
+        <li>5</li>
+    </ul>
+    <script>
+    /*传统的获取元素方式只能根据Id或者类名 或者标签的方式获取 而且每种方式使用的方法都不一样造成要记很多方法 用起来不方便*/
+    var box = document.getElementById('box');
+    var box = document.getElementsByClassName('box')[0];
+    /*在html5里面新增了两个获取元素的方式 
+    	1.document.querySelector('选择器') 根据选择器获取符合要求的第一个元素 可以是id 类 标签等等选择器 返回的是单个DOM元素对象
+    	2.document.querySelectorAll('选择器') 根据选择器获取符合要求的所有元素 也同样是可以是任意选择器 返回的是数组*/
+    var box = document.querySelector('.box');
+    var li = document.querySelector('ul li');
+    </script>
+</body>
+
+</html>

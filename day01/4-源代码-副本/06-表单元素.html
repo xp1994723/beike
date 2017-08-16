@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<form action="#">
+		<!-- 数据集合： 用于配合Input做下拉选择数据提示 数据和select一样写法一样 写在option的value里面不是写在标签中间 需要将datalist和input关联起来才有效果 通过list属性指向datalist的id关联 -->
+		<datalist id="source">
+			<option value="HTML5"></option>
+			<option value="CSS3"></option>
+			<option value="JS"></option>
+			<option value="Jquery"></option>
+		</datalist>
+		<input type="text" name="" id="" list="source">
+		<br>
+		<!-- 生成加密字符串 火狐浏览器有效果 -->
+		<keygen>
+		<br>
+		<!-- output输出 类似于span但是通常在表单里面不用span用output输出一些内容 -->
+		输出内容
+		<output>输出</output>
+		<br>
+		度量器
+		<meter value="0.5"></meter>
+		<br>
+		<input type="submit" value="提交">
+	</form>
+</body>
+</html>

@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <style>
+    nav {
+        width: 500px;
+        height: 60px;
+        margin: 0px auto;
+    }
+    
+    nav li {
+        width: 98px;
+        height: 58px;
+        background-color: #0ff;
+        float: left;
+        list-style: none;
+        line-height: 60px;
+        border: 1px solid #ccc;
+        text-align: center;
+        font-size: 16px;
+        font-family: '微软雅黑';
+        color: #000;
+    }
+    
+    nav li a {
+        display: block;
+    }
+    
+    li.active {
+        background-color: #0f0;
+    }
+    
+    section {
+        display: none;
+        text-align: center;
+        line-height: 40px;
+        font-size: 40px;
+        width: 400px;
+        margin: 0px auto;
+    }
+    
+    section.active {
+        display: block;
+    }
+    </style>
+</head>
+
+<body>
+
+    <nav>
+        <li class="active"><a href="#" data-target="#nav1">导航菜单1</a></li>
+        <li><a href="#" data-target="#nav2">导航菜单2</a></li>
+        <li><a href="#" data-target="#nav3">导航菜单3</a></li>
+        <li><a href="#" data-target="#nav4">导航菜单4</a></li>
+        <li><a href="#" data-target="#nav5">导航菜单5</a></li>
+    </nav>
+    <section class="active" id="nav1">
+        导航菜单1里面的内容 导航菜单1里面的内容 导航菜单1里面的内容 导航菜单1里面的内容
+    </section>
+    <section id="nav2">
+        导航菜单2里面的内容 导航菜单2里面的内容 导航菜单2里面的内容 导航菜单2里面的内容
+    </section>
+    <section id="nav3">
+        导航菜单3里面的内容 导航菜单3里面的内容 导航菜单3里面的内容 导航菜单3里面的内容
+    </section>
+    <section id="nav4">
+        导航菜单4里面的内容 导航菜单4里面的内容 导航菜单4里面的内容 导航菜单4里面的内容
+    </section>
+    <section id="nav5">
+        导航菜单5里面的内容 导航菜单5里面的内容 导航菜单5里面的内容 导航菜单5里面的内容
+    </section>
+    <script>
+    var navs = document.querySelectorAll('nav li a');
+    for (var i = 0; i < navs.length; i++) {
+        navs[i].addEventListener('click', function() {
+            var active = document.querySelector('.active');
+            active.classList.remove('active');
+            document.querySelector(active.querySelector('a').dataset['target']).style.display = "none";
+            this.parentNode.classList.add('active');
+            document.querySelector(this.dataset['target']).style.display = "block";
+        })
+    }
+    </script>
+</body>
+
+</html>

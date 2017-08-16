@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+    form {
+        width: 500px;
+        margin: 0px auto;
+    }
+    
+    input {
+        width: 100%;
+    }
+    </style>
+</head>
+
+<body>
+<form action="#">
+    <!-- placeholder在输入框内显示提示文字 -->
+    <!-- autofocus 自动获得焦点 -->
+    <label for="">请输入用户名: <input type="text" name="" id="" placeholder="请输入用户名" autofocus></label>  
+    <!-- required 必须项 必须填写内容才能提交   -->
+    <label for="#">请输入密码:<input type="text" required></label>
+    <label for="#">请输入手机:<input type="text" pattern="\d{11}"></label>
+    <label for="#"><input type="submit" value="提交"></label>
+</form>
+</body>
+
+</html>

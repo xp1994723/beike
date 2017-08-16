@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        header{
+            height: 200px;
+            background-color: pink;
+            display: block;
+        }
+        main{
+            height: 500px;
+            width: 1100px;
+            margin: 0px auto;
+            display: block;
+        }
+        article{
+            height: 500px;
+            width: 700px;
+            float: left;
+            background-color: green;
+            display: block;
+        }
+        aside{
+            height: 500px;
+            width: 400px;
+            float: left;
+            background-color: yellow;
+            display: block;
+        }
+        footer{
+            height: 200px;
+            background-color: red;
+            display: block;
+        }
+    </style>
+</head>
+<!-- 解决html5新标签的兼容方案1 就是手动创建所有新标签 并且给所有新标签加上display:block;因为创建的标签默认是行内元素 -->
+<script>
+    document.createElement('header');
+    document.createElement('main');    
+    document.createElement('article');    
+    document.createElement('aside');    
+    document.createElement('footer');    
+</script>
+<!-- 2.引入一个第三方的包解决兼容问题 -->
+<script src="html5shiv.js"></script>
+
+<body>
+    <header></header>
+    <main>
+        <article></article>
+        <aside></aside>
+    </main>
+    <footer></footer>
+</body>
+</html>

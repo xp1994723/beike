@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+    nav li {
+        float: left;
+        width: 100px;
+        list-style: none;
+        margin-left: 10px;
+    }
+    
+    nav li a {
+        width: 100px;
+        height: 50px;
+        display: block;
+        text-align: center;
+        line-height: 50px;
+        text-decoration: none;
+        background-color: #c0c0c0;
+        color: #000;
+    }
+    
+    li.active a {
+        background-color: green;
+        color: #fff;
+    }
+    </style>
+</head>
+
+<body>
+    <nav>
+        <li class="active"><a href="#">导航1</a></li>
+        <li><a href="#">导航2</a></li>
+        <li><a href="#">导航3</a></li>
+        <li><a href="#">导航4</a></li>
+        <li><a href="#">导航5</a></li>
+    </nav>
+    <script>
+    //需求实现点击a链接切换 li的active类名
+    // 1. 获取所有的a链接添加点击事件
+    // 2. 移除所有li的active列名
+    // 3. 给当前点击的a父元素li添加active
+    var navs = document.querySelectorAll('li a');
+    var lis = document.querySelectorAll('li');
+    for (var i = 0; i < navs.length; i++) {
+        navs[i].onclick = function() {
+            for (var i = 0; i < lis.length; i++) {
+                // classList类名的集合 remove方法删除一个类名
+                lis[i].classList.remove('active');
+            }
+            //给当前a的父元素添加类名
+            this.parentNode.classList.add('active');
+            // toggle替换类名有则删除 无责添加
+            // this.parentNode.classList.toggle('active');
+            if (this.parentNode.classList.contains('aaa')) {
+            	console.log('有这个active类名了');
+            }
+        }
+    }
+    </script>
+</body>
+
+</html>

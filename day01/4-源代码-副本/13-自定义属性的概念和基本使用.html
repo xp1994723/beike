@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<!-- 自定义属性 用来定义一些存储和DOM强相关的数据的属性 -->
+	<!-- 语法是以data-开头 后面跟属性名 例如data-name 可以有多个-  data-student-name -->
+	<div data-info="student">
+		<p data-name="张三">张三</p>
+		<p data-age="19">19</p>
+		<p data-hobby="打篮球">打篮球</p>
+	</div>
+	<script>
+		//获取自定义属性
+		var student = document.querySelector('div');
+		var info = document.querySelectorAll('div p');
+		// 获取自定义属性有两种方式 可以通过getAttribute('属性名') 的方式获取但是这种方式要写完整属性名 例如data-name 要都写并且不能用驼峰命名法 一定要写data-name不能写dataName
+		console.log(info[0].getAttribute('data-name'));
+
+		//第二种方式是HTML5新增的专门获取自定义属性的方式 dataset['属性名'] 这种方式属性名只要写data-后面的内容 比如 data-name 只要写name 注意这是一个数组是[]不是方法
+		//而且如果是有两个-的要驼峰命名法 例如data-student-name 要写 dataset['studentName']
+		console.log(info[0].dataset['name']);
+
+		//第三种方式是jquery的方式 data('属性名') 这种方式也和dataset一样不需要带data-只需要data-后面的名字 
+		// $(info[0]).data('name');
+		// 第四种方式是jquery的方式 attr('属性名') 这种方式和getAttribute()一样要写全名 带data-
+		// $(info[0]).attr('data-name');
+	</script>
+</body>
+</html>

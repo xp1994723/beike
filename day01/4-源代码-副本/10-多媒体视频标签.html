@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+<!-- 	video HTML5的视频标签 通过src指定要播放的视频
+	需要添加一些属性控制是否显示 和播放
+	controls控制是否显示音频播放控制器
+	autoplay控制是否自动播放
+	loop控制是否循环播放  -->
+	<!-- 为了浏览器兼容 可能要准备多个视频文件 还支持加载多个不同格式的视频文件 通过source标签指定 -->
+	<!-- 视频标签还可以指定宽度和高度 控制视频播放器区域的宽高 但是会取最小值 不会被拉伸 -->
+	<video src="video/movie.mp4" width="400" height="600">
+		<source src="video/movie.wmv">
+		<source src="video/movie.ogg">
+	</video>
+</body>
+</html>

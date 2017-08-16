@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		header{
+			height: 200px;
+			background-color: #f40;
+			/*display: block;*/
+		}
+	</style>
+</head>
+<script>
+	//解决方案就是通过创建标签的方式让IE浏览器认识这个标签
+	//语法是document.createElement('标签名'); 页面上用了多少个新标签就要创建多少个
+	//但是创建出来的标签是行内元素 所以还需要在样式里面加上转块 	
+ 	// document.createElement('header');
+</script>
+<!-- 但是这样的方式比较繁琐 每个页面都要写这样的代码所以有一些人开发了插件 帮我们写这样的代码 就是html5shiv -->
+<!-- 使用方式 ： 只需要把html5shiv引入页面即可 -->
+<!-- 但是在谷歌等支持html5新标签的浏览器就不需要引入这个包了 所以只针对IE引入加一个条件注释 -->
+<!-- 条件注释当满足条件后里面的代码执行 当不满足条件当成注释不执行  条件满足IE小于等于IE8 -->
+<!-- 快捷键 cc:ie6 -->
+<!--[if lte IE 8]>
+<script src="html5shiv.js"></script>	
+<![endif]-->
+<body>
+	<!-- 正常情况下主流的浏览器都支持HTML5新标签 但是一些老版本的IE浏览器不支持HTML5新标签 那么这种网页在IE8以下就无法识别 所以针对IE8要做一些兼容处理 了解即可现在很多网站都不用兼容IE8 -->
+	<header>头部</header>
+</body>
+</html>

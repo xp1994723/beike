@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+    .item {
+        width: 100px;
+        height: 50px;
+        background-color: hotpink;
+        border-left: 1px solid #0f0;
+        float: left;
+        text-align: center;
+        line-height: 50px;
+        list-style: none;
+    }
+    
+    .item a {
+        display: block;
+        color: #fff;
+        text-decoration: none;
+    }
+    
+    .item.active a {
+        background-color: #ff0;
+        color: hotpink;
+        text-decoration: none;
+    }
+    </style>
+</head>
+
+<body>
+    <nav>
+        <ul>
+            <li class="item active"><a href="#">全部新闻</a></li>
+            <li class="item"><a href="#">国内新闻</a></li>
+            <li class="item"><a href="#">国际新闻</a></li>
+            <li class="item"><a href="#">体育新闻</a></li>
+        </ul>
+    </nav>
+    <script>
+    var lis = document.querySelectorAll('nav ul li');
+    for (var i = 0; i < lis.length; i++) {
+        lis[i].addEventListener('click', function() {
+            // for (var i = 0; i < lis.length; i++) {
+            // 	lis[i].className = 'item';
+            // }
+            // this.className = 'item active';
+            for (var i = 0; i < lis.length; i++) {
+                // classList 是html5新增的类名集合的对象 里面提供了4个方法
+                // add('类名')添加类名
+                // remove('类名') 删除一个类名
+                // toggle('类名')替换一个类名 有则删除无则添加
+                // contain('类名')查询一个类名 有则返回true无则返回false
+                lis[i].classList.remove('active');
+            }
+            this.classList.add('active');
+        });
+    }
+    </script>
+</body>
+
+</html>

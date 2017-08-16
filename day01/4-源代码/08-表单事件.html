@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <form action="#">
+        <label for="">选择分数:<input type="range" name="" id="range"><span id="score">分数:0</span></label>
+    </form>
+    <script>
+        //需求 实现拖选滑块 获取滑块的值设置到分数上
+        // 1. 给滑块添加拖动事件
+        // 2. 在事件里面获取滑块的value值
+        // 3. 把滑块的value值设置到分数上
+        var range = document.getElementById('range');
+        // onchange事件是在滑块滑动结束后才会触发 所以不能在拖动的时候设置分数
+        // range.onclick = function () {
+        //     console.log('滑块改变了');
+        // }
+        var score = document.getElementById('score');
+        range.oninput = function () {
+            score.innerHTML = "分数:"+range.value;
+        }
+    </script>
+</body>
+</html>

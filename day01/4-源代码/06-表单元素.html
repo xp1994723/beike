@@ -1,0 +1,37 @@
+    <!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+
+<body>
+    <form action="#">
+        <!-- 数据集合标签 用于配合input做下拉选择数据提示 
+    		数据和select一样 写在option里面 但是 是写在value值里面 而不是写在标签中间
+    		需要将datalist的id和input的list属性关联上才能生效否则无效果 -->
+        <datalist id="source">
+            <option value="HTML5"></option>
+            <option value="CSS3"></option>
+            <option value="JS"></option>
+            <option value="jquery"></option>
+        </datalist>
+        <input type="text" name="" id="" list="source">
+        <br>
+        <!-- 生成加密字符串 火狐有效果 -->
+        <keygen>
+        <br>
+        <!-- 输出表单 类似span -->
+        <output>
+            输出内容
+        </output>
+        <br>
+        <!-- 度量器 类似温度计 -->
+        <meter value="0.5"></meter>
+        <br> 提交：
+        <input type="submit" value="提交">
+    </form>
+</body>
+
+</html>
