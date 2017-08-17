@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		/**
+		 * 1. E::before和E::after 在E元素内部的开始位置和结束位创建一个元素，该元素为行内元素，且必须要结合content属性使用。
+		 * ::before是在当前元素子元素之前创建一个元素 但是必须写content属性 并且默认伪元素的行内元素
+		 * ::after是在当前元素子元素的最后面创建一个子元素 也需要content属性 并且默认也是行内元素
+ 		 */
+		.box{
+			width: 500px;
+			height: 500px;
+			background-color: #f0f0f0;
+		}
+		.box::before{
+			content: "这是before添加的伪元素";
+			width: 100px;
+			height: 100px;
+			background-color: hotpink;
+			/*默认伪元素行内元素 要有宽高的话要转块*/
+			display: block;
+		}
+		.box::after{
+			content: "这是after添加的伪元素";
+			width: 100px;
+			height: 100px;
+			background-color: hotpink;
+			/*默认伪元素行内元素 要有宽高的话要转块*/
+			display: block;
+		}
+	</style>
+</head>
+<body>
+	<div class="box">
+		<div>这是我本身拥有的内容</div>
+		<div>这是我本身拥有的内容</div>
+		<div>这是我本身拥有的内容</div>
+		<div>这是我本身拥有的内容</div>
+		<div>这是我本身拥有的内容</div>
+	</div>
+</body>
+</html>

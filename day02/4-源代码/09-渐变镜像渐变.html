@@ -1,0 +1,39 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>CSS3 渐变</title>
+    <style>
+    body {
+        margin: 0;
+        padding: 0;
+        background-color: #F7F7F7;
+    }
+    
+    .radial {
+        width: 600px;
+        height: 600px;
+        margin: 100px auto;
+        background-color: #fff;
+        border-radius: 300px;
+        /* 	第一个 100px是指水平半径是100px 
+			第二个 50px是指垂直半径是50px (也可以用circle 和 ellipse这两个值表示)
+			at
+			第三个 150px 是指水平的坐标150px 
+			第四个150px指的是垂直的坐标150px */
+        /*background-image: radial-gradient(ellipse at 150px 150px,#f00 ,#ff0 );*/
+        /*background-image: radial-gradient(circle at 150px 150px , #fff , #000);*/
+        /*	background-image: radial-gradient(200px  200px at 150px 150px,#fff , #000);*/
+        /*background-image: radial-gradient(circle at 150px 150px,#fff , #000);*/
+        background-image: radial-gradient(ellipse at 150px 150px,#fff 25%,yellow 50%);
+    }    
+    </style>
+</head>
+
+<body>
+    <div class="radial"></div>
+</body>
+
+</html>

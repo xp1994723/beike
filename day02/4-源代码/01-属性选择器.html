@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+    a{
+        text-decoration: none;
+        font-size: 30px;
+        line-height: 50px;
+        display: block;
+    }
+    /*属性选择器 语法  []*/
+    /*[href] 表示 选中页面上所有包含了href属性的元素*/
+    [href] {
+        color: red;
+    }
+    /*[href^="a"] 表示选中href属性 值 以a开头的元素*/
+    [href^="a"]{
+        color: #0f0;
+    }
+    /*[href$="html"] 选中href属性值 以html结尾的元素*/
+    [href$="html"]{
+        color: #ff0;
+    }
+    /*[href*="t"] 选中href属性 值里面包含t的元素*/
+    [href*="t"]{
+        color: #00f;
+    }
+    [href="a.html"]{
+        color: #f0f;
+    }
+    </style>
+</head>
+
+<body>
+    <!-- <p href="">着是p</p> -->
+    <a href="a.html">a.html</a>
+    <a href="b.html">b.html</a>
+    <a href="a.txt">a.txt</a>
+    <a href="b.txt">b.txt</a>
+    <a href="a.avi">a.avi</a>
+    <a href="b.avi">b.avi</a>
+</body>
+
+</html>

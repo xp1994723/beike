@@ -1,0 +1,34 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+  <style>
+    /*匹配所有类名以icon-开头的元素 因为他们都需要引入这张图都需要设置不重复 而且宽高都一样*/
+    /*所以属性选择器通常会用来做一些公共样式*/
+    div[class^="icon"] {
+      background-image: url("images/sprites.png");
+      background-repeat: no-repeat;
+      width: 65px;
+      height: 65px;
+    }
+
+    
+    .icon-phone {
+      background-position: -80px -140px;
+    }
+    
+    .icon-computer {
+      background-position: -160px -140px;
+    }
+  </style>
+</head>
+
+<body>
+  <div class='icon-phone'></div>
+  <div class='icon-computer'></div>
+</body>
+
+</html>

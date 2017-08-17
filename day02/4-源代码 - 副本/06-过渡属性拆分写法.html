@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        .box{
+            width: 200px;
+            height: 200px;
+            background-color: green;
+            position: absolute;
+            left: 0;
+            /*设置过渡的属性*/
+            transition-property: width,height,left,background-color;
+            /*设置过渡的时间*/
+            transition-duration: 2s;
+        }
+        .box:hover{
+            width: 500px;
+            height: 500px;
+            left: 600px;
+            background-color: hotpink;
+        }
+    </style>
+</head>
+<body>
+    <div class="box"></div>
+</body>
+</html>

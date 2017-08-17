@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+    /*伪元素一般用双冒号表示 用来 区分 伪元素 和 伪类 双冒号就是伪元素 单冒号就是伪类*/
+    /*::before是在当前元素的里面的最上面添加一个元素 这个元素就是伪元素 伪元素没有标签<> 就是伪元素的名字*/
+    /*  .box::before {
+        content: "这是伪元素::before添加的盒子";
+        display: block;
+        width: 200px;
+        height: 200px;
+        background-color: #f40;
+    }*/
+    /*:::after是在当前元素的里面的最下面添加一个元素 这个元素就是伪元素 伪元素没有标签<> 就是伪元素的名字*/
+    /* .box::after {
+        content: "这是伪元素::after添加的盒子";
+        display: block;
+        width: 200px;
+        height: 200px;
+        background-color: #0f0;
+    }*/
+    
+    .fl {
+        float: left;
+        width: 100px;
+        height: 100px;
+        border: 10px solid #ccc;
+    }
+    
+    .two {
+        width: 300px;
+        height: 300px;
+        background-color: #0f0;
+    }
+    /*
+    .box{
+        height: 120px;
+    }*/
+    /*
+    .box{
+        overflow: hidden;
+    }*/
+    /* .clear{
+        clear: both;
+    }*/
+    /*.box::after{
+        content: "";
+        display: block;
+        clear: both;
+    }
+    */
+    /*.clear::before {
+        
+    }*/
+    
+    .clearfix::before,
+    .clearfix::after {
+        content: "";
+        display: block;
+        clear: both;
+    }
+    </style>
+</head>
+
+<body>
+    <div class="box clearfix">
+        <div class="fl"></div>
+        <div class="fl"></div>
+        <div class="fl"></div>
+        <div class="fl"></div>
+        <div class="fl"></div>
+        <!-- 在大盒子里面清除了浮动 这时候大盒子就会根据子元素的高度加上高度  大盒子有高度 清除了浮动-->
+        <!-- <div class="clear"></div>   -->
+    </div>
+    <!-- 如果清除浮动类在大盒子外面 不会给大盒子添加高度 但是也能清除浮动 -->
+    <div class="clear"></div>
+    <div class="two"></div>
+    <div class="two"></div>
+    <div class="two"></div>
+    <div class="two"></div>
+</body>
+
+</html>

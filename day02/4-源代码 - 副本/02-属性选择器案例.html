@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+    /*这样写代码会有很多两个人都要写的公共样式 宽度高度背景图 只是他们各自的背景定位不一样*/
+    /*	.icon-phone{
+			background-image: url(images/sprites.png);
+			width: 65px;
+			height: 65px;
+			background-position: -80px -140px;
+		}
+		.icon-computer{
+			background-image: url(images/sprites.png);
+			width: 65px;
+			height: 65px;
+			background-position: -160px -140px;
+		}*/
+    /*可以利用属性选择器提取公共样式 选中所有类名以icon-开头的元素 把公共样式写在里面*/
+    
+    [class^="icon-"] {
+        background-image: url(images/sprites.png);
+        width: 65px;
+        height: 65px;
+    }
+    
+    .icon-phone {
+        background-position: -80px -140px;
+    }
+    
+    .icon-computer {
+        background-position: -160px -140px;
+    }
+    </style>
+</head>
+
+<body>
+    <!-- 手机图标 -->
+    <div class="icon-phone"></div>
+    <!-- 电脑图标 -->
+    <div class="icon-computer"></div>
+</body>
+
+</html>

@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+    .box {
+        /*float: left;*/
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 300px;
+        height: 300px;
+        /*rgba 是红绿蓝透明度 rgba是设置在加颜色的地方  rgba只会影响当前设置的值 不会影响别的内容也不会影响子元素*/
+        /*opcity是设置在盒子身上  会影响到里面的内容包括子盒子 像一个会继承的效果（不是真正继承）*/
+        background-color: rgba(255, 0, 0, 0.5);
+        color: #ff0;
+        font-size: 50px;
+        /*opacity 是给整个盒子加的 会影响到里面的内容包括子盒子 像一个会继承的效果（不是真正继承）*/
+        /*opacity: 0.5;*/
+        /*   color: rgba(255, 205, 0, 0.6);
+        font-size: 50px;*/
+    }
+    
+    .inner {
+        width: 200px;
+        height: 200px;
+        background-color: #0f0;
+    }
+    .item{
+        width: 300px;
+        height: 300px;        
+        float: left;
+        position: relative;
+    }
+    .item img{
+        width: 100%;
+    }
+    .item::after{
+        content: "";
+        width: 100%;
+        height: 0px;
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        background-color: rgba(255,0,0,0.3);
+        transition: all 1s;
+        display: none;
+    }
+    .item:hover::after{
+        height: 200px;
+        display: block;
+    }
+    </style>
+</head>
+
+<body>
+ <!--    fssdfsdf
+    <div class="box">
+        fdsfsfds
+        <div class="inner"></div>
+    </div> -->
+      <div class="item">
+        <img src="images/pic_1.jpg" alt="">
+    </div>
+    <div class="item">
+        <img src="images/pic_2.jpg" alt="">
+    </div>
+    <div class="item">
+        <img src="images/pic_3.jpg" alt="">
+    </div>
+    <div class="item">
+        <img src="images/pic_4.jpg" alt="">
+    </div>
+</body>
+
+</html>

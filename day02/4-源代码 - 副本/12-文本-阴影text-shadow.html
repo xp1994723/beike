@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+    body {
+        background-color: #f0f0f0;
+    }
+    
+    .box {
+        font-size: 100px;
+        text-align: center;
+        color: blue;
+        /*1px 表示文本阴影的 水平偏移量 + 右 - 左*/
+        /*1px 表示文本阴影的 垂直偏移量 + 下 - 上*/
+        /*5px 表示的是模糊度*/
+        /*颜色 如果不加默认和文字颜色一样 */
+        text-shadow: 1px 1px 5px , -10px -10px 5px pink, 10px 10px 5px #ff0;
+    }
+    </style>
+</head>
+
+<body>
+    <div class="box">
+        文本阴影
+    </div>
+</body>
+
+</html>

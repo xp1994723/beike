@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		/*属性选择器 用[]表示 
+			有5种选择方式 
+			1. E[attr]		存在attr属性即可
+			2. E[attr=val]		属性值完全等于val
+			3. E[attr*=val]		属性值里包含val字符并且在“任意”位置
+			4. E[attr^=val]		属性值里包含val字符并且在“开始”位置
+			5. E[attr$=val]		属性值里包含val字符并且在“结束”位置
+		*/	
+		/*选中包含href属性的所有元素*/
+		[href]{
+			color:red;
+		}
+		/*选中href属性值="a.html"的元素*/
+		[href="a.html"]{
+			color:green;
+		}
+		/*选中所有href属性里面包含a的元素*/
+		[href*="a"]{
+			color:yellowgreen;
+		}
+		/*选中所有href属性以a开头的元素*/
+		[href^="a"]{
+			color:blue;
+		}
+		/*选中所有href属性以html结尾的元素*/
+		[href$="html"]{
+			color:pink;
+		}
+		a{
+			display: block;
+			line-height: 50px;
+		}
+	</style>
+</head>
+<body>
+	<a href="a.html">a.html</a>
+	<a href="b.html">b.html</a>
+	<a href="a.txt">a.txt</a>
+	<a href="b.txt">b.txt</a>
+	<a href="a.avi">a.avi</a>
+	<a href="b.avi">b.avi</a>
+</body>
+</html>
