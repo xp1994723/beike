@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+    .box {
+        width: 600px;
+        height: 400px;
+        margin: 0px auto;
+        background-image: url(images/1.jpg);
+        border:1px solid #ccc;
+        /*背景大小background-size可以设置背景图的大小 
+			默认是auto即图片有多大就是多大
+			可以设置值 两个值 一个是宽度一个的高度 也可以设置百分比 宽度(相对于当前容器的宽度)和高度(相对于当前容器的高度)*/
+        /*background-size: 100px 100px;*/
+        /*background-size: 100% 100%;*/
+        /*	还可以设置两个特殊的显示方式 contain  和 cover*/
+        /*contain是沿着图片的最大边缩放到盒子最大的宽度或者高度的范围内 最小边也随着缩放对应的比例
+        例如当前图片的最大边是宽度 那就是宽度1920缩放到600 缩放3倍多 高度是 1026也缩放3倍多大概是340左右*/
+        /*background-size: contain;*/
+        /*cover是沿着图片的最小边等比例缩放 最大边也按照这个比例缩放
+        例如当前图片最小边是高度1026 缩放到400px需要缩放2倍多
+			宽度1920也缩放2倍多到800左右*/
+        background-size: cover;
+        /*优点contain就能完全的显示整个图片 但是可能不能完全覆盖到容器
+        cover能完全覆盖容器 但是可能有部分图片看不到*/
+        background-repeat: no-repeat;
+    }
+    </style>
+</head>
+
+<body>
+    <div class="box"></div>
+</body>
+
+</html>

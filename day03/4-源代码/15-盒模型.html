@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+    .box {
+        width: 500px;
+        height: 500px;
+        padding: 100px;
+        border: 100px solid #f40;
+        /*box-sizing: border-box;*/
+        /*box-sizing: content-box; 默认的值 是传统计算盒模型的方式 border+padding+width*/
+        box-sizing: border-box;
+        /*正常加上 box-sizing: border-box; 可以让盒模型的计算方式变成固定的宽度和高度 是会把内容挤小*/
+        /*如果padding+border的值超过了设置的高度和宽度 那就会取最大的值 取padding+border的值*/
+    }
+    </style>
+</head>
+
+<body>
+    <div class="box"></div>
+</body>
+
+</html>

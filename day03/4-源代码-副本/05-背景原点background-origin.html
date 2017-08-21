@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		.box{
+			width: 300px;
+			height: 300px;
+			padding: 50px;
+			border:10px dashed #ccc;
+			background-image: url(images/bg.jpg);
+			background-repeat: no-repeat;	
+			/*background-origin调整背景图的初始位置从哪里开始 分别有border-box padding-box 和 content-box	同clip的效果 */	
+			background-origin: border-box;
+			background-origin: padding-box;
+			background-origin: content-box;
+		}
+	</style>
+</head>
+<body>
+	<div class="box"></div>
+</body>
+</html>

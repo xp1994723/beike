@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+    .box {
+        width: 200px;
+        height: 200px;
+        background-color: hotpink;
+        margin: 0px auto;
+        /*添加过渡*/
+        transition: all 1s;
+    }
+    
+    .box:hover {
+        /*设置缩放 transform:scale(缩放的倍数) 默认是1;*/
+        transform: scale(0.5);
+    }
+    </style>
+</head>
+
+<body>
+    <div class="box"></div>
+</body>
+
+</html>

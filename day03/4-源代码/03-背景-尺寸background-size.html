@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+    body {
+        margin: 0;
+        padding: 0;
+        background-color: #F7F7F7;
+    }
+    
+    .pic {
+        width: 600px;
+        height: 400px;
+        margin: 50px auto;
+        border: 1px solid #ccc;
+        background-image: url(images/1.jpg);     
+        /*默认背景图的大小是auto自动 图片该多大就多大   */
+        /*background-size: auto;	*/
+        /*尽量不要用百分比*/
+        /*background-size: 100% 50%;*/
+       	/*cover是沿着图片的最小边等比例缩放到盒子的对应的边 就能够实现背景图自动适应铺满*/
+        /*background-size: cover;	*/
+        /*沿着背景图片的最大边等比例缩放到盒子对应的边*/
+        /*能够完全的显示图片*/
+        background-size: contain;
+        background-repeat: no-repeat;
+    }
+    </style>
+</head>
+
+<body>
+    <div class="pic"></div>
+</body>
+
+</html>

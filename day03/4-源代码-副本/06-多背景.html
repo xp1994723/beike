@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		.box{
+			width: 623px;
+			height: 417px;
+			margin: 0px auto;
+			/*可以给一个盒子设置多个背景 但是只能用background属性不能用background-image 可以分别设置上有下左和中间5个区域的背景图*/
+			background:url(images/bg1.png) left top,
+			url(images/bg2.png) right top,
+			url(images/bg3.png) right bottom,
+			url(images/bg4.png) left bottom,
+			url(images/bg5.png) center center;
+			background-repeat: no-repeat;
+		}
+	</style>
+</head>
+<body>
+	<div class="box"></div>
+</body>
+</html>

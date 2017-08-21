@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>背景-原点</title>
+    <style>
+    .box {
+        width: 200px;
+        height: 200px;
+        padding: 50px;
+        border: 40px solid green;
+        margin: 100px auto;
+        /*background-color: #ff0;*/
+        background-image: url(images/bg.jpg);
+        background-repeat: no-repeat;
+        /*背景图的定为原点 默认是padding-box 就背景的定位位置参照的起点的padding区域的左上角*/
+        /*background-origin: padding-box;*/
+        /*表示背景图的定为原点参照盒子的content就是内容部分 来设置定位位置的参照原点
+        也就是content的左上角*/
+        /*表示背景图的定为原点参照盒子的border就是边框部分 来设置定位位置的参照原点
+        也就是border的左上角*/
+        background-origin: border-box;
+        background-position: 10px 20px;
+    }
+    /*origin 有原点的意思*/
+    </style>
+</head>
+
+<body>
+    <div class="box"></div>
+</body>
+
+</html>

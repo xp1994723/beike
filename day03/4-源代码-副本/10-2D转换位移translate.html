@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		.box{
+			width: 200px;
+			height: 200px;
+			background-color: hotpink;
+			transition: all 1s;
+		}
+		.box:hover{
+		/*	transform:translate(水平位移px,垂直位移px); 可以设置盒子的水平和垂直位移
+		如果只想设置水平位移则使用translateX() 如果只想使用垂直位移则使用translateY()
+		水平的正值往右移动 负值往左移动
+		垂直的正值往下移动 负值往上移动*/
+			transform:translate(200px,200px);
+		}
+	</style>
+</head>
+<body>
+	<div class="box"></div>
+</body>
+</html>

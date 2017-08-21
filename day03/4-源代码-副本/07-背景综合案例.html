@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		.icon-back{
+			background-image: url(images/sprites.png);
+			width: 40px;
+			height: 40px;
+			display: block;
+			padding: 10px;
+			box-sizing: border-box;
+			/*设置背景图的大小 要缩小一倍*/
+			background-size:200px 200px;
+			/*背景图的定位也要缩小一倍*/
+			background-position: -20px 0;
+			/*设置背景图裁切 只有内容区域有背景*/
+			background-clip: content-box;
+		/*	设置背景图的起始定位原点 从内容部分开始显示背景*/
+			background-origin: content-box;
+		}
+	</style>
+</head>
+<body>
+	<a href="#" class="icon-back"></a>
+	<a href="#" class="icon-menu"></a>
+</body>
+</html>

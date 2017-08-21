@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		.box{
+			width: 300px;
+			height: 300px;
+			padding: 50px;
+			border:20px dashed #ccc;
+			background-image: url(images/2.jpg);
+			/*默认背景图的位置是从padding区域开始显示的*/
+			/*可以通过background-clip背景裁切来调整背景的显示范围 */
+			/*background-clip: 有3个值分别是 border-box padding-box  content-box 默认是padding-box*/		
+			background-clip: border-box;	/*在边框及以内的所有范围都会有背景*/
+			background-clip: padding-box;	/*在padding及以内的所有范围都会有背景*/
+			background-clip: content-box;	/*在content内容所有范围都会有背景*/
+		}
+	</style>
+</head>
+<body>
+	<div class="box">内容</div>
+</body>
+</html>

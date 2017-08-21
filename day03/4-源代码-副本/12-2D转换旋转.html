@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		.box{
+			width: 200px;
+			height: 200px;
+			background-color: hotpink;
+			margin: 100px auto;
+			transition: all 1s;
+		}
+		.box:hover{
+			/*rotate旋转 控制盒子的旋转 单位deg度 正值是顺时针旋转 负值是逆时针旋转*/
+			transform:rotate(-180deg);
+			/*控制旋转的方向是按照盒子的水平中心线旋转*/
+			/*transform:rotateX(-180deg);*/
+			/*控制旋转的方向是按照盒子的垂直中心线旋转*/
+			/*transform:rotateY(-180deg);*/
+		}
+	</style>
+</head>
+<body>
+	<div class="box">正</div>
+</body>
+</html>

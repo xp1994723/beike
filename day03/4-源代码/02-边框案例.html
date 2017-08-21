@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+  <style>
+    .iphone{
+      width: 300px;
+      height: 500px;
+      border:1px solid #000;
+      margin: 0px auto;
+      /*设置最外层的圆角*/
+      border-radius: 5px;
+      position: relative;
+    }
+    /*设置屏幕*/
+    .iphone::before{
+      content: "";
+      /*display: block;*/
+      position: absolute;
+      width: 90%;
+      height: 80%;
+      border-radius: 5px;
+      border: 1px solid #000;
+      /*margin: 10px auto;*/
+      top: 10px;
+      left: 50%;
+      margin-left: -135px;
+    }
+    .iphone::after{
+      content: "";
+      position: absolute;
+      width: 60px;
+      height: 60px;
+      border: 1px solid #000;
+      bottom: 10px;
+      left: 50%;
+      margin-left: -30px;
+      border-radius: 50%;
+    }
+  </style>
+</head>
+<body>
+  <div class="iphone"></div>
+</body>
+</html>

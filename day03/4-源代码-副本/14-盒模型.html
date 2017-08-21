@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		.box{
+			width: 500px;
+			height: 500px;
+			padding: 100px;
+			border:100px solid #0f0;
+			/*默认情况下盒模型的计算方式是内容的宽高+padding+border*/
+			/*但是这样经常会给我们带来困扰比如我有一个盒子高度是50px我要给他加个2px的底边框就要把盒子设置成48px高度再加上边框 万一后面边框的大小要变成3px那么要再次计算把高度变成47px这样计算不方便也不利益后期维护*/
+			/*可以通过设置改变盒模型的计算方式 通过box-sizing*/
+			/*box-sizing: 有2个值 border-box  content-box 默认是content-box*/
+			/*盒子的宽度计算width+padding+border*/
+			/*box-sizing: content-box;*/
+			/*盒子的宽度计算width*/
+			/*box-sizing: border-box;*/
+		}
+	</style>
+</head>
+<body>
+	<div class="box"></div>
+</body>
+</html>

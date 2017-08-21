@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		.box{
+			width: 200px;
+			height: 200px;
+			margin: 200px auto;
+		}
+		.box img{
+			width: 100%;
+			height: 100%;
+			transition: all 2s;
+		}
+		.box:hover img{
+			/*2D转换的属性可以连写 顺序位置任意 但是通常是 位移 缩放 倾斜 旋转*/
+			/*设置图片水平位移400 垂直位移200  旋转360度 缩放1.5倍*/
+			transform:  translate(400px,200px)  scale(1.5)  rotate(360deg);
+		}
+	</style>
+</head>
+<body>
+	<div class="box">
+		<img src="images/dfc.gif" alt="">
+	</div>
+</body>
+</html>
