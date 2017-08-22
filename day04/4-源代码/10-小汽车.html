@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+    img {
+        width: 100px;
+    }
+    /* 定义动画 */
+    
+    @keyframes drive {
+        0% {}
+        30% {
+            transform: translateX(1000px);
+        }
+        40% {
+            transform: translateX(1000px) rotateY(180deg);
+        }
+        80% {
+            transform: translateX(0px) rotateY(180deg);
+        }
+        100% {}
+    }
+    
+    .drive {
+        animation: drive 10s linear infinite;
+    }
+    </style>
+</head>
+
+<body>
+    <img class="drive" src="images/car.jpg" alt="">
+</body>
+
+</html>

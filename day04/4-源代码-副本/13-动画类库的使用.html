@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <link rel="stylesheet" href="animate.css">
+    <style>
+    .box {
+        width: 200px;
+        height: 200px;
+        margin: 200px auto;
+        background-color: pink;
+        animation-duration: 3s;
+    }
+    </style>
+</head>
+
+<body>
+    <div class="box"></div>
+    <script>
+    document.querySelector('.box').onmouseover = function() {
+        this.classList.add('wobble');
+    }
+    document.querySelector('.box').onmouseout = function() {
+        this.classList.remove('wobble');
+    }
+    </script>
+</body>
+
+</html>

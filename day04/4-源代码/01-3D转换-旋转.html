@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>CSS 3D转换</title>
+	<style>
+		body {
+			margin: 0;
+			padding: 0;
+			background-color: #F7F7F7;
+		}
+		
+		.rotateX {
+			height: 226px;
+			margin-top: 100px;
+			text-align: center;
+
+			perspective: 1000px;
+			float: left;
+		}
+
+		.rotateX img {
+			transition: all 3s;
+		}
+
+		.rotateX:hover img {
+			transform: rotateX(-180deg);
+		}
+
+		.rotateY {
+			height: 226px;
+			margin-top: 100px;
+			float: left;
+			margin-left: 50px;
+			text-align: center;
+			perspective: 1000px;
+		}
+		
+		.rotateY img {
+			transition: all 3s;
+		}
+		
+		.rotateY:hover img {
+			transform: rotateY(-180deg);
+		}
+
+		.rotateZ {
+			margin-top: 100px;
+			height: 226px;
+			float: left;
+			margin-left: 50px;
+			text-align: center;
+			perspective: 1000px;
+		}
+
+		.rotateZ img {
+			transition: all 3s;
+		}
+
+		.rotateZ:hover img {
+			transform: rotateZ(-180deg);
+		}
+	</style>
+</head>
+<body>
+	<div class="rotateX">
+	rotateX
+		<img src="./images/x.jpg" alt="">
+	</div>
+	<div class="rotateY">
+	rotateY
+		<img src="./images/y.jpg" alt="">
+	</div>
+	<div class="rotateZ">
+	rotateZ
+		<img src="./images/z.jpg" alt="">
+	</div>
+</body>
+</html>

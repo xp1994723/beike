@@ -1,0 +1,52 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        /* 砖墙 */
+          
+        body {
+            background: url('images/wall.jpg');
+        }
+        /* 门的基础样式 */
+        
+        .door {
+            width: 500px;
+            height: 400px;
+            border: 10px solid white;
+            margin: 100px auto;
+            background: url('images/dog.gif')no-repeat center /cover;
+            position: relative;
+        }
+        /* 设置门 */
+        
+        .door::before {
+            content: '○';
+            height: 100%;
+            width: 50%;
+            position: absolute;
+            background: url('images/door.jpg')no-repeat center / cover;
+            text-align: right;
+            line-height: 400px;
+            font-weight: 900;
+            color: white;
+            font-size: 50px;
+            transition: all 1s;
+            transform-origin: left center;
+            transform: perspective(1000px);
+        }
+        
+        .door:hover::before {
+            transform: perspective(1000px) rotateY(180deg);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="door"></div>
+</body>
+
+</html>

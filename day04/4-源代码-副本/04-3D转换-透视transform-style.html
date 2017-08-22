@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+    .box {
+        width: 600px;
+        height: 600px;
+        margin: 0px auto;
+        background-color: #ccc;
+        position: relative;
+        transform-style: preserve-3d;
+        /*perspective: 1000px;*/
+    }
+    
+    .pk1 {
+        width: 200px;
+        height: 200px;
+        position: absolute;
+        left: 0;
+        top: 0;
+    }
+    
+    .pk1 img {
+        width: 100%;
+    }
+    
+    .pk2 {
+        width: 200px;
+        height: 200px;
+        position: absolute;
+        left: 0;
+        top: 0;
+        transform-style: preserve-3d;
+    }
+    
+    .pk2 img {
+        width: 100%;
+    }
+    
+    .pk2 {
+        transform: rotateX(60deg) skew(30deg, 0);
+    }
+    </style>
+</head>
+
+<body>
+    <div class="box">
+        <div class="pk1">
+            <img src="images/pk1.png" alt="">
+        </div>
+        <div class="pk2">
+            <img src="images/pk1.png" alt="">
+        </div>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+    body {
+        padding-top: 100px;
+    }
+    
+    .rotateX {
+        float: left;
+        margin-left: 100px;
+        perspective: 1000px;
+    }
+    
+  
+    .rotateX img {
+        transition: all 2s;
+    }
+    
+    .rotateX:hover img {
+        transform: rotateX(180deg);
+    }
+    
+    .rotateY {
+        float: left;
+        margin-left: 100px;
+    }
+    
+    .rotateY img {
+        transition: all 2s;
+    }
+    
+    .rotateY:hover img {
+        transform: rotateY(180deg);
+    }
+    
+    .rotateZ {
+        float: left;
+        margin-left: 100px;
+    }
+    
+    .rotateZ img {
+        transition: all 2s;
+    }
+    
+    .rotateZ:hover img {
+        transform: rotateZ(180deg);
+    }
+    </style>
+</head>
+
+<body>
+    <div class="rotateX">
+        <img src="images/x1.jpg" alt="">
+    </div>
+    <div class="rotateY">
+        <img src="images/y1.jpg" alt="">
+    </div>
+    <div class="rotateZ">
+        <img src="images/z1.jpg" alt="">
+    </div>
+</body>
+
+</html>

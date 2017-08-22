@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+    .translateX {
+        width: 200px;
+        height: 200px;
+        perspective: 1000px;
+    }
+    
+    .translateX .box {
+        width: 100%;
+        height: 100%;
+        background-color: hotpink;
+        transition: all 1s;
+    }
+    
+    .translateX:hover .box {
+        transform: translateX(200px);
+    }
+    
+    .translateY {
+        width: 200px;
+        height: 200px;
+        perspective: 1000px;
+        margin-left: 400px;
+    }
+    
+    .translateY .box {
+        width: 100%;
+        height: 100%;
+        background-color: green;
+        transition: all 1s;
+    }
+    
+    .translateY:hover .box {
+        transform: translateY(200px);
+    }
+    
+    .translateZ {
+        width: 200px;
+        height: 200px;
+        perspective: 1000px;
+        margin-left: 800px;
+    }
+    
+    .translateZ .box {
+        width: 100%;
+        height: 100%;
+        background-color: blue;
+        transition: all 1s;
+    }
+    
+    .translateZ:hover .box {
+        transform: translateZ(-1000px);
+    }
+    </style>
+</head>
+
+<body>
+    <div class="translateX">
+        <div class="box">translateX</div>
+    </div>
+    <div class="translateY">
+        <div class="box">translateY</div>
+    </div>
+    <div class="translateZ">
+        <div class="box">translateZ</div>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>CSS3 3D转换</title>
+    <style>
+    body {
+        margin: 0;
+        padding: 0;
+        background-color: #F7F7F7;
+    }
+    
+    .perspective {
+        width: 200px;
+        height: 200px;
+        margin: 100px auto;
+        margin-top: 100px;
+        perspective: 1000px;
+    }
+    
+    .rotateY {
+        width: 200px;
+        height: 200px;
+        background-color: green;
+        transform: rotateY(90deg) translateZ(100px);
+        transition: all 2s;
+    }
+    
+    .perspective:hover .rotateY {
+        transform: rotateY(90deg);
+        transform: translateZ(400px);
+    }
+    </style>
+</head>
+
+<body>
+    <div class="perspective">
+        <div class="rotateY">一些内容</div>
+    </div>
+</body>
+
+</html>

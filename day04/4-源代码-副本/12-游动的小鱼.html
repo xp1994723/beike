@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+    body {
+        background-color: lightblue;
+    }
+    .fish {
+        width: 174px;
+        height: 126px;
+        background: url('images/fish.png') no-repeat;
+    }
+    
+    @keyframes autoSwim {
+        from {}
+        to {
+            background-position-y: -882px;
+        }
+    }
+    
+    .autoSwim {
+        animation: autoSwim .5s steps(7) infinite;
+    }
+    
+    html,
+    body {
+        height: 100%;
+        margin: 0;
+    }
+    
+    body {
+        background-image: linear-gradient(to bottom, lightblue, deepskyblue, blue, black)
+    }
+    
+    .fish {
+        transition: all 1s linear;
+    }
+    
+    body:hover .fish {
+        transform: translate(1000px, 500px) rotate(90deg) scale(0, 0);
+    }
+    </style>
+</head>
+
+<body>
+    <div class="fish autoSwim"></div>
+</body>
+
+</html>
