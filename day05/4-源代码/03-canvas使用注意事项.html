@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+    canvas {
+        border: 1px solid #ccc;
+    }
+    </style>
+</head>
+
+<body>
+    <canvas width="500" height="500"></canvas>
+    <script>
+    var cvs = document.querySelector('canvas');
+    var ctx = cvs.getContext('2d');
+    //1. 如果不moveTo就没有起点 就画不出线
+    ctx.moveTo(0, 0);
+    ctx.lineTo(100, 100);
+    // ctx.stroke();
+    ctx.moveTo(100, 0);
+    ctx.lineTo(200, 100);
+    ctx.stroke();
+    //2.    ctx.stroke();方法每次执行都会把之前的所有线重新画一遍所以如果要画多个线先画好最好调用stroke()
+    </script>
+</body>
+
+</html>

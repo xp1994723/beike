@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+    canvas {
+        border: 1px solid #ccc;
+    }
+    </style>
+</head>
+
+<body>
+    <canvas width="500" height="500"></canvas>
+    <script>
+    var cvs = document.querySelector('canvas');
+    var ctx = cvs.getContext('2d');
+    ctx.moveTo(100,100);
+    ctx.lineTo(200,100);
+    ctx.lineTo(200,200);
+    ctx.lineTo(100,200);
+    ctx.closePath();
+    ctx.stroke();
+
+    ctx.moveTo(400,100);
+    ctx.lineTo(500,100);
+    ctx.lineTo(500,200);
+    ctx.lineTo(400,200);
+    ctx.closePath();
+    ctx.fill();
+    // 当使用fill和stroke的时候都会对当前路径下的所有内容进行绘制
+    </script>
+</body>
+
+</html>

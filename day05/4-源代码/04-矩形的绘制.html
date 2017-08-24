@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+    canvas {
+        border: 1px solid #ccc;
+    }
+    </style>
+</head>
+
+<body>
+    <canvas width="500" height="500"></canvas>
+    <script>
+    var cvs = document.querySelector('canvas');
+    var ctx = cvs.getContext('2d');
+    ctx.moveTo(100, 100);
+    ctx.lineTo(200, 100);
+    ctx.lineTo(200, 200);
+    ctx.lineTo(100, 200);
+    // ctx.lineTo(100, 100);
+    // closePath方法可以自动闭合路径， 将当前点和上一次moveTo的点连接起来
+    ctx.closePath();
+    ctx.stroke();
+    </script>
+</body>
+
+</html>

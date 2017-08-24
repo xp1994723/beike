@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+    canvas {
+        border: 1px solid #ccc;
+    }
+    </style>
+</head>
+
+<body>
+    <canvas width="500" height="500"></canvas>
+    <script>
+    var cvs = document.querySelector('canvas');
+    var ctx = cvs.getContext('2d');
+    // 填充只会填充内部不会收到线宽的影响
+    ctx.lineWidth = 20;
+    ctx.moveTo(100, 100);
+    ctx.lineTo(200, 100);
+    ctx.lineTo(200, 200);
+    ctx.lineTo(100, 200);
+    ctx.closePath();
+    // stroke会收到线宽的影响
+    ctx.stroke();
+    // fill 方法会自动闭合且填充满整个图形 可以不用stroke和closePath
+    // ctx.fill();
+
+    </script>
+</body>
+
+</html>
