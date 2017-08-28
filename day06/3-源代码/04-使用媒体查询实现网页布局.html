@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+    /**
+         * 超小屏幕（移动设备）    768px以下  .box div 宽度100%
+            小屏设备    768px-992px .box div宽度50%
+            中等屏幕    992px-1200px .box div 宽度33.33%
+            宽屏设备    1200px以上 .box div 宽度25%
+         */
+    
+    .box div {
+        width: 100%;
+        height: 100px;
+        border: 1px solid red;
+        /*设置盒子模型的计算方式 包含boorder+padding+content: 如果固定了宽度要加边框要设置盒模型是border-box*/
+        box-sizing: border-box;
+        float: left;
+    }
+    @media (min-width: 768px){
+    	.box div{
+    		width: 50%;
+    	}
+    }
+    @media (min-width: 992px){
+    	.box div{
+    		width: 33.33%;
+    	}
+    }
+    @media (min-width: 1200px){
+    	.box div{
+    		width: 25%;
+    	}
+    }
+    </style>
+</head>
+
+<body>
+    <div class="box">
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+    </div>
+</body>
+
+</html>

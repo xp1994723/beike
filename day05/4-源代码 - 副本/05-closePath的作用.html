@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+      canvas{
+        border: 1px solid #ccc;
+      }
+    </style>
+</head>
+
+<body>
+    <canvas width="600" height="500"></canvas>
+    <script>
+    var cvs = document.querySelector('canvas');
+    var ctx = cvs.getContext('2d');
+    ctx.lineWidth = 20;
+  	 ctx.moveTo(100,100);
+  	 ctx.lineTo(300,100);
+  	 ctx.lineTo(500,200);
+  	 // ctx.lineTo(100,100);
+  	 ctx.closePath();
+  	 // closePath方法除了可以闭合画布之外还可以填充角
+  	 ctx.stroke();
+    </script>
+</body>
+
+</html>

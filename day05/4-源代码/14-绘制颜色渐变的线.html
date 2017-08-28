@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+    canvas {
+        border: 1px solid #ccc
+    }
+    </style>
+</head>
+
+<body>
+    <canvas width="600" height="500"></canvas>
+    <script>
+    var cas = document.querySelector("canvas");
+    var ctx = cas.getContext("2d");
+
+    //    ctx.lineWidth = 10;
+    //
+    //    ctx.strokeStyle = "red";
+    //    ctx.moveTo(100, 100);
+    //    ctx.lineTo(355, 100);
+    //    ctx.stroke();
+
+
+    //    for(var i = 0; i <= 255; i ++){
+    //        ctx.beginPath();
+    //        ctx.moveTo(100 + i, 100);
+    //        ctx.strokeStyle = "rgb(" + (255 - i) + ", 0, 0)";
+    //        ctx.lineTo(100 + i + 1, 100);
+    //        ctx.stroke();
+    //    }
+
+
+    //    for(var i = 0; i <= 400; i ++){
+    //        ctx.beginPath();
+    //        ctx.moveTo(100 + i, 100);
+    //        ctx.strokeStyle = "rgb(" + parseInt(255 - (255/400) * i) + ", 0, 0)";
+    //        ctx.lineTo(100 + i + 1, 100);
+    //        ctx.stroke();
+    //    }
+
+    //    ctx.strokeStyle = "rgb(255, 0, 0)"
+    //    ctx.moveTo(100, 100);
+    //    ctx.lineTo(500, 100);
+    //    ctx.stroke();
+    //
+    //    ctx.beginPath();
+    //    ctx.strokeStyle = "rgb(255, 165, 0)"
+    //    ctx.moveTo(100, 110);
+    //    ctx.lineTo(500, 110);
+    //    ctx.stroke();
+
+
+    //    ctx.strokeStyle = "red";
+    //    ctx.moveTo(100, 100);
+    //    ctx.lineTo(200, 100);
+    //    ctx.stroke();
+
+    //    //beginPath之后需要重新设置起点！
+    //    ctx.beginPath();
+    //    ctx.strokeStyle = "yellow";
+    //    ctx.moveTo(200, 100);
+    //    ctx.lineTo(200, 200);
+    //    ctx.stroke();
+    //
+    //    ctx.beginPath();
+    //    ctx.strokeStyle = "blue";
+    //    ctx.moveTo(200, 200);
+    //    ctx.lineTo(100, 200);
+    //    ctx.stroke();
+    //
+    //    ctx.beginPath();
+    //    ctx.strokeStyle = "green";
+    //    ctx.moveTo(100, 200);
+    //    ctx.lineTo(100, 100);
+    //    ctx.stroke();
+
+    //closePath也不能用，因为起点没了，不知道要closePath到哪里去了
+    </script>
+</body>
+
+</html>

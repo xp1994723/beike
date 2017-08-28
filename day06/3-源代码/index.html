@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <!-- 1. 在head中引入必要的CSS文件,优先引入第三方的CSS,方便我们自己的样式覆盖 -->
+    <link rel="stylesheet" href="lib/bootstrap/css/bootstrap.css">
+    <!-- 引入font.css是引入定义了字体图标类名的css -->
+    <link rel="stylesheet" href="css/font.css">
+    <link rel="stylesheet" href="css/index.css">
+</head>
+
+<body>
+	<!-- 头部区域 -->
+	<header id="header">
+		<!-- 顶部通栏 -->
+		<div class="topbar">
+			<!-- 固定宽度且居中 -->
+			<div class="container">
+				<div class="row">
+					<div class="col-md-2 text-center"> <!-- 前提是bootstrap里面的fonts文件夹在css文件夹旁边 -->
+						 <i class="icon-mobilephone"></i> 手机微金所 <i class="glyphicon glyphicon-chevron-down"></i>
+					</div>
+					<div class="col-md-5 text-center">
+						<i class="icon-telephone"></i>4006-89-4006（服务时间：9:00-21:00）
+					</div>
+					<div class="col-md-2 text-center">
+						<a href="#">常见问题</a> <a href="#"> 财富登录</a>
+					</div>
+					<div class="col-md-3 text-center">
+					    <a href="#" class="btn btn-danger btn-sm">免费注册</a>
+						 <a href="#">登录</a>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- 导航条 -->
+		<nav></nav>
+	</header>
+	<!-- 轮播图区域 -->
+	<section id="slide"></section>
+	<!-- 特色介绍区域 -->
+	<section id="feature"></section>
+	<!-- 立即预约 -->
+	<section id="booking"></section>
+	<!-- 产品区域 -->
+	<section id="products"></section>
+	<!-- 新闻区域 -->
+	<section id="news"></section>
+	<!-- 合作伙伴区域 -->
+	<footer id="partner"></footer>
+    <!-- 2. 在body末尾引入必要的JS文件,优先引入第三方的JS文件,注意JS文件之间的依赖关系
+   比如Bootstrap.js 依赖jquery,那就应该先引入jquery.js 然后引用Bootstrap.js -->
+    <script src="lib/jquery/jquery.js"></script>
+    <script src="lib/bootstrap/js/bootstrap.js"></script>
+    <script src="js/index.js"></script>
+</body>
+
+</html>

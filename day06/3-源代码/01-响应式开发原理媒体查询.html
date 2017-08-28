@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+    /**
+		 * 超小屏幕（移动设备）    768px以下  body背景色红色
+			小屏设备    768px-992px 背景色绿色
+			中等屏幕    992px-1200px 背景色蓝色
+			宽屏设备    1200px以上 背景色骚粉色
+		 */
+    /*if(w<768px){
+			body{
+				background-color: red;
+			}
+		}else if(768<w<992px){
+			body{
+				background-color: green;
+			}
+		}else if(992<w<1200px){
+			body{
+				background-color: blue;
+			}
+		}else if(w>1200px){
+			body{
+				background-color: hotpink;
+			}
+		}*/
+    /*媒体查询的写法 @media (条件){
+			条件成立执行的代码
+			body{
+				background-color: blue;
+			}
+			screen and 可以省略  如果不省略 and的前后必须有空格
+			条件 min-width:768px;  屏幕最小宽度大于等于768px的时候条件成立
+			max-width:768px; 屏幕的最大宽度小于等于768px的时候条件成立
+		}*/
+    /*	@media screen and (){
+
+		}
+		@media(){
+
+		}*/
+    /*768px以下  body背景色红色*/
+    
+    @media(max-width:768px) {
+        body {
+            background-color: red;
+        }
+    }
+    /*如果有多个条件可以用and链接 前后要有空格*/
+    /*768px-992px 背景色绿色*/
+    
+    @media (min-width:768px) and (max-width: 992px) {
+        body {
+            background-color: green;
+        }
+    }
+    /*中等屏幕    992px-1200px 背景色蓝色*/
+    
+    @media (min-width:992px) and (max-width: 1200px) {
+        body {
+            background-color: blue;
+        }
+    }
+    /*1200px以上 背景色骚粉色*/
+    
+    @media (min-width: 1200px) {
+        body {
+            background-color: hotpink;
+        }
+    }
+    </style>
+</head>
+
+<body>
+</body>
+
+</html>

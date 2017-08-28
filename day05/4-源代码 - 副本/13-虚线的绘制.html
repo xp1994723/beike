@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+    canvas {
+        border: 1px solid #ccc;
+    }
+    </style>
+</head>
+
+<body>
+    <canvas width="600" height="500"></canvas>
+    <script>
+    var cas = document.querySelector("canvas");
+    var ctx = cas.getContext("2d");
+
+    //setLineDash可以用来设置虚线的样式
+    //这个方法需要一个数组作为参数，数组中的元素会被依次应用到虚线的每一段上作为长度
+    //    ctx.setLineDash([5, 10, 15]);
+    //
+    //    //getLineDash可以用来获取虚线的设置
+    //    var res = ctx.getLineDash();
+    //    console.log(res);
+    //
+    //    ctx.moveTo(100, 100);
+    //    ctx.lineTo(300, 100);
+    //    ctx.stroke();
+    //
+    //    ctx.beginPath();
+    //    //如果想要画实线，就可以通过给setLineDash传递一个空数组实现
+    //    ctx.setLineDash([]);
+    //    ctx.moveTo(100, 200);
+    //    ctx.lineTo(300, 200);
+    //    ctx.stroke();
+
+    //    ctx.beginPath();
+
+    ctx.moveTo(100, 50);
+    ctx.lineTo(100, 150);
+
+    ctx.moveTo(300, 50);
+    ctx.lineTo(300, 150);
+    ctx.stroke();
+
+    ctx.beginPath();
+
+    //lineDashOffset可以设置虚线的偏移量
+    //如果是正值，就向左偏，如果是负值，就向右偏
+    ctx.lineDashOffset = -15;
+    ctx.setLineDash([20]);
+    ctx.moveTo(100, 100);
+    ctx.lineTo(300, 100);
+    ctx.stroke();
+    </script>
+</body>
+
+</html>

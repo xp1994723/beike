@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+    canvas {
+        border: 1px solid #ccc;
+    }
+    </style>
+</head>
+
+<body>
+    <canvas width="600" height="500"></canvas>
+    <script>
+    var cas = document.querySelector("canvas");
+    var ctx = cas.getContext("2d");
+
+    //255, 0, 0     255, 165, 0
+
+    for (var i = 0; i < 20; i++) {
+        ctx.beginPath();
+        var g = parseInt(165 / 20 * i);
+        ctx.strokeStyle = "rgb(255, " + g + ", 0)";
+        ctx.moveTo(100, 100 + i);
+        ctx.lineTo(500, 100 + i);
+        ctx.stroke();
+    }
+
+    //255, 165, 0  255, 255, 0
+
+    for (var i = 0; i < 20; i++) {
+        ctx.beginPath();
+        var g = 165 + parseInt(90 / 20 * i);
+        ctx.strokeStyle = "rgb(255, " + g + ", 0)";
+        ctx.moveTo(100, 120 + i);
+        ctx.lineTo(500, 120 + i);
+        ctx.stroke();
+    }
+
+    //255, 255, 0     0, 255, 0
+
+    for (var i = 0; i < 20; i++) {
+        ctx.beginPath();
+        var r = 255 - parseInt(255 / 20 * i);
+        ctx.strokeStyle = "rgb(" + r + ", 255, 0)";
+        ctx.moveTo(100, 140 + i);
+        ctx.lineTo(500, 140 + i);
+        ctx.stroke();
+    }
+
+    //0, 255, 0   0, 127, 255
+    for (var i = 0; i < 20; i++) {
+        ctx.beginPath();
+        var g = 255 - parseInt(128 / 20 * i);
+        var b = parseInt(255 / 20 * i)
+        ctx.strokeStyle = "rgb(0, " + g + ", " + b + ")";
+        ctx.moveTo(100, 160 + i);
+        ctx.lineTo(500, 160 + i);
+        ctx.stroke();
+    }
+    </script>
+</body>
+
+</html>

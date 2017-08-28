@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        canvas {
+            border: 1px solid #ccc
+        }
+    </style>
+</head>
+<body>
+<canvas  width="600" height="500"></canvas>
+<script>
+    var cas = document.querySelector('canvas');
+    var ctx = cas.getContext("2d");
+
+    //路径中包含，当前画笔设置的绘制方式，以及各种绘图的样式
+    //当想要换一种绘制方式或者样式的时候，就需要重新开辟一个路径
+    //否则会对之前绘制的内容产生影响！
+
+    ctx.moveTo(100, 100);
+    ctx.lineTo(200, 100);
+    ctx.lineTo(200, 200);
+    ctx.lineTo(100, 200);
+    ctx.closePath();
+
+    ctx.stroke();
+
+    ctx.beginPath();
+
+
+    ctx.moveTo(300, 100);
+    ctx.lineTo(400, 100);
+    ctx.lineTo(400, 200);
+    ctx.lineTo(300, 200);
+    ctx.closePath();
+
+    ctx.fill();
+
+</script>
+</body>
+</html>

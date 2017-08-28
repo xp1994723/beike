@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        canvas {
+            border: 1px solid #ccc;
+        }
+    </style>
+</head>
+<body>
+<canvas  width="600" height="500"></canvas>
+<script>
+    var cas = document.querySelector("canvas");
+    var ctx = cas.getContext("2d");
+
+    ctx.lineWidth = 10;
+    ctx.moveTo(100, 100);
+    ctx.lineTo(500, 100);
+    ctx.stroke();
+
+    ctx.beginPath();
+    ctx.lineWidth = 50;
+    ctx.moveTo(100, 200);
+    ctx.lineTo(500, 200);
+    ctx.stroke();
+
+    ctx.beginPath();
+    //beginPath之后，样式相关的所有的内容，不会恢复到默认值
+    //所以，想要恢复就得自己手动的进行设置！
+    ctx.lineWidth = 1;
+    ctx.moveTo(100, 300);
+    ctx.lineTo(500, 300);
+    ctx.stroke();
+
+</script>
+</body>
+</html>

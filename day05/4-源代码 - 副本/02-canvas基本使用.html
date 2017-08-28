@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		canvas{
+			border:1px solid #ccc;
+		}
+	</style>
+</head>
+<body>
+	<!-- 使用canvas的基本步骤
+		1. 创建canvas标签
+		2. 获取canvas(画布)元素对象
+		3. 获取画图工具
+		4. 告诉画图工具在画布的哪个位置开始画
+		5. 告诉画图工具要画到哪里
+		6. 告诉画图工具可以画到画布上了 -->
+		<!-- 1. 创建canvas标签 -->
+	<canvas width="500" height="500"></canvas>
+	<script>
+		// 2. 获取canvas(画布)元素对象
+		var cvs = document.querySelector('canvas');
+		// 3. 获取画图工具
+		// getContext(type) 能够获取画图工具 
+		// type 2d表示二维绘图工具 webgl 表示三维绘图工具
+		var ctx = cvs.getContext('2d');
+		// 4. 告诉画图工具在画布的哪个位置开始画
+		ctx.moveTo(0,0);
+		// 5. 告诉画图工具要画到哪里
+		ctx.lineTo(500,500);
+		// 6. 告诉画图工具可以画到画布上了 
+		ctx.stroke();
+	</script>
+</body>
+</html>

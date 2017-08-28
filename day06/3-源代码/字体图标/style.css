@@ -1,0 +1,138 @@
+/*定义一个web字体 上属于当前你这个网页 和系统字体没关系 但是名字不要和系统冲突*/
+
+@font-face {
+    /*font-family: 表示你将要定义字体的字体名字*/
+    font-family: 'weijinsuo';
+    /*src表示这个自定义字体的字体文件路径 为了兼容所有浏览器引入多个字体文件*/
+    /*  - eot : embedded-opentype
+      - svg : svg
+      - ttf : truetype
+      - woff : woff
+      常见的4中字体格式的声明 format表示声明字体是什么类型 而且必须要声明不然浏览器不认识这个文件
+    */
+    src: url('fonts/weijinsuo.eot?yl0vd5');
+    src: url('fonts/weijinsuo.eot?yl0vd5#iefix') format('embedded-opentype'), url('fonts/weijinsuo.ttf?yl0vd5') format('truetype'), url('fonts/weijinsuo.woff?yl0vd5') format('woff'), url('fonts/weijinsuo.svg?yl0vd5#weijinsuo') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+/*属性选择器 ^表示以什么开头的类名*/
+/**表示包含 icon-的列名*/
+[class^="icon-"],
+[class*=" icon-"] {
+    /* use !important to prevent issues with browser extensions that change fonts */
+    /*定了字体之后要使用字体 图标才能显示*/
+    /*指定font-family的字体名字是定义的名字*/
+    font-family: 'weijinsuo' !important;
+    speak: none;
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+    /* Better Font Rendering =========== */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-jiahao:before {
+    content: "\e900";
+}
+
+.icon-arrow:before {
+    content: "\e901";
+    color: #a22826;
+}
+
+.icon-back:before {
+    content: "\e902";
+    color: #9c2b2a;
+}
+
+.icon-cancle:before {
+    content: "\e903";
+    color: #e1e1e1;
+}
+
+.icon-cart:before {
+    content: "\e904";
+    color: #b97474;
+}
+
+.icon-center:before {
+    content: "\e905";
+    color: #fff100;
+}
+
+.icon-circle:before {
+    content: "\e906";
+    color: #a22a28;
+}
+
+.icon-delete:before {
+    content: "\e907";
+    color: #102e8e;
+}
+
+.icon-detail .path1:before {
+    content: "\e908";
+    color: rgb(0, 0, 0);
+}
+
+.icon-detail .path2:before {
+    content: "\e909";
+    margin-left: -0.94140625em;
+    color: rgb(62, 22, 22);
+}
+
+.icon-edit:before {
+    content: "\e90a";
+    color: #303289;
+}
+
+.icon-order:before {
+    content: "\e90b";
+    color: #a11f24;
+}
+
+.icon-phone:before {
+    content: "\e90c";
+    color: #6f2727;
+}
+
+.icon-picture:before {
+    content: "\e90d";
+    color: #6f2727;
+}
+
+.icon-plus:before {
+    content: "\e90e";
+    color: #964444;
+}
+
+.icon-preview:before {
+    content: "\e90f";
+    color: #00a0e9;
+}
+
+.icon-share:before {
+    content: "\e910";
+}
+
+.icon-staroff:before {
+    content: "\e911";
+}
+
+.icon-starton:before {
+    content: "\e912";
+    color: #831a1f;
+}
+
+.icon-time:before {
+    content: "\e913";
+    color: #31337d;
+}
+
+.icon-weixin:before {
+    content: "\e914";
+    color: #8c2d2c;
+}

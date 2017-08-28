@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+    canvas {
+        border: 1px solid #ccc;
+    }
+    </style>
+</head>
+
+<body>
+    <canvas  width="600" height="500"></canvas>
+    <script>
+    var cas = document.querySelector("canvas");
+    var ctx = cas.getContext("2d");
+
+    //lineWidth： 设置线宽
+    //strokeStyle: 设置线的颜色  只要是css支持的颜色格式，都支持
+    //fillStyle: 填充的颜色  跟strokeStyle支持的格式一样
+    //lineCap: 设置线两端的样式 round 圆的 square 方的  butt没有帽子的（默认butt）
+    //lineJoin: 设置的就是两条线连接位置的样式 round 圆的  bevel 平的  miter尖的（默认）
+
+
+    //    ctx.lineWidth = 50;
+    //ctx.strokeStyle = "#00FF00";
+    //ctx.strokeStyle = "rgb(255, 0, 0)";
+    //ctx.strokeStyle = "hotpink";
+    //    ctx.strokeStyle = "rgba(255,0,0)";
+    //    ctx.moveTo(100, 100);
+    //    ctx.lineTo(500, 100);
+    //    ctx.stroke();
+    //
+    //    ctx.beginPath();
+    //    ctx.lineCap = "butt";
+    //    ctx.moveTo(100, 200);
+    //    ctx.lineTo(500, 200);
+    //    ctx.stroke();
+    //
+    //    ctx.lineJoin = "miter";
+    //
+    //    ctx.moveTo(100, 100);
+    //    ctx.lineTo(300, 200);
+    //    ctx.lineTo(500, 100);
+    //    ctx.stroke();
+
+
+    ctx.fillStyle = "#FFFF00";
+    ctx.moveTo(100, 100);
+    ctx.lineTo(200, 100);
+    ctx.lineTo(200, 200);
+    ctx.lineTo(100, 200);
+    ctx.closePath();
+
+    ctx.fill();
+    //    ctx.stroke();
+    </script>
+</body>
+
+</html>
