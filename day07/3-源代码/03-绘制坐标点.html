@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+    canvas {
+        border: 1px solid #ccc
+    }
+    </style>
+</head>
+
+<body>
+    <canvas width=600 height=500></canvas>
+    <script>
+    var cas = document.querySelector('canvas');
+    var ctx = cas.getContext("2d");
+
+
+    var padding = 10;
+    var arrowHeight = 20;
+    var arrowWidth = 8;
+
+    //绘制y轴
+    ctx.moveTo(padding, cas.height - padding);
+    ctx.lineTo(padding, padding);
+
+    //绘制y轴的箭头
+    ctx.moveTo(padding - arrowWidth / 2, padding + arrowHeight);
+    ctx.lineTo(padding, padding);
+    ctx.lineTo(padding + arrowWidth / 2, padding + arrowHeight)
+    ctx.lineTo(padding, padding + arrowHeight / 2);
+    ctx.closePath();
+
+
+    //绘制x轴
+    ctx.moveTo(padding, cas.height - padding);
+    ctx.lineTo(cas.width - padding, cas.height - padding);
+
+    //绘制x轴的箭头
+    ctx.moveTo(cas.width - padding - arrowHeight, cas.height - padding - arrowWidth / 2);
+    ctx.lineTo(cas.width - padding, cas.height - padding);
+    ctx.lineTo(cas.width - padding - arrowHeight, cas.height - padding + arrowWidth / 2);
+    ctx.lineTo(cas.width - padding - arrowHeight / 2, cas.height - padding);
+    ctx.closePath();
+
+    ctx.stroke();
+
+    ctx.beginPath();
+
+
+
+
+
+    //100, 100
+
+    //该函数接收一个点，这个点是我们绘制的坐标系中的坐标
+    //会返回该点对应在canvas中的坐标
+    function exchangePoint(point) {
+        var x0 = padding;
+        var y0 = cas.height - padding;
+
+        var x1 = x0 + point.x;
+        var y1 = y0 - point.y;
+        return {
+            x: x1,
+            y: y1
+        };
+    }
+
+    function drawPoint(point, pointWidth) {
+        //避免自己的fill操作影响到别人
+        ctx.beginPath();
+        pointWidth = pointWidth || 4;
+        ctx.moveTo(point.x - pointWidth / 2, point.y - pointWidth / 2);
+        ctx.lineTo(point.x + pointWidth / 2, point.y - pointWidth / 2);
+        ctx.lineTo(point.x + pointWidth / 2, point.y + pointWidth / 2);
+        ctx.lineTo(point.x - pointWidth / 2, point.y + pointWidth / 2);
+        ctx.closePath();
+        ctx.fill();
+        //避免别人影响我们
+        ctx.beginPath();
+    }
+
+    var point = exchangePoint({
+        x: 100,
+        y: 100
+    });
+
+    drawPoint(point);
+
+    var point1 = exchangePoint({
+        x: 250,
+        y: 300
+    });
+    drawPoint(point1);
+    </script>
+</body>
+
+</html>

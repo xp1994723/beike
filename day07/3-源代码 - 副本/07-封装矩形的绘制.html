@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+    canvas {
+        border: 1px solid #ccc
+    }
+    </style>
+</head>
+
+<body>
+    <canvas width=600 height=500></canvas>
+    <script>
+    var cas = document.querySelector("canvas");
+    var ctx = cas.getContext("2d");
+
+
+
+    function Rect(option) {
+        this.ctx = option.ctx;
+        this.strokeStyle = option.strokeStyle;
+        this.width = option.w;
+        this.height = option.h;
+        this.area = this.width * this.height;
+        this.perimeter = this.width * 2 + this.height * 2;
+        this.fillStyle = option.fillStyle;
+
+        this.init(option);
+    }
+    Rect.prototype = {
+        constructor: Rect,
+        init: function(option) {
+            this.drawPath(option);
+            this.draw();
+        },
+        drawPath: function(option) {
+            this.ctx.beginPath();
+            this.ctx.moveTo(option.x, option.y);
+            this.ctx.lineTo(option.x + option.w, option.y);
+            this.ctx.lineTo(option.x + option.w, option.y + option.h);
+            this.ctx.lineTo(option.x, option.y + option.h);
+            this.ctx.closePath();
+        },
+        draw: function() {
+            this.ctx.save();
+            if (this.strokeStyle) {
+                this.ctx.strokeStyle = this.strokeStyle;
+                this.ctx.stroke();
+            }
+
+            if (this.fillStyle) {
+                this.ctx.fillStyle = this.fillStyle;
+                this.ctx.fill();
+            }
+            this.ctx.beginPath();
+            this.ctx.restore();
+        }
+    }
+
+    var rect = new Rect({
+        x: 100,
+        y: 100,
+        w: 200,
+        h: 100,
+        ctx: ctx,
+        strokeStyle: "red",
+        fillStyle: "yellow"
+    });
+
+    console.log(rect.area); //平方像素！自创
+    console.log(rect.perimeter);
+
+    var rect1 = new Rect({
+        x: 400,
+        y: 100,
+        w: 100,
+        h: 100,
+        ctx: ctx,
+        strokeStyle: "blue",
+        fillStyle: "pink"
+    });
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+    canvas {
+        border: 1px solid #ccc
+    }
+    </style>
+</head>
+
+<body>
+    <canvas width=600 height=500></canvas>
+    <script>
+    var cas = document.querySelector("canvas");
+    var ctx = cas.getContext("2d");
+
+    ctx.strokeStyle = "red";
+    ctx.lineWidth = 10;
+    ctx.fillStyle = "green";
+
+    ctx.moveTo(100, 100);
+    ctx.lineTo(100, 200);
+    ctx.lineTo(200, 200);
+    ctx.lineTo(200, 100);
+    ctx.closePath();
+
+    ctx.stroke();
+    ctx.fill();
+
+
+    ctx.save();
+
+    ctx.beginPath();
+    ctx.strokeStyle = "blue";
+    ctx.lineWidth = 10;
+    ctx.fillStyle = "yellow";
+    ctx.moveTo(300, 100);
+    ctx.lineTo(300, 200);
+    ctx.lineTo(400, 200);
+    ctx.lineTo(400, 100);
+    ctx.closePath();
+    ctx.stroke();
+    ctx.fill();
+
+
+    ctx.beginPath();
+    ctx.restore();
+    ctx.moveTo(100, 300);
+    ctx.lineTo(300, 300);
+    ctx.stroke();
+
+    //save和restore方法可以用来保存和恢复画布的状态
+    //save方法可以被调用多次，restore方法也是
+
+    //但是每次restore的内容都是最后一次save进去的（先进后出的特性）
+    //save是进  restore是出
+
+    //一般情况下 save和restore是要成对出现的
+    </script>
+</body>
+
+</html>

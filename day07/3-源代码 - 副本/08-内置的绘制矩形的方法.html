@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+    canvas {
+        border: 1px solid #ccc
+    }
+    </style>
+</head>
+
+<body>
+    <canvas width=600 height=500></canvas>
+    <script>
+    var cas = document.querySelector("canvas");
+    var ctx = cas.getContext("2d");
+
+    //rect方法用来绘制路径
+    //rect(x, y, w, h)
+    //x, y： 矩形的左上角的坐标
+    //w, h: 矩形的宽和高
+    //    ctx.rect(100, 100, 100, 100);
+    //    ctx.stroke();
+    //    ctx.fill();
+
+
+    //strokeRect直接绘制一个描边的矩形
+    //他有自己的路径，别人不会对他产生影响
+    //    ctx.strokeRect(100, 100, 100, 100);
+    //
+    //    ctx.fill();
+
+
+    //fillRect 直接绘制一个填充的矩形
+    //他有自己的路径，别人不会对他产生影响
+    //    ctx.fillRect(100, 100, 100, 100);
+    //
+    //    ctx.fillStyle = "#000";
+    //    ctx.fill();
+
+
+    //clearRect(x, y, w, h)
+    //清除一个矩形的区域
+
+    var width = 300;
+
+    ctx.fillRect((cas.width - width) / 2, (cas.height - width) / 2, width, width);
+
+    width = 200;
+    ctx.fillStyle = "green";
+    ctx.fillRect((cas.width - width) / 2, (cas.height - width) / 2, width, width);
+
+
+    ctx.clearRect(300, 100, 100, 100);
+    </script>
+</body>
+
+</html>

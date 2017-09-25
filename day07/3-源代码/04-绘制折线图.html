@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+    canvas {
+        border: 1px solid #ccc
+    }
+    </style>
+</head>
+
+<body>
+    <canvas width=600 height=500></canvas>
+    <script>
+    var cas = document.querySelector("canvas");
+    var ctx = cas.getContext("2d");
+
+
+    var padding = 10;
+    var arrowHeight = 20;
+    var arrowWidth = 8;
+
+    //绘制y轴
+    ctx.moveTo(padding, cas.height - padding);
+    ctx.lineTo(padding, padding);
+
+    //绘制y轴的箭头
+    ctx.moveTo(padding - arrowWidth / 2, padding + arrowHeight);
+    ctx.lineTo(padding, padding);
+    ctx.lineTo(padding + arrowWidth / 2, padding + arrowHeight)
+    ctx.lineTo(padding, padding + arrowHeight / 2);
+    ctx.closePath();
+
+
+    //绘制x轴
+    ctx.moveTo(padding, cas.height - padding);
+    ctx.lineTo(cas.width - padding, cas.height - padding);
+
+    //绘制x轴的箭头
+    ctx.moveTo(cas.width - padding - arrowHeight, cas.height - padding - arrowWidth / 2);
+    ctx.lineTo(cas.width - padding, cas.height - padding);
+    ctx.lineTo(cas.width - padding - arrowHeight, cas.height - padding + arrowWidth / 2);
+    ctx.lineTo(cas.width - padding - arrowHeight / 2, cas.height - padding);
+    ctx.closePath();
+
+    ctx.stroke();
+
+    ctx.beginPath();
+
+
+
+
+
+    //100, 100
+
+    //该函数接收一个点，这个点是我们绘制的坐标系中的坐标
+    //会返回该点对应在canvas中的坐标
+    function exchangePoint(point) {
+        var x0 = padding;
+        var y0 = cas.height - padding;
+
+        var x1 = x0 + point.x;
+        var y1 = y0 - point.y;
+        return {
+            x: x1,
+            y: y1
+        };
+    }
+
+    function drawPoint(point, pointWidth) {
+        //避免自己的fill操作影响到别人
+        ctx.beginPath();
+        pointWidth = pointWidth || 4;
+        ctx.moveTo(point.x - pointWidth / 2, point.y - pointWidth / 2);
+        ctx.lineTo(point.x + pointWidth / 2, point.y - pointWidth / 2);
+        ctx.lineTo(point.x + pointWidth / 2, point.y + pointWidth / 2);
+        ctx.lineTo(point.x - pointWidth / 2, point.y + pointWidth / 2);
+        ctx.closePath();
+        ctx.fill();
+        //避免别人影响我们
+        ctx.beginPath();
+    }
+
+
+    var data = [100, 200, 180, 280, 310, 50];
+
+    //根据数据的数量，求出每个数据的x轴之间的间隔
+    var perWidth = (cas.width - padding * 2 - arrowHeight * 2) / data.length;
+
+
+    //用来存储算出来的每一个点，方便之后连线用！
+    var points = [];
+
+    for (var i = 0; i < data.length; i++) {
+        //根据数据的大小，求出y的坐标
+        var y = data[i];
+        //根据当前是第几个数据，算出来x的坐标
+        var x = perWidth * (i + 1);
+
+        //由于上面算出来的x 和y 是我们自己的坐标系中的坐标，所以需要手动转换成canvas的坐标
+        var point = exchangePoint({
+            x: x,
+            y: y
+        });
+
+        //将算出来的点添加到最后要用来连线的数组中
+        points.push(point);
+
+        //把当前点绘制出来
+        drawPoint(point);
+    }
+
+
+    //根据所有算出来的点，把每一个点进行连接，组成折线图
+    ctx.moveTo(points[0].x, points[0].y);
+
+    for (var i = 1; i < points.length; i++) {
+        var p = points[i];
+        ctx.lineTo(p.x, p.y);
+    }
+    ctx.stroke();
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+    canvas {
+        border: 1px solid #ccc
+    }
+    </style>
+</head>
+
+<body>
+    <canvas width=600 height=500></canvas>
+    <script>
+    var cas = document.querySelector("canvas");
+    var ctx = cas.getContext("2d");
+
+
+    function angleToRadian(angle) {
+        return angle / 180 * Math.PI;
+    }
+
+    var x = cas.width / 2;
+    var y = cas.height / 2;
+    var r = 50;
+
+    ctx.arc(x, y, r, angleToRadian(-120), angleToRadian(-60));
+    ctx.stroke();
+
+    ctx.fill();
+    </script>
+</body>
+
+</html>

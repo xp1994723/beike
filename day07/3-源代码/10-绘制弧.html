@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+    canvas {
+        border: 1px solid #ccc
+    }
+    </style>
+</head>
+
+<body>
+    <canvas width=600 height=500></canvas>
+    <script>
+    var cas = document.querySelector("canvas");
+    var ctx = cas.getContext("2d");
+
+
+
+    //语法：ctx.arc(x, y, r, startAngle, endAngle, anticlockwise)
+    //x, y: 圆心的坐标
+    //r : 圆的半径
+    //startAngle: 开始的角度  弧度制
+    //endAngle： 结束角度     弧度制
+    //anticlockwise： 是否逆时针绘制！（角度还是原来的角度，只是反着画了） 默认是false， 顺时针绘制
+
+
+    //0度角在3点钟位置！ x轴的正方向
+
+    //2π = 360
+    //弧度/2π = 角度/360
+    //弧度 = 角度 / 180 * π
+
+    function angleToRadian(angle) {
+        return angle / 180 * Math.PI;
+    }
+
+
+    var x = cas.width / 2;
+    var y = cas.height / 2;
+    var r = 100;
+
+    ctx.arc(x, y, r, angleToRadian(-45), angleToRadian(45));
+
+    ctx.stroke();
+    </script>
+</body>
+
+</html>

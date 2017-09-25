@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+    canvas {
+        border: 1px solid #ccc
+    }
+    </style>
+</head>
+
+<body>
+    <canvas width=600 height=500></canvas>
+    <script>
+    var cas = document.querySelector('canvas');
+    var ctx = cas.getContext("2d");
+
+    var cellWidth = 10;
+
+    for (var j = 0; j <= cas.height / cellWidth; j++) {
+        for (var i = 0; i <= cas.width / cellWidth; i++) {
+            ctx.moveTo(cellWidth * i, cellWidth * (j + 1));
+            ctx.lineTo(cellWidth * (i + 1), cellWidth * (j + 1));
+            ctx.lineTo(cellWidth * (i + 1), cellWidth * j);
+        }
+    }
+
+
+    ctx.stroke();
+    </script>
+</body>
+
+</html>

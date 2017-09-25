@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+    canvas {
+        border: 1px solid #ccc
+    }
+    </style>
+</head>
+
+<body>
+    <canvas width=600 height=500></canvas>
+    <script>
+    var cas = document.querySelector("canvas");
+    var ctx = cas.getContext("2d");
+
+    function getRandomColor() {
+        return "rgb(" +
+            parseInt(Math.random() * 256) +
+            "," +
+            parseInt(Math.random() * 256) +
+            "," +
+            parseInt(Math.random() * 256) +
+            ")";
+    }
+
+
+    function angleToRadian(angle) {
+        return angle / 180 * Math.PI;
+    }
+
+    var x = cas.width / 2;
+    var y = cas.height / 2;
+    var r = 100;
+    var startAngle = -90;
+
+    var n = 5;
+    var perAngle = 360 / n;
+
+    for (var i = 0; i < n; i++) {
+        ctx.beginPath();
+        ctx.fillStyle = getRandomColor();
+        ctx.moveTo(x, y);
+        ctx.arc(x, y, r, angleToRadian(startAngle + perAngle * i), angleToRadian(startAngle + perAngle * (i + 1)));
+        ctx.closePath();
+        ctx.fill();
+    }
+
+    //    ctx.moveTo(x, y);
+    //    ctx.arc(x, y, r, angleToRadian(30), angleToRadian(150));
+    //    ctx.closePath();
+    //
+    //    ctx.moveTo(x, y);
+    //    ctx.arc(x, y, r, angleToRadian(150), angleToRadian(270));
+    //    ctx.closePath();
+
+    //    ctx.stroke();
+    </script>
+</body>
+
+</html>

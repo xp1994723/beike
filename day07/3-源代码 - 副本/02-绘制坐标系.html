@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+    canvas {
+        border: 1px solid #ccc
+    }
+    </style>
+</head>
+
+<body>
+    <canvas width=600 height=500></canvas>
+    <script>
+    var cas = document.querySelector("canvas");
+    var ctx = cas.getContext("2d");
+
+    var padding = 50;
+    var arrowHeight = 20;
+    var arrowWidth = 8;
+
+    //绘制y轴
+    ctx.moveTo(padding, cas.height - padding);
+    ctx.lineTo(padding, padding);
+
+    //绘制y轴的箭头
+    ctx.moveTo(padding - arrowWidth / 2, padding + arrowHeight);
+    ctx.lineTo(padding, padding);
+    ctx.lineTo(padding + arrowWidth / 2, padding + arrowHeight)
+    ctx.lineTo(padding, padding + arrowHeight / 2);
+    ctx.closePath();
+
+
+    //绘制x轴
+    ctx.moveTo(padding, cas.height - padding);
+    ctx.lineTo(cas.width - padding, cas.height - padding);
+
+    //绘制x轴的箭头
+    ctx.moveTo(cas.width - padding - arrowHeight, cas.height - padding - arrowWidth / 2);
+    ctx.lineTo(cas.width - padding, cas.height - padding);
+    ctx.lineTo(cas.width - padding - arrowHeight, cas.height - padding + arrowWidth / 2);
+    ctx.lineTo(cas.width - padding - arrowHeight / 2, cas.height - padding);
+    ctx.closePath();
+
+    ctx.stroke();
+    </script>
+</body>
+
+</html>

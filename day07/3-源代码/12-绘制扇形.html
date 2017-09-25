@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+    canvas {
+        border: 1px solid #ccc
+    }
+    </style>
+</head>
+
+<body>
+    <canvas width=600 height=500></canvas>
+    <script>
+    var cas = document.querySelector("canvas");
+    var ctx = cas.getContext("2d");
+
+    var x = cas.width / 2;
+    var y = cas.height / 2;
+    var r = 100;
+
+    //1. moveTo 到圆心
+    ctx.moveTo(x, y);
+
+    //2. 画弧
+    ctx.arc(x, y, r, 0, Math.PI / 4);
+
+    //3. 自动闭合路径，将弧的终点和圆心连接起来
+    ctx.closePath();
+
+    ctx.stroke();
+    ctx.fill();
+    </script>
+</body>
+
+</html>
