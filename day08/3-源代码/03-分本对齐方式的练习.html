@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+    canvas {
+        border: 1px solid #ccc
+    }
+    </style>
+</head>
+
+<body>
+    <canvas width=600 height=500></canvas>
+    <script>
+    var cas = document.querySelector("canvas");
+    var ctx = cas.getContext("2d");
+
+    function getRandomColor() {
+        return "rgb(" +
+            parseInt(Math.random() * 256) +
+            "," +
+            parseInt(Math.random() * 256) +
+            "," +
+            parseInt(Math.random() * 256) +
+            ")";
+    }
+
+    var cWidth = cas.width;
+    var cHeiht = cas.height;
+
+    var textAligns = ["right", "center", "left"];
+    var textBaselines = ["top", "middle", "bottom"]
+
+    ctx.font = "20px consolas"
+
+    for (var j = 0; j < 3; j++) {
+        for (var i = 0; i < 3; i++) {
+            var x = cWidth / 6 + cWidth / 3 * i;
+            var y = cHeiht / 6 + cHeiht / 3 * j;
+            drawPoint(x, y);
+            ctx.textAlign = textAligns[j];
+            ctx.textBaseline = textBaselines[i];
+            ctx.fillStyle = getRandomColor();
+            ctx.fillText(textAligns[j] + "-" + textBaselines[i], x, y);
+        }
+    }
+
+    function drawPoint(x, y) {
+        ctx.fillRect(x - 2, y - 2, 4, 4);
+    }
+    </script>
+</body>
+
+</html>

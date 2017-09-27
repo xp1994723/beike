@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+    canvas {
+        border: 1px solid #ccc
+    }
+    </style>
+</head>
+
+<body>
+    <canvas width=600 height=500></canvas>
+    <script>
+    var cas = document.querySelector("canvas");
+    var ctx = cas.getContext("2d");
+
+    var img = new Image();
+    img.src = "dmm.png";
+
+    var xIndex = 0;
+    var yIndex = 2;
+
+    var ySpeed = 10;
+    var xSpeed = 10;
+
+    img.onload = function() {
+        //每一个小人图片的宽和高
+        var picW = img.width / 4;
+        var picH = img.height / 4;
+        //要将图片绘制到画布上的坐标点
+        var x = (cas.width - picW) / 2;
+        var y = (cas.height - picH) / 2;
+
+        setInterval(function() {
+            //1. 清空之前画的所有内容
+            ctx.clearRect(0, 0, cas.width, cas.height);
+
+            //            y += ySpeed;
+            //            if(y > cas.height - picH){
+            //                ySpeed = -ySpeed;
+            //                yIndex = 3;
+            //            }
+            //            if(y < 0){
+            //                ySpeed = -ySpeed;
+            //                yIndex = 0;
+            //            }
+
+            x += xSpeed;
+            if (x > cas.width - picW) {
+                xSpeed = -xSpeed;
+                yIndex = 1;
+            }
+
+            if (x < 0) {
+                xSpeed = -xSpeed;
+                yIndex = 2;
+            }
+
+
+
+            //2.将图片绘制到画布上
+            ctx.drawImage(img, picW * xIndex, picH * yIndex, picW, picH, x, y, picW, picH);
+
+            //3.图片的索引向后移动一个
+            xIndex++;
+            if (xIndex > 3) {
+                xIndex = 0;
+            }
+        }, 100);
+    }
+    </script>
+</body>
+
+</html>

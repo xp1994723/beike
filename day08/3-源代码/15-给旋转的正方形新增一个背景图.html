@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+    canvas {
+        border: 1px solid #ccc
+    }
+    </style>
+</head>
+
+<body>
+    <canvas width=600 height=500></canvas>
+    <script>
+    var cas = document.querySelector("canvas");
+    var ctx = cas.getContext("2d");
+
+    function angleToRadian(angle) {
+        return angle / 180 * Math.PI;
+    }
+
+    var width = 100;
+
+    var angle = 0;
+
+
+    var img = new Image();
+    img.src = "bgp.jpg";
+
+    img.onload = function() {
+        setInterval(function() {
+            ctx.clearRect(0, 0, cas.width, cas.height);
+            ctx.drawImage(img, 0, 0);
+
+            //每次进来之后，save方法保存正常的画布状态（没有平移也没有旋转的状态）
+            ctx.save();
+
+            //对画布进行平移
+            ctx.translate(cas.width / 2, cas.height / 2);
+
+            //对画布进行旋转
+            ctx.rotate(angleToRadian(angle++));
+
+            //在旋转之后的画布上画出这个正方形
+            ctx.strokeRect(-width / 2, -width / 2, width, width);
+
+            //将画布恢复到正常的状态
+            ctx.restore();
+        }, 17);
+    }
+    </script>
+</body>
+
+</html>

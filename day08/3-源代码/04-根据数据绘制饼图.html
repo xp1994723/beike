@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+    canvas {
+        border: 1px solid #ccc
+    }
+    </style>
+</head>
+
+<body>
+    <canvas width=600 height=500></canvas>
+    <script>
+    var cas = document.querySelector("canvas");
+    var ctx = cas.getContext("2d");
+
+    function getRandomColor() {
+        return "rgb(" +
+            parseInt(Math.random() * 256) +
+            "," +
+            parseInt(Math.random() * 256) +
+            "," +
+            parseInt(Math.random() * 256) +
+            ")";
+    }
+
+    function angleToRadian(angle) {
+        return angle / 180 * Math.PI;
+    }
+
+    var x = cas.width / 2;
+    var y = cas.height / 2;
+    var r = 100;
+    var startAngle = -90;
+
+    var data = [{
+        title: "程序员",
+        count: 900
+    }, {
+        title: "程序媛",
+        count: 800
+    }, {
+        title: "攻城狮",
+        count: 1250
+    }, {
+        title: "射击师",
+        count: 300
+    }, {
+        title: "家狗师",
+        count: 200
+    }, ];
+
+    //1. 求和
+    var sum = 0;
+    data.forEach(function(v) {
+        sum += v.count;
+    })
+
+    //2.求比例求角度
+    var angleArr = data.map(function(v) {
+        return 360 * v.count / sum;
+    })
+
+    //3. 绘制扇形
+    angleArr.forEach(function(v) {
+        ctx.beginPath();
+        ctx.fillStyle = getRandomColor();
+        ctx.moveTo(x, y);
+        ctx.arc(x, y, r, angleToRadian(startAngle), angleToRadian(startAngle + v));
+        ctx.closePath();
+        ctx.fill();
+
+        //绘制直线（扇形的中线）
+        ctx.moveTo(x, y);
+        //        ctx.lineTo()
+
+        startAngle += v;
+    })
+    </script>
+</body>
+
+</html>

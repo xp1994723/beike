@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+    canvas {
+        border: 1px solid #ccc
+    }
+    </style>
+</head>
+
+<body>
+    <canvas width=600 height=500></canvas>
+    <canvas width=600 height=500></canvas>
+    <!--<img src="2.jpg" alt="" id="img">-->
+    <script>
+    var cas1 = document.querySelector("canvas");
+    var ctx1 = cas1.getContext("2d");
+    ctx1.moveTo(100, 100);
+    ctx1.lineTo(300, 100);
+    ctx1.stroke();
+
+
+    var cas = document.querySelector("#c");
+    var ctx = cas.getContext("2d");
+
+    // 三参模式
+    //ctx.drawImage(img, x, y);
+    //img: 图片对象 图片标签对象  视频标签对象  cavnas标签对象
+    //x, y：要将图片绘制到画布中位置的坐标，左上角
+
+    //    var img = document.querySelector("#img");
+
+    //注意： 绘制图片的时候，一定要等待图片加载完成
+    //绘制图片的操作，一定要在图片的onload事件中进行！
+    //    var img = new Image();
+    //    img.src = "1.jpg";
+    //    img.onload = function () {
+    //        ctx.drawImage(img, 0, 0);
+    //    }
+
+
+    //五参模式
+    //ctx.drawImage(img, x, y, w, h)
+    //w, h： 用来指定绘制图片的宽和高
+    var img = new Image();
+    img.src = "1.jpg";
+    img.onload = function() {
+
+        //绘制图片的方法并不提供等比的模式
+        //想要等比例绘制，就需要自己算比例，根据比例求宽高！
+        var picW = img.width;
+        var picH = img.height;
+        var width = 600;
+        var rate = width / picW;
+        var height = picH * rate;
+        ctx.drawImage(img, 0, 0, width, height);
+    }
+    </script>
+</body>
+
+</html>

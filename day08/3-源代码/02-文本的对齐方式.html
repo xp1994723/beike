@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+    canvas {
+        border: 1px solid #ccc;
+        /*direction: rtl;*/
+    }
+    </style>
+</head>
+
+<body>
+    <canvas width=600 height=500></canvas>
+    <script>
+    var cas = document.querySelector("canvas");
+    var ctx = cas.getContext("2d");
+
+    ctx.font = "30px 微软雅黑";
+
+    //水平对齐：   right  center  left  start end
+    //start 和 end 根据css样式 direction来确定
+    //如果是： ltr的， 那么start和left一样
+    //如果是： rtl的， 那么start和right一样
+    //水平对齐的方式中，start是默认值
+
+    //水平对齐的参照点为 绘制文本的那个坐标
+
+    //    ctx.textAlign = "start";
+
+
+    //垂直对齐的方式
+    //   top :基线处于文本正上方，并且有一段距离
+    // middle：基线横穿文本正中间
+    // bottom：基线处于文本的正下方，并且有一段距离
+    // ideographic: 和bottom特别像！
+    //alphabetic : 基线对齐，基线处于文本的下方穿过文本
+    //hanging: 文本吊在基线上
+    ctx.textBaseline = "hanging";
+
+    ctx.fillText("该配合你演出的我演视而不见", 100, 100);
+
+    ctx.fillStyle = "red";
+    ctx.fillRect(98, 98, 4, 4);
+
+    ctx.strokeStyle = "red";
+    ctx.moveTo(100, 100);
+    ctx.lineTo(600, 100);
+    ctx.stroke();
+    </script>
+</body>
+
+</html>
