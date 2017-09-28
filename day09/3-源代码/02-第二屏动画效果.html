@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/base.css">
+    <style>
+    html,
+    body {
+        height: 100%;
+        min-height: 600px;
+        position: relative;
+    }
+    
+    .section2 {
+        height: 100%;
+        background-color: #84a2d4;
+        background-image: url(images/bg2.png);
+        background-position: center bottom;
+        background-repeat: no-repeat;
+        min-height: 600px;
+        position: relative;
+    }
+    
+    .container {
+        width: 1050px;
+        height: 500px;
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+        /*background-color: rgba(0, 0, 0, 0.3);*/
+        bottom: 0;
+    }
+    
+    .words-box {
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+        bottom: 530px;
+        width: 363px;
+        height: 27px;
+    }
+    
+    .words-box img {
+        position: absolute;
+        left: 0;
+        top: 0;
+    }
+    
+    .words-box img:last-of-type {
+    	opacity: 0;
+    }
+    
+    .search-box1 {
+        width: 222px;
+        height: 45px;
+        background-image: url(images/search.png);
+        position: absolute;
+        right: 0;
+        bottom: 300px;
+        display: none;
+    }
+    
+    .search-box1 img {
+        position: absolute;
+        right: 30px;
+        top: 2px;
+        opacity: 0;
+    }
+    
+    .search-box2 {
+        width: 222px;
+        height: 45px;
+        position: absolute;
+        right: 370px;
+        bottom: 300px;
+        display: none;
+    }
+    
+    .search-box2 img {
+        height: 100%;
+    }
+    
+    .safa-box {
+        height: 100px;
+        position: absolute;
+        right: 290px;
+        bottom: 220px;
+        display: none;
+    }
+    
+    .safa-box img {
+        height: 100%;
+    }
+    
+    .next {
+        position: fixed;
+        bottom: 120px;
+        right: 10%;
+        animation: next 0.6s linear infinite;
+    }
+    
+    @keyframes next {
+        0% {
+            transform: translate(0, 0px);
+        }
+        50% {
+            transform: translate(0, -20px);
+        }
+        100% {
+            transform: translate(0, 0px);
+        }
+    }
+    </style>
+</head>
+
+<body>
+    <div class="section2">
+        <div class="container">
+            <div class="words-box">
+                <img src="images/words-01.png" alt="">
+                <img src="images/words-02.png" alt="">
+            </div>
+            <div class="search-box1">
+                <img src="images/search-words.png" alt="">
+            </div>
+            <div class="search-box2">
+                <img src="images/search-02-1.png" alt="">
+            </div>
+            <div class="safa-box">
+                <img src="images/safa.png" alt="">
+            </div>
+        </div>
+    </div>
+    <a href="#" class="next">
+        <img src="images/next.png" alt="">
+    </a>
+    <script src="js/jquery.min.js"></script>
+    <script>
+    $(function() {
+    	  // 1. 首先让第一个搜索沙发盒子显示
+    	  // 2. 然后花1.5秒让第一个搜索沙发盒子从右边往左边移动到370px的位置
+        $('.search-box1').show().animate({
+            'right': "370px"
+        }, 1500, function() {
+        		//3. 当第一个搜索沙发盒子移动完成后里面的沙发文字花1秒渐渐的显示
+            $('.search-box1 img').animate({
+                'opacity': 1
+            }, 1000, function() {
+            	//4. 当沙发文字显示完成后隐藏第一个沙发盒子包括里面的文字
+                $('.search-box1').hide();
+                //5. 然后在显示第二个沙发盒子 
+                //6. 再花1秒让第二个沙发盒子移动到右上角 并且高度变成30px宽度也会随之变小
+                $('.search-box2').show().animate({
+                    'bottom': '452px',
+                    'right': '200px',
+                    'height': '30px'
+                }, 1000);
+                //7. 同时沙发图片显示 高度花1秒慢慢的变大到218px
+                $('.safa-box').show().animate({
+                    'height': '218px'
+                }, 1000);
+                //8. 同时花1秒让文字盒子里面的第二个文字图片慢慢的显示
+                $('.words-box img').eq(1).animate({
+                	'opacity':1
+                },1000);
+            })
+        });
+    });
+    </script>
+</body>
+
+</html>

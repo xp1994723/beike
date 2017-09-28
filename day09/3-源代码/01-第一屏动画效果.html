@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/base.css">
+    <style>
+    html,
+    body {
+        height: 100%;
+        min-height: 600px;
+        position: relative;
+    }
+    
+    div {
+        height: 100%;
+        background-color: #fadd67;
+        background-image: url(images/bg1.png);
+        background-position: center bottom;
+        background-repeat: no-repeat;
+        min-height: 600px;
+        position: relative;
+    }
+    
+    .section1-icon {
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+        bottom: 150px;
+    }
+    
+    .section1-sofa {
+        position: absolute;
+        left: 50%;
+        transform: translateX(-200px);
+        bottom: 335px;
+        animation: move1 2.5s linear infinite;
+    }
+    
+    .section1-fly {
+        position: absolute;
+        top: 20%;
+        right: 20%;
+        animation: move2 3s linear infinite;
+    }
+    
+    .next {
+        position: fixed;
+        bottom: 120px;
+        right: 10%;
+        animation: next 0.6s linear infinite;
+    }
+    /*设置第一个沙发图片动画*/
+    @keyframes move1 {
+        50% {
+            transform: translate(-200px, -50px);
+        }
+        100% {
+            transform: translate(-200px, 0px);
+        }
+    }
+    /*设置第二个飞机图片的动画*/
+    @keyframes move2 {
+        0% {
+            transform: translate(0, 0px);
+        }
+        50% {
+            transform: translate(0, -80px);
+        }
+        100% {
+            transform: translate(0, 0px);
+        }
+    }
+    /*设置继续往下图片的动画*/
+    @keyframes next {
+        0% {
+            transform: translate(0, 0px);
+        }
+        50% {
+            transform: translate(0, -20px);
+        }
+        100% {
+            transform: translate(0, 0px);
+        }
+    }
+    </style>
+</head>
+
+<body>
+    <div class="section1">
+        <img src="images/section1-icon.png" alt="" class="section1-icon">
+        <img src="images/section1-sofa.png" alt="" class="section1-sofa">
+        <img src="images/section1-fly.png" alt="" class="section1-fly">
+    </div>
+    <a href="#" class="next">
+        <img src="images/next.png" alt="">
+    </a>
+</body>
+
+</html>
