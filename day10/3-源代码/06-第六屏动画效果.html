@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/base.css">
+    <style>
+    html,
+    body {
+        height: 100%;
+        min-height: 600px;
+        position: relative;
+    }
+    
+    .section6 {
+        height: 100%;
+        min-height: 600px;
+        position: relative;
+        background: #84d9ed url(images/bg6.png) no-repeat center bottom;
+    }
+    .section6-box{
+        position: absolute;
+        left: 123px;
+        bottom: 500px;
+
+    }
+    .section6-car{
+        position: absolute;
+        bottom: 0px;
+        right: 50%;
+    }
+    .section6-cloud{
+        position: absolute;
+
+        animation: cloud6 30s linear infinite;
+    }
+    div img{
+        display: block;        
+    }
+    @keyframes cloud6{
+        0%{
+            left: 50%;
+        }
+        50%{
+            left: 20%;
+        }
+        100%{
+            left: 50%;
+        }
+    }
+    </style>
+</head>
+
+<body>
+    <div class="section section6">
+        <div class="section6-box">
+            <img src="images/section6-box.png" alt="">
+        </div>
+        <div class="section6-car">
+            <img src="images/section6-car.png" alt="">
+        </div>
+        <div class="section6-cloud">
+            <img src="images/section6-cloud.png" alt="">
+        </div>
+    </div>
+    <script src="js/jquery.min.js"></script>
+    <script>
+    </script>
+</body>
+
+</html>
