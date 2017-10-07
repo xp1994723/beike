@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		.box {
+			width: 200px;
+			height: 200px;
+			/*如果子元素的定位元素给标准流的父元素加隐藏溢出是无效的 父元素必须也定位 可以是相对定位*/
+			overflow: hidden;
+			position: relative;
+		}
+		.inner{
+			position: absolute;
+			background-color: pink;
+			width: 100px;
+			height: 500px;
+		}
+	</style>
+</head>
+<body>
+	<div class="box">
+		<div class="inner"></div>
+	</div>
+</body>
+</html>
