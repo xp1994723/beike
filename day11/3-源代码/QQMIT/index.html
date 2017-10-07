@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+    * {
+        margin: 0;
+        padding: 0;
+    }
+    
+    body {
+        font-family: helvetica, arial;
+        padding-top: 40px;
+    }
+    
+    .photo {
+        background-attachment: fixed;
+        background-position: 50% 0;
+        background-repeat: no-repeat;
+        height: 450px;
+        position: relative;
+    }
+    
+    .photo span {
+        bottom: 0;
+        color: white;
+        display: block;
+        left: 50%;
+        margin-left: -640px;
+        font-size: 38px;
+        padding: 10px;
+        position: absolute;
+        text-shadow: 0 2px 0 black, 0 0 10px black;
+        width: 1280px;
+    }
+    
+    .img1 {
+        background-image: url(images/1.png);
+    }
+    
+    .img2 {
+        background-image: url(images/2.png);
+    }
+    
+    .img3 {
+        background-image: url(images/3.png);
+    }
+    
+    .img4 {
+        background-image: url(images/4.png);
+    }
+    
+    .img5 {
+        background-image: url(images/5.png);
+    }
+    
+    .img6 {
+        background-image: url(images/6.png);
+    }
+    
+    .img7 {
+        background-image: url(images/7.png);
+    }
+    </style>
+</head>
+
+<body>
+    <div class="photo img1" data-stellar-background-ratio="0.5"><span>1</span></div>
+    <div class="photo img2" data-stellar-background-ratio="0.5"><span>2</span></div>
+    <div class="photo img3" data-stellar-background-ratio="0.5"><span>3</span></div>
+    <div class="photo img4" data-stellar-background-ratio="0.5"><span>4</span></div>
+    <div class="photo img5" data-stellar-background-ratio="0.5"><span>5</span></div>
+    <div class="photo img6" data-stellar-background-ratio="0.5"><span>6</span></div>
+    <div class="photo img7" data-stellar-background-ratio="0.5"><span>7</span></div>
+    <script src="js/jquery.min.js"></script>
+    <script src="js/stellar.js"></script>
+    <script>
+    $(function() {
+        $.stellar({
+            horizontalScrolling: false,
+            verticalOffset: 40
+        });
+    });
+    </script>
+</body>
+
+</html>
