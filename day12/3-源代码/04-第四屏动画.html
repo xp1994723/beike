@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/base.css">
+    <style>
+    .section4 {
+        background: #fed url(images/bg4.png) no-repeat center bottom;
+    }
+    
+    .section4-cloud {
+        width: 882px;
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+        animation: section4Cloud 30s linear infinite;
+    }
+    .section4-words1,.section4-words2{
+		position: absolute;
+		left: 50%;
+		transform: translateX(-50%);
+		bottom: 500px;
+    }
+    .section4-words2{
+    	opacity: 0;
+    }
+
+    .section4-cart {
+        position: absolute;
+        width: 500px;
+        height: 346px;
+        bottom: 50px;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+    
+    .section4-cart img:first-of-type {
+        position: absolute;
+        left: 150px;
+        bottom: 800px;
+        z-index: 10;
+    }
+    
+    .section4-cart img:last-of-type {
+        position: absolute;
+        z-index: 20;
+    }
+	 
+	 .section4-address{
+	 	position: absolute;
+	 	left: 50%;
+	 	transform:translateX(-50%);
+	 	bottom: 180px;
+	 	display: none;
+	 }
+	.section4-address img:first-of-type{
+		position: absolute;
+		left: 60px;
+		top: 60px;
+		opacity: 0;
+	}
+    @keyframes section4Cloud {
+        0% {
+            transform: translateX(-50%);
+        }
+        25% {
+            transform: translateX(-80%);
+        }
+        50% {
+            transform: translateX(-50%);
+        }
+        75% {
+            transform: translateX(-20%);
+        }
+        100% {
+            transform: translateX(-50%);
+        }
+    }
+    </style>
+</head>
+
+<body>
+    <section class="section section4">
+        <img src="images/section4-cloud.png" alt="" class="section4-cloud">
+        <img src="images/section4-words1.png" alt="" class="section4-words1">
+        <img src="images/section4-words2.png" alt="" class="section4-words2">
+        <div class="section4-cart">
+            <img src="images/section4-sofa.png" alt="">
+            <img src="images/section4-cart.png" alt="">
+        </div>
+        <div class="section4-address">
+        		<img src="images/section4-address.png" alt="">
+        		<img src="images/section4-note.png" alt="">
+        </div>
+    </section>
+    <script src="js/jquery.min.js"></script>
+    <script src="js/jquery.easing.1.3.js"></script>
+    <script>
+    	$(function () {
+    		$('.section4-cart img').eq(0).animate({
+    			'bottom':'200px'    	
+    		},1500,'easeOutExpo',function () {
+    			$('.section4-cart').animate({
+    				'left':'150%'
+    			},2000,'easeInOutElastic',function () {
+    				$('.section4-address').show().children(0).animate({
+    					'opacity':1
+    				},1000);
+    				$('.section4-words2').animate({
+    					'opacity':1
+    				},1000);
+    			});
+    		})
+    	});
+    </script>
+</body>
+
+</html>
