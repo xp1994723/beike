@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<link rel="stylesheet" href="css/base.css">
+	<style>
+		.section7{
+			background: #8ac060  url('images/bg7.png') no-repeat center bottom;
+		}
+		.section7-star{
+			position: absolute;
+			left: 50%;
+			margin-left: -295px;
+			bottom: 442px;
+			width: 0px;
+			height: 20px;
+			background-image: url(images/section7-star.png);
+		}
+		.section7-good{
+			position: absolute;
+			bottom: 382px;
+			left: 50%;
+			margin-left: -289px;
+			display: none;
+		}
+	</style>
+</head>
+<body>
+	<!-- 第七屏 -->
+	<section class="section section7">
+		<!-- 第七屏的星星 -->
+		<div class="section7-star">			
+		</div>
+		<!-- 第七屏的好评文字 -->
+		<img src="images/section7-good.png" alt="" class="section7-good">
+	</section>
+	<script src="js/jquery.min.js"></script>
+	<script>
+		$(function () {
+			// 好评的五角星盒子的宽度渐渐地变宽让五角星背景图显示出来
+			$('.section7-star').animate({
+				'width':'120px'
+			},1000,function () {
+				//五角星显示完毕后让好评两个字显示出来
+				$('.section7-good').show();
+			});
+		})
+	</script>
+</body>
+</html>
