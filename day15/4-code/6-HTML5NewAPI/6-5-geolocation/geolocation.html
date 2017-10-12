@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
+    <style type="text/css">
+    body,
+    html,
+    #allmap {
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+        margin: 0;
+        font-family: "微软雅黑";
+    }
+    </style>
+    <script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=yYPt7G1nnl5H2LkiL2p98Sukl31aNfUh"></script>
+    <title>地图展示</title>
+</head>
+
+<body>
+    <div id="allmap"></div>
+</body>
+
+</html>
+<script type="text/javascript">
+//重复获取当前位置的事件
+navigator.geolocation.watchPosition(function(position) {
+    console.log(position);
+    var weidu = position.coords.latitude;
+    var jingdu = position.coords.longitude;
+    // 百度地图API功能
+    var map = new BMap.Map("allmap"); // 创建Map实例
+    map.centerAndZoom(new BMap.Point(jingdu, weidu), 20); // 初始化地图,设置中心点坐标和地图级别
+    map.enableScrollWheelZoom(true); //开启鼠标滚轮缩放 
+});
+</script>

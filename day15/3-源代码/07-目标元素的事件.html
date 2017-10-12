@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+    .target {
+        border: 10px dashed #f40;
+        width: 800px;
+        height: 300px;
+    }
+    </style>
+</head>
+
+<body>
+    <!-- 拖拽物一张图片 -->
+    <img src="images/toy.png" alt="" id="toy">
+    <!-- 目标元素 用来装拖拽物的元素 -->
+    <div class="target"></div>
+    <script>
+    var img = document.querySelector('img');
+    var target = document.querySelector('.target');
+    // 目标元素 有4个事件
+    // 	1. ondragenter	当拖拽元素进入时调用
+    // 	2. ondragover	当停留在目标元素上时调用
+    // 	3. ondrop		当在目标元素上松开鼠标时调用
+    // 	4. ondragleave	当鼠标离开目标元素时调用
+    //当拖拽物体的鼠标进入目标元素时候调用
+    target.addEventListener('dragenter', function() {
+        console.log('dragenter');
+    });
+    //当拖拽物体的鼠标进入目标元素并在目标元素范围内拖动的时候触发 会持续触发
+    target.addEventListener('dragover', function(e) {
+        console.log('dragover');
+        e.preventDefault();
+    });
+    //drop是拖拽物的鼠标在目标区域松开手的时候会触发 但是这个事件 默认不能触发 需要在 dragover 里面阻止拖拽的默认行为
+    target.addEventListener('drop', function(e) {
+        console.log('drop');
+    });
+    //当拖拽物的鼠标进入目标元素 并且离开的时候会触发的事件
+    target.addEventListener('dragleave', function () {
+    	console.log('dragleave');
+    });
+    </script>
+</body>
+
+</html>

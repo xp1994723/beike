@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		.target{
+			border:10px dashed #f40;
+			width: 800px;
+			height: 300px;
+		}
+	</style>
+</head>
+<body>
+	<!-- 拖拽物一张图片 -->
+	<img src="images/toy.png" alt="" id="toy">
+	<!-- 目标元素 用来装拖拽物的元素 -->
+	<div class="target"></div>
+	<script>
+		var img = document.querySelector('img');
+
+		img.addEventListener('dragstart',function (e) {
+			//拖拽物的拖拽事件里面有一个事件源对象 dragevent 里面存放了拖拽物的一些信息
+			// e.dataTransfer.setData('id',e.target.id);
+			// 在拖拽的时候拖拽物的信息一般存放到 e.dataTransfer 对象中
+			// 这个对象提供了两个方法 
+			// 	1. e.dataTransfersetData('键','值') 将值设置到对象的某个键里面 
+			// 	2. e.dataTransfer.getData('键')  根据键获取对应的值
+			console.log(e.dataTransfer.getData('id'));
+		});
+	</script>
+</body>
+</html>

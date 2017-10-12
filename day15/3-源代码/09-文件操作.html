@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+
+<body>
+    <input type="file" name="" id="" multiple="">
+    <script>
+    // 如何获取到选择的文件 
+    var fileBox = document.querySelector('input');
+    // console.dir(fileBox);
+    fileBox.addEventListener('change', function() {
+        // fileBox.files 是所有文件的集合 fileList对象 里面装了所有选中的文件 
+        // files[0] 是所有文件里面的第一个文件 是file对象
+        // console.dir(fileBox.files);
+        var file = fileBox.files[0];
+        // 如何读取文件 需要创建一个fileReader对象（文件阅读对象）
+        var fileReader = new FileReader();
+        //读取图片
+        // fileReader.readAsDataURL(file);
+        //读取文本
+        // fileReader.readAsText(file);
+        // fileReader.readAsBinaryString(file);
+        // fileReader.readAsArrayBuffer(file);
+        //load事件是当文件读取完毕会触发的事件
+        fileReader.addEventListener('load', function() {
+        		//this.result是存储着读取完毕的结果
+            console.log(this.result);
+            console.log('文件读取成功');
+        });
+    })
+    </script>
+</body>
+
+</html>

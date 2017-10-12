@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+
+<body>
+    <form action="#">
+        username:
+        <input type="text" name="" id="username" required="">
+        <br> password
+        <input type="password" name="" id="password" required="">
+        <br> 注册：
+        <input type="submit" value="注册" id="register">
+    </form>
+    <script>
+    var register = document.querySelector('#register');
+    register.addEventListener('click', function() {
+        var username = document.querySelector('#username').value;
+        var password = document.querySelector('#password').value;
+        // console.log(username + "---" + password);
+        //将用户名和密码存入到本地存储中 把用户名当做键 把密码当做值
+        if (username && password) {
+            window.localStorage.setItem(username, password);
+            alert('注册成功');
+        } else {
+            alert('注册失败');
+        }
+    });
+    </script>
+</body>
+
+</html>

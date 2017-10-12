@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+
+<body>
+    <video src="video/fun.mp4"></video>
+    <input type="button" value="开始播放" id="start">
+    <input type="button" value="暂停播放" id="stop">
+    <script>
+    var start = document.querySelector('#start');
+    var stop = document.querySelector('#stop');
+    var video = document.querySelector('video');
+    start.addEventListener('click', function() {
+        //开始播放
+        video.play();
+        //获取当前播放视频的文件路径
+        // console.log(video.currentSrc); 
+        //获取当前播放的时间 以秒作为单位
+        // console.log(video.currentTime);
+        console.log(video.duration);
+    });
+    stop.addEventListener('click', function() {
+        video.pause();
+         //获取当前播放视频的文件路径
+        // console.log(video.currentSrc); 
+        //获取当前播放的时间 以秒作为单位
+        // console.log(video.currentTime);
+    });
+    //视频播放事件发生变化触发
+    video.addEventListener('timeupdate', function(){
+        console.log(video.currentTime);
+    });
+    //视频播放结束事件 结束触发
+    video.addEventListener('ended', function(){
+        console.log('视频播放结束');
+    });
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		.target{
+			border:10px dashed #f40;
+			width: 800px;
+			height: 300px;
+		}
+	</style>
+</head>
+<body>
+	<!-- 拖拽物一张图片 -->
+	<img src="images/toy.png" alt="">
+	<!-- 目标元素 用来装拖拽物的元素 -->
+	<div class="target"></div>
+	<script>
+	/*	拖拽事件分两种 第一种是拖拽物的事件
+			1. ondrag 整个过程都会触发
+			2. ondragstart 拖拽开始的时候触发
+			3. ondragleave 鼠标离开拖拽物的时候触发
+			4. ondragend 拖拽结束触发*/
+			var img = document.querySelector('img');
+			// drag拖拽过程会一直触发
+			img.addEventListener('drag',function () {
+				console.log('drag');
+			});
+			// dragstart当拖拽开始就会触发的事件
+			img.addEventListener('dragstart',function (e) {
+				console.log('dragstart');
+			});
+			//dragleave当拖拽的鼠标离开拖拽物之前的位置的时候会触发
+			img.addEventListener('dragleave',function () {
+				console.log('dragleave');
+			});
+			//dragend当拖拽结束松开手会触发
+			img.addEventListener('dragend',function () {
+				console.log('dragend');
+			});
+	</script>
+</body>
+</html>

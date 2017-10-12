@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+    .target {
+        border: 10px dashed #f40;
+        width: 800px;
+        height: 300px;
+    }
+    
+    #box {
+        width: 100px;
+        height: 100px;
+        background-color: #f40;
+    }
+    </style>
+</head>
+
+<body>
+    <!-- 拖拽物一张图片 -->
+    <img src="images/toy.png" alt="" id="toy"> 文字
+    <div id="box" draggable="true"></div>
+    <!-- 目标元素 用来装拖拽物的元素 -->
+    <div class="target"></div>
+    <script>
+    var target = document.querySelector('.target');
+    target.addEventListener('dragover', function(e) {
+        //阻止默认行为
+        e.preventDefault();
+    })
+    target.addEventListener('drop', function(e) {
+        // console.log(e.dataTransfer.getData('Text'));
+        //获取文字
+        var text = e.dataTransfer.getData('Text');
+        //把文字放到目标元素里面
+        target.innerHTML += text;
+        //获取图片路径
+        var src = e.dataTransfer.getData('Text/uri-list');
+        //创建一个图片标签 把获取到的图片路径放到图片标签的src里面 然后添加到目标元素里面
+        target.innerHTML += '<img src="'+src+'" alt="" />';	
+        //获取拖拽div的id
+        var id = e.dataTransfer.getData('id');
+        //根据id获取拖拽的元素
+        var box = document.querySelector('#' + id);
+        //把获取到的拖拽元素放到目标元素里面	
+        target.appendChild(box);
+    });
+    var box = document.querySelector('#box');
+    box.addEventListener('dragstart', function(e) {
+        //把box的id存放到dataTransfer数据里面
+        e.dataTransfer.setData('id', e.target.id);
+    });
+    </script>
+</body>
+
+</html>

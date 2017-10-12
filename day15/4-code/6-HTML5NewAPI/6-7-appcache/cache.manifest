@@ -1,0 +1,12 @@
+CACHE MANIFEST
+
+# 注释内容
+
+version: 1.0.5
+# CACHE: 一定要记得带:冒号
+CACHE:
+	index.html
+	css/style.css
+	js/index.js
+	
+

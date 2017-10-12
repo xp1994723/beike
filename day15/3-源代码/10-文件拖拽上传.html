@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+    .target {
+        width: 800px;
+        height: 300px;
+        border: 10px dashed #f40;
+    }
+    
+    .target img {
+        max-width: 800px;
+        max-height: 300px;
+    }
+    </style>
+</head>
+
+<body>
+    <div class="target"></div>
+    <script>
+    var target = document.querySelector('.target');
+    target.addEventListener('dragover', function(e) {
+        e.preventDefault();
+    });
+    target.addEventListener('drop', function(e) {
+        //文件默认会打开需要阻止默认打开的操作
+        e.preventDefault();
+        // e.dataTransfer.files 获取拖拽到目标区域的文件
+        // console.log(e.dataTransfer.files);
+        var file = e.dataTransfer.files[0];
+        //读取文件
+        var fileReader = new FileReader();
+        //因为是图片按照图片的方式读取
+        fileReader.readAsDataURL(file);
+        fileReader.addEventListener('load', function() {
+            // console.log(this.result);
+            var src = this.result;
+            target.innerHTML += '<img src="' + src + '" alt="" max-width="800px" max-height="300px" />';
+        });
+    });
+    </script>
+</body>
+
+</html>

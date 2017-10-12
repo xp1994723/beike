@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <style>
+    body {
+        padding: 0;
+        margin: 0;
+        background-color: #f0f0f0;
+    }
+    
+    p {
+        width: 200px;
+        height: 40px;
+        text-align: center;
+        line-height: 40px;
+        margin: 100px auto;
+        color: #fff;
+        font-size: 24px;
+        background-color: #000;
+        display: none;
+        text-decoration: none;
+    }
+    
+    div {}
+    
+    .one {
+        width: 200px;
+        height: 200px;
+        background-color: #f40;
+        /*margin-top: 20px;*/
+        margin-right: 10px;
+    }
+    
+    .two {
+        width: 100px;
+        height: 100px;
+        background-color: #0f0;
+        /*margin-top: 10px;*/
+        margin-left: 20px;
+    }
+    </style>
+</head>
+
+<body>
+    <p class="tips"></p>
+    <p>事件绑定方法</p>
+    <script src="jquery.min.js"></script>
+    <script>
+    //检测当前网络是否在线 在线返回true 离线返回false
+    console.log(window.navigator.onLine);
+    //给window添加 网络状态online事件  在连网的时候会触发
+    window.addEventListener('online', function() {
+        console.log('online');
+        //判断当前是否是在线状态 是返回true 不是返回false
+        console.log(window.navigator.onLine);
+    });
+    //给window 添加网络状态offline事件 在断开网络的时候会触发
+    window.addEventListener('offline', function() {
+        console.log('offline');
+        console.log(window.navigator.onLine);
+    });
+    </script>
+</body>
+
+</html>

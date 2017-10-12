@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+    #drag {
+        width: 200px;
+        height: 200px;
+        background-color: #0f0;
+    }
+    
+    #target {
+        height: 500px;
+        border: 10px dashed #f40;
+    }
+    </style>
+</head>
+
+<body>
+    <div id="drag" draggable="true">佛挡杀佛</div>
+    <div id="target"></div>
+    <script>
+    var drag = document.querySelector('#drag');
+    var target = document.querySelector('#target');
+    //给拖拽物注册一个拖拽开始的事件  目的为了给dataTransfer属性设置值
+    drag.addEventListener('dragstart', function(e) {
+        // console.log(e.dataTransfer.setData('text', drag.id));
+    });
+    target.addEventListener('dragover', function(e) {
+        e.preventDefault();
+    });
+
+
+    //给目标物添加一个drop事件 在这个事件里面获取拖拽物
+    target.addEventListener('drop', function(e) {
+        //图片和文字等默认可以被拖拽的 默认拖拽的时候会在dataTransfer里面设置值 文字就设置文字 图片就设置图片路径
+        //div默认 是不可以被拖拽的 所以div没有在dataTransfer里面设置值
+        //应该在div拖拽开始的时候给dataTransfer属性里面设置好值
+        //获取拖拽物 DIV 
+        console.log(e.dataTransfer.getData('text'));
+        //根据 获取到的div的id获取这个元素
+        var dragDiv = document.querySelector('#drag' + e.dataTransfer.getData('text')).cloneNode(true);
+        
+        //DOM节点  DOM对象 和 普通标签不一样
+        // console.log(dragDiv);
+        //把获取到的div放到目标物里面
+        //appendChild是一个方法 添加DOM 节点 要求是一个DOM节点的对象 而不是一对标签字符串
+        target.appendChild(dragDiv);
+    });
+
+    //1. 要做div拖拽 div默认不可以被拖拽 要在div身上设置draggable="true"
+    //2. 给目标物注册一个drop事件 在鼠标松开的时候把div添加到target目标物里面
+    //3. drop事件默认是不能触发 需要再dragover里面阻止事件默认行为
+    //4. 由于div默认不可拖拽 在dataTransfer属性里面获取不到div的相关的信息
+    //5. 是因为div在开始拖拽的时候没有在dataTransfer里面设置值
+    //6. 就要在div开始拖拽的时候给dataTransfer属性里面设置值
+    //7. 设置什么值 设置ID可以让后面获取到这个div
+    //8. 设置是在dataTransfer.setData('键',id);
+    //9. 在drop事件里面获取到div的id然后根据这个id获取到这个div元素 追加到目标物上
+    </script>
+</body>
+
+</html>

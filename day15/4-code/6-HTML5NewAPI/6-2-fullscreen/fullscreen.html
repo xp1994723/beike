@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+
+<body>
+    <input type="button" value="开启全屏" id="request">
+    <input type="button" value="关闭全屏" id="cancel">
+    <input type="button" value="检测是否全屏" id="check">
+    <script>
+    var request = document.querySelector('#request');
+    var cancel = document.querySelector('#cancel');
+    var check = document.querySelector('#check');
+
+    request.addEventListener('click', function() {
+        //在 点击时候 开启全屏 由于兼容性问题 不同浏览器要加上前缀
+        // document.body.requestFullScreen(); 一定要加上body
+        document.body.webkitRequestFullScreen();
+        //由于兼容性问题 属性也要加上前缀
+        //由于JS代码运行是从上往下运行  当全屏方法执行的过程中还没有完全开启全屏的时候这时候检测是是否全屏还是之前的状态
+        console.log(document.webkitIsFullScreen);
+    });
+    check.addEventListener('click', function() {
+        console.log(document.webkitIsFullScreen);
+    });
+    cancel.addEventListener('click', function() {
+
+        //关闭全屏的时候 不能写document.body 
+        // document.body.webkitCancelFullScreen();
+        //一定不要加上body
+        document.webkitCancelFullScreen();
+    });
+    </script>
+</body>
+
+</html>

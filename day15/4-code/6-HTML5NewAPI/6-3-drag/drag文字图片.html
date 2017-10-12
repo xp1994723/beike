@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+    #target {
+        height: 500px;
+        border: 10px dashed #f40;
+    }
+    </style>
+</head>
+
+<body>
+    <a href="#">fsdfsd</a>
+    <img src="toy.png" alt=""> 我是文字
+    <div id="target"></div>
+    <script>
+    var target = document.querySelector('#target');
+    //给目标物注册dragover事件
+    target.addEventListener('dragover', function(e) {
+        //阻止默认事件
+        e.preventDefault();
+    });
+    //给目标物注册drop事件
+    target.addEventListener('drop', function(e) {
+        //拖拽事件event对象里面的一个属性
+        console.log(e.dataTransfer);
+        // console.log(e.dataTransfer.getData('Text'));
+        // console.log(e.dataTransfer.getData('Text/uri-list'));
+        // 专门针对图片拖拽 才能获取到信息
+        // e.dataTransfer.getData('Text/uri-list')
+        if (e.dataTransfer.getData('Text/uri-list')) {
+            target.innerHTML += '<img src="' + e.dataTransfer.getData('Text/uri-list') + '" alt="" />';
+        } else {
+            target.innerHTML += e.dataTransfer.getData('Text');
+        }
+        //在drop事件里面要获取拖拽进来的东西 
+    });
+    // target.addEventListener('click',function(e){
+    //     console.log(e);
+    // })
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script>
+		// online offline 事件
+		// online在联网的时候会触发
+		// offline在断开网络会触发 
+		// 可以做一些联网和断网的提示信息
+		window.addEventListener('online',function () {
+			//网络在线
+			console.log(window.navigator.online);
+		});
+		window.addEventListener('offline',function () {
+			//网络离线
+			console.log(window.navigator.offline);
+		});
+	</script>
+</body>
+</html>

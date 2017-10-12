@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+    #target {
+        height: 500px;
+        border: 10px dashed pink;
+    }
+    </style>
+</head>
+
+<body>
+    <input type="file" name="" id="">
+    <div id="target"></div>
+    <script>
+    var target = document.querySelector('#target');
+
+    target.addEventListener('dragover', function(e) {
+        //阻止默认事件   为了阻止拖拽默认事件让drop事件能够触发
+        e.preventDefault();
+    });
+    target.addEventListener('drop', function(e) {
+        //阻止默认事件 为了防止文件拖拽进来默认打开
+        e.preventDefault();
+        // console.log(e.dataTransfer.getData('text'));
+        // console.log(e.dataTransfer.files[0]);
+        var file = e.dataTransfer.files[0];
+        // console.log(e.dataTransfer.files);
+        // fileList 就是 文件对象集合类型 也就是文件数组
+        target.innerHTML += '文件名称:' + file.name + "<br />" + "文件类型" + file.type;
+        //创建一个文件读取对象的实例
+        var reader = new FileReader();
+        //这个readAsText方法就是用来读取文件他读取返回的是文本格式， 读取方法里面传的参数就是 文件对象
+        // reader.readAsText(file);
+        //readAsDataURL 他也可以读取文件 是以dataURL的格式读取文件 读取一些非文本文件都是使用这个东西
+        reader.readAsDataURL(file);
+        //读取文件需要时间 要等读取完毕才有结果 
+        //添加了一个读取文件完成的事件
+        reader.addEventListener('load', function() {
+            //在读取完成之后reader.result对象就是读取到的内容
+            // console.log(reader.result);
+            // target.innerHTML += reader.result;
+            target.innerHTML += '<img src="'+reader.result+'" alt="" />';
+            // target.innerHTML += this.result;
+            // target.innerHTML += '<video src="'+reader.result+'" controls autoplay></video>'
+        });
+    });
+    </script>
+</body>
+
+</html>

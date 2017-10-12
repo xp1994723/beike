@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+    #drag {
+        width: 200px;
+        height: 200px;
+        background-color: #0f0;
+    }
+
+    #target {
+        height: 500px;
+        border: 10px dashed #f40;
+    }
+    </style>
+</head>
+
+<body>
+    <img src="toy.png" alt=""> 文字默认是可以被拖拽
+    <a href="">fdsfsdfd</a>
+    <!-- div 默认是不可以被拖拽的 需要加上draggble="true" 才可以被拖拽 -->
+    <div id="drag" draggable="true"></div>
+    <div id="target"></div>
+    <script>
+    var drag = document.querySelector('#drag');
+    //给 拖拽物添加 drag事件 在拖拽的时候(非点击) 会一直的触发
+    // drag.addEventListener('drag', function() {
+    //     console.log('drag');
+    // });
+    // 给拖拽物 添加一个dragstart事件 每次在拖拽的时候 会触发一次
+    // drag.addEventListener('dragstart', function() {
+    //     console.log('dragstart');
+    // });
+    //给拖拽物 添加一个dragleave事件 在拖拽物拖拽的过程中鼠标离开拖拽物原来的位置的时候触发
+    // drag.addEventListener('dragleave', function() {
+    //     console.log('dragleave');
+    // });
+    //给拖拽物 添加一个dragend事件 在拖拽过程中松开手的时候触发
+    // drag.addEventListener('dragend', function() {
+    //     console.log('dragend');
+    // });
+    var target = document.querySelector('#target');
+    //给 目标物添加一个dragenter 事件 在拖拽物拖拽过程中鼠标进入目标物区域的时候触发
+    // target.addEventListener('dragenter',function(){
+    //    console.log('dragenter'); 
+    // });
+    //给目标物 添加一个dragover事件 在拖拽物拖拽过程中鼠标进入目标区域停留在目标区域和一直在目标区域拖动的时候会一直触发（触发很多次）
+    target.addEventListener('dragover', function(e) {
+        console.log('dragover');
+        //阻止默认事件
+        e.preventDefault();
+        //阻止事件冒泡
+        e.stopPropagation();
+    });
+    // 给目标物添加一个dragleave事件 在拖拽物拖拽过程中进入目标区域 并且鼠标离开目标区域的时候触发
+    // target.addEventListener('dragleave', function() {
+    //     console.log('dragleave');
+    // });
+    //给目标物添加一个drop 事件 在拖拽物拖拽过程鼠标进入目标区域且在目标区域松开手的时候触发
+    //但是这个事件有个特点就是不能直接触发 需要在拖拽过程中阻止拖拽的默认事件才能够触发
+    target.addEventListener('drop', function() {
+        console.log('drop');
+        
+    });
+    </script>
+</body>
+
+</html>

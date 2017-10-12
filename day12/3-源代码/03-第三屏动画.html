@@ -43,9 +43,12 @@
 		}
 		.section3-sofa{
 			position: absolute;
-			width: 207px;
+			width: 100px;
+			/*width: 207px;*/
 			left: 115px;
-			bottom: 250px;
+			bottom: 800px;
+			/*bottom: 250px;*/
+			display: none;
 		}
 	</style>
 </head>
@@ -69,5 +72,24 @@
 			</div>
 		</div>
 	</section>
+	<script src="js/jquery.min.js"></script>
+	<script>
+		$(function () {
+			//让沙发变大从上往下掉下来
+			$('.section3-sofa').show().animate({
+				'bottom':'250px',
+				'width':'207px'
+			},1500,function () {
+				//让右侧选择尺寸的第二个图片渐渐显示
+				$('.section3-icon2').animate({
+					'opacity':1
+				},500);
+				//让右侧的白色购物车渐渐的显示
+				$('.section3-cart2').animate({
+					'opacity':1
+				},500);
+			});
+		})
+	</script>
 </body>
 </html>
