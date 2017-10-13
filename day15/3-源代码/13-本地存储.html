@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script>
+	/*	html5里面新增了2个本地存储的方式 ， 可以把数据保存到本地存储里面 实现一个数据的存储功能
+		有两个存储方式 localStorage 和 sessionStorage
+		localStorage 是本地存储 会永久存储在本地电脑 如果不删除会一直存在
+		sessionStorage 是会话存储 是临时存储在浏览器中 浏览器关闭存储的数据就消失了*/
+		// 怎么往本地存储里面存储数据 提供了操作本地存储的API
+		// setItem(key,value); 往存储里面设置值 传入两个参数 键,值
+		// getItem(key); 根据键获取存储里面的值
+		// removeItem(key); 根据键删除某个值
+		// clear(); 情况所有的键值
+		// key(index); 根据索引获取键
+		// 设置num键的值是123
+		localStorage.setItem('num','123');
+		// 根据num键获取值123
+		console.log(localStorage.getItem('num'));
+		// 删除num键和值
+		// localStorage.removeItem('num');
+		// console.log(localStorage.getItem('num'));
+		// 设置num键的值是123
+		sessionStorage.setItem('num','123');
+		// 根据num键获取值123
+		console.log(sessionStorage.getItem('num'));
+		// 删除num键和值
+		// sessionStorage.removeItem('num');
+		// console.log(sessionStorage.getItem('num'));
+	</script>
+</body>
+</html>

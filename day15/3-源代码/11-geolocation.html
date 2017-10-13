@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	您当前所在位置
+	<h1 id="longitude"></h1>
+	<h1 id="latitude"></h1>
+	<script>
+		navigator.geolocation.getCurrentPosition(function (position) {
+				console.log(position.coords);
+		});
+	</script>
+</body>
+</html>
