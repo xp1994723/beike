@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		*{
+			margin: 0px;
+			padding: 0px;
+		}
+		.box{
+			width: 200px;
+			height: 200px;
+			background-color: #f40;
+			/*动画定义好了默认是不会执行的需要调用才会执行 就像函数一样需要调用函数才会执行*/
+		/*	调用动画 使用animation属性 
+			 animation： 动画名 持续时间 动画执行的速度函数 动画执行的次数 动画延迟时间;*/
+			 /*move就是 @keyframes定义的动画名字
+			 2s就是动画执行总共需要2s
+			 linear 是动画执行的速度函数匀速
+			 3是动画执行的次数 3次 如果想无限执行可以写infinite 如果不写默认动画只执行一次
+			 1s是动画的延迟时间 等1秒后动画才开始执行*/
+			 animation:move 2s linear infinite 1s;
+		}
+		/*定义了一动画 名字叫move*/
+		@keyframes move{
+			/*动画需要在1秒内从左边移动到右边 然后再一秒从右边移动回左边*/
+			/*移动可以使用定位的left值 也可以使用CSS3的转换translate*/
+			/* 如何控制动画状态变化的过程 可以通过 百分比来控制
+			比如动画执行需要2s 在0-1s往右移动 1-2s往左移动 
+			那么 0-2s就是整个过程 就是0-100% 0-1就是0-50% 1s-2s就是50%-100% */
+			/*所以控制0%的时候元素在左边 50%的时候在右边 这个时候花了1s把元素从左往右移动
+			100%的时候在左边 这个时候花了1s把元素从右往左移动*/
+			0%{
+				transform: translateX(0px);
+			}
+			50%{
+				transform: translateX(1000px);	
+			}
+			100%{
+				transform: translateX(0px);
+			}
+		}
+	</style>
+</head>
+<body>
+	<!-- 什么是CSS3动画： 动画是使元素从一种状态(自动)逐渐变化到另一种状态的效果 也可以是多种状态的变化
+	CSS3的动画在什么时候用： 在一些需要自动执行一些状态变化的时候会用到动画
+	如果使用(使用步骤)：
+		1. 需要知道要做什么动画
+		2. 定义一个动画
+		3. 控制动画里面的状态变化
+		4. 给需要做动画的元素调用定义的这个动画 -->
+	<div class="box"></div>
+</body>
+</html>

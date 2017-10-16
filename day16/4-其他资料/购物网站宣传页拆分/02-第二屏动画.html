@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/base.css">
+    <style>
+    .section2 {
+        background: #84a2d4 url(images/bg2.png) no-repeat center bottom;
+    }
+    
+    .section2-container {
+        width: 1050px;
+        height: 500px;
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+        bottom: 0px;
+    }
+    
+    .section2-words1,
+    .section2-words2 {
+        position: absolute;
+        left: 50%;
+        transform: translate(-50%);
+        bottom: 530px;
+    }
+    
+    .section2-words2 {
+        opacity: 0;
+    }
+    
+    .section2-search1 {
+        width: 222px;
+        height: 45px;
+        position: absolute;
+        background-image: url(images/section2-search1.png);
+        right: 0;
+        bottom: 300px;
+        display: none;
+    }
+    
+    .section2-search1 img {
+        position: absolute;
+        right: 20px;
+        top: 5px;
+        opacity: 0;
+    }
+    
+    .section2-search2 {
+        position: absolute;
+        right: 370px;
+        bottom: 300px;
+        display: none;
+    }
+    
+    .section2-sofas {
+        position: absolute;
+        right: 290px;
+        bottom: 220px;
+        width: 100px;
+        display: none;
+    }
+    
+    .section2-sofa {
+        position: absolute;
+        width: 100px;
+        left: 434px;
+        bottom: 350px;
+        z-index: 10;
+        display: none;
+    }
+    
+    .section2-sofa-mask {
+        position: absolute;
+        background-color: #fff;
+        width: 100px;
+        height: 81px;
+        left: 434px;
+        bottom: 350px;
+        z-index: 20;
+        display: none;
+    }
+    </style>
+</head>
+
+<body>
+    <!-- 第二屏 -->
+    <section class="section section2">
+        <!-- 第二屏的容器 -->
+        <div class="section2-container">
+            <!-- 第二屏的文字 -->
+            <img src="images/section2-words1.png" alt="" class="section2-words1">
+            <img src="images/section2-words2.png" alt="" class="section2-words2">
+            <!-- 第二屏的第一个搜索框和搜索框的文字 -->
+            <div class="section2-search1">
+                <img src="images/section2-search-words.png" alt="">
+            </div>
+            <!-- 第二屏的第二个搜索框 -->
+            <img src="images/section2-search2.png" alt="" class="section2-search2">
+            <!-- 第二屏的所有沙发图片 -->
+            <img src="images/section2-sofas.png" alt="" class="section2-sofas">
+            <!-- 第二屏的中间第二个沙发 -->
+            <img src="images/section2-sofa.png" alt="" class="section2-sofa">
+            <!-- 第二屏中间沙发走了的遮罩层 -->
+            <div class="section2-sofa-mask"></div>
+        </div>
+    </section>
+    <script src="js/jquery.min.js"></script>
+    <script>
+    	$(function () {
+            // 让右侧的搜索框显示 并且从右往左移动到right370px的位置
+    		$('.section2-search1').show().animate({
+    			'right':'370px'
+    		},1000,function() {
+                //搜索框移动完后 里面的搜索文字图片渐渐的出现
+    			$('.section2-search1 img').animate({
+    				'opacity':1
+    			},500,function () {
+                    //第一个搜索框和文字动画完后隐藏
+    				$('.section2-search1').hide();
+                    // 显示第二个带有文字的搜索框 同时往右上角移动到right 270px和 bottom452px的位置 同时高度变小到30px
+    				$('.section2-search2').show().animate({
+    					'right':'270px',
+    					'bottom':'452px',
+    					'height':'30px'
+    				},1000);
+                    //第二个搜索框移动的同时 所有沙发的图片显示 并且变大
+    				$('.section2-sofas').show().animate({
+    					'height':'218px',
+    					'width':'441px'
+    				},1000);
+                    // 同时上方的第二个文字渐渐的显示 覆盖之前的文字
+    				$('.section2-words2').animate({
+    					'opacity':1
+    				},1000)
+    			})
+    		})
+    	});
+    </script>
+</body>
+
+</html>

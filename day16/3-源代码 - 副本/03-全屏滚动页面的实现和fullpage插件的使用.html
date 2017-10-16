@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/jquery.fullPage.css">
+</head>
+
+<body>
+    <!-- 全屏滚动页面 ： 原理就是使用鼠标滚轮的事件 mousewheel (当鼠标滚轮滚动的时候会触发的事件) 判断滚动的方向 向上滚动就切换到上一屏  向下滚动就切换到下一屏 但是自己实现起来难免会遇到很多兼容性问题 和 很多细节 所以开发应用阶段更多的使用第三方的插件实现 
+	全屏滚动的插件： fullpage 插件  github 官网 ：    https://github.com/alvarotrigo/fullPage.js  
+							中文演示的官网：  http://www.dowebok.com/demo/2014/77/    
+	全屏滚动插件实现的功能： 鼠标滚动 键盘的向上向下 手机屏幕的触摸滑动等等功能强大兼容性也好
+	使用插件的步骤：
+				1. 先引入fullpage的css文件 因为插件包含样式所以要引入CSS文件
+				2. 引入jquery 因为这个是jQuery的插件 所以里面的JS代码依赖jQuery需要先引入jQuery
+				3. 在引入fullpage的JS文件 里面就包含了插件的JS代码
+				4. 写页面结构 要按照官网要求的页面结构写
+					最外层一个容器 里面 每一屏的是一个section 
+				5. 调用JS初始化方法初始化fullpage
+					 -->
+	<!-- 最外层的父容器 id或者类名都可以推荐idJS使用id获取元素不容易出问题 -->
+    <div id="fullpage">
+    		<!-- 里面的每一屏 必须使用section类名 标签可以任意 只要是块级元素标签 -->
+    		<section class="section">第一屏</section>
+    		<section class="section">第二屏</section>
+    		<section class="section">第三屏</section>
+    		<section class="section">第四屏</section>
+    </div>
+    <script src="js/jquery.min.js"></script>
+    <script src="js/jquery.fullPage.min.js"></script>
+    <script>
+    	$(function () {
+    		// 获取最外层的父容器 调用fullpage()方法 就可以实现一个全屏滚动的效果
+    		$('#fullpage').fullpage();
+    	})
+    </script>
+</body>
+
+</html>

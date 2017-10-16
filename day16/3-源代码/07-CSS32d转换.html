@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		.box{
+			width: 100px;
+			height: 100px;
+			background-color: #f40;
+			/*在之前要移动一个盒子到某个地方需要使用定位 改变定位的值来控制元素的移动 但是这样元素就脱标了 很容易影响后面的布局*/
+			/*position: absolute;
+			left: 600px;*/
+			/*CSS3新增了一个让盒子位移的方式 使用转换 transform: translate() 位移的方式让元素移动*/
+			/*translate有两个参数 translateX和 translateY分别控制X轴和Y轴的位移 如果只传入一值表示位移X轴 传两个第一个表示X第二个表示Y*/			
+			/*transform:translate(100px);*/
+			/*transform:translate(100px,200px);*/
+			/*这个时候盒子的位置虽然已经移动了 到了下面 但是box2的位置没有受到影响还是在原来的位置
+			所以位移是不会影响后面盒子布局的 可以放心使用*/
+			/*除了使用translate之外还可以使用 
+			translateX()
+			translateY()
+			分别只设置水平或者只设置垂直的位移*/
+			/*传入的值可以是px也可以是百分比*/
+			/*如果是px就传入多少就是多少 
+			如果是百分比 则表示自身宽度的百分比*/
+			/*例如 transform: translateX(100%); 表示往右移动自身的宽度
+			例如 transform: translateX(50%); 表示往右移动自身的宽度一半*/
+			/*transform: translateX(100%);*/
+			/*除了可以往右和往下移动还可以往左和往上移动 只需要调整移动的值为负值*/
+			transform: translateX(-10px);/*在X方向做位移的时候 正值是往右移动 负值往左移动*/
+			transform: translateY(-10px);/*在Y方向做位移的时候 正值是往下移动 负值往上移动*/
+		}
+		.box2{
+			height: 300px;
+			background-color: #0f0;
+		}
+	</style>
+</head>
+<body>
+	<div class="box"></div>
+	<div class="box2"></div>
+</body>
+</html>

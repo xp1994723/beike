@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/base.css">
+    <style>
+    .section6 {
+        background: #84d9ed url(images/bg6.png) no-repeat left bottom;
+    }
+    
+    .section6-cloud {
+        position: absolute;
+        left: 50%;
+        bottom: 500px;
+        transform: translateX(-50%);
+        animation: section6Cloud 30s linear infinite;
+    }
+    
+    .section6-sofa {
+        width: 70px;
+        position: absolute;
+        left: 25%;
+        bottom: 800px;
+        display: none;
+    }
+    
+    .section6-box {
+        position: absolute;
+        /*left: 23%;*/
+        bottom: 500px;
+        left: 123px;
+        z-index: 10;
+        display: none;
+    }
+    
+    .section6-car {
+        position: absolute;
+        bottom: 0;
+        right: 50%;
+    }
+    
+    .section6-street {
+        position: absolute;
+        right: 50%;
+        bottom: 122px;
+        display: none;
+    }
+    
+    .section6-boy {
+        position: absolute;
+        bottom: 0;
+        height: 100px;
+        right: 50%;
+        display: none;
+    }
+    
+    .section6-door {
+        position: absolute;
+        right: 285px;
+        bottom: 116px;
+        opacity: 0;
+    }
+    
+    .section6-girl {
+        position: absolute;
+        height: 100px;
+        right: 315px;
+        bottom: 116px;
+        display: none;
+        z-index: 10;
+    }
+    
+    .section6-receiving {
+        position: absolute;
+        right: 445px;
+        bottom: 400px;
+        z-index: 20;
+        display: none;
+    }
+    
+    .section6-words {
+        position: absolute;
+        left: 0%;
+        bottom: 479px;
+        display: none;
+    }
+    
+    .section6-bg-move {
+        animation: section6BgMove 4s linear forwards;
+    }
+    
+    @keyframes section6BgMove {
+        0% {
+            background-position: left bottom;
+        }
+        100% {
+            background-position: right bottom;
+        }
+    }
+    
+    @keyframes section6Cloud {
+        0% {
+            transform: translateX(-50%);
+        }
+        25% {
+            transform: translateX(-80%);
+        }
+        50% {
+            transform: translateX(-50%);
+        }
+        75% {
+            transform: translateX(-20%);
+        }
+        100% {
+            transform: translateX(-50%);
+        }
+    }
+    </style>
+</head>
+
+<body>
+    <!-- 第六屏 -->
+    <section class="section section6">
+        <!-- 第六屏的云彩 -->
+        <img src="images/section6-cloud.png" alt="" class="section6-cloud">
+        <!-- 第六屏的沙发 -->
+        <img src="images/section5-sofa.png" alt="" class="section6-sofa">
+        <!-- 第六屏的装沙发的盒子 -->
+        <img src="images/section6-box.png" alt="" class="section6-box">
+        <!-- 第六屏的车 -->
+        <img src="images/section6-car.png" alt="" class="section6-car">
+        <!-- 第六屏的收货街道信息 -->
+        <img src="images/section6-street.png" alt="" class="section6-street">
+        <!-- 第六屏的送货男孩 -->
+        <img src="images/section6-boy.png" alt="" class="section6-boy">
+        <!-- 第六屏的打开的门 -->
+        <img src="images/section6-door.png" alt="" class="section6-door">
+        <!-- 第六屏的收货女孩 -->
+        <img src="images/section6-girl.png" alt="" class="section6-girl">
+        <!-- 第六屏的请收货图片-->
+        <img src="images/section6-receiving.png" alt="" class="section6-receiving">
+        <!-- 第六屏的光速文字 -->
+        <img src="images/section6-words.png" alt="" class="section6-words">
+    </section>
+    <script src="js/jquery.min.js"></script>
+    <script>
+    $(function() {
+        // 沙发从上往下掉下来
+        $('.section6-sofa').show().animate({
+            'bottom': '500px',
+            'left': '40%'
+        }, 1500, function() {
+            //掉到装沙发的盒子里面的时候隐藏
+            $(this).hide();
+        })
+        //同时装沙发的盒子从左往右移动
+        $('.section6-box').show().animate({
+            'left': '38%'
+        }, 1500, function() {
+            //接到沙发之后往下掉到车里
+            $(this).animate({
+                'bottom': '40px'
+            }, 1000, function() {
+                // 掉到车里之后隐藏当前的装沙发的盒子
+                $(this).hide();
+                // 让车从左往右动起来(原理就是切换背景的定位值显得背景在动就显得车在走)
+                $('.section6').animate({
+                    'backgroundPositionX': '100%'
+                }, 3000, function() {
+                    //车停止之后让接到的信息显示出来
+                    $('.section6-street').show();
+                    //同时让送货的小男孩变高同时站起来
+                    $('.section6-boy').show().animate({
+                        'height': '305px',
+                        'bottom': '116px'
+                    }, 500, function() {     
+                        //然后让小男孩往右走到小女孩的家门口                   
+                        $(this).animate({
+                            'right': '500px'
+                        }, 1000, function() {               
+                            //小女孩把门打开             
+                            $('.section6-door').animate({
+                                'opacity': 1
+                            }, 500, function() {
+                                //小女孩出来往左走到小男孩面前
+                                $('.section6-girl').show().animate({
+                                    'right': '350px',
+                                    'height': '305px'
+                                }, 1000, function() {
+                                    // 小女孩到小男孩面前之后 小男孩说请收货
+                                    $('.section6-receiving').show();
+                                })
+                            })
+                        })
+                    })
+                });
+                // 当小车在走的时候上面的文字也跟着往右走
+                $('.section6-words').show().animate({
+                    'left': '30%'
+                }, 3000, function() {
+
+                });
+            })
+        })
+    });
+    </script>
+</body>
+
+</html>

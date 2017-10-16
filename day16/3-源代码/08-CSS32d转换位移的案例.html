@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+    html,
+    body {
+        height: 100%;
+        margin: 0px;
+        padding: 0px;
+    }
+    
+    .box {
+        position: absolute;
+        width: 200px;
+        height: 200px;
+        background-color: #f40;
+        left: 50%;
+       /* 在之前要让定位元素水平居中 要设置left:50%; 这个50%是指父元素宽度的50%父元素是body宽度是整个页面 那就往右位移整个页面一半的宽度
+        但是这个时候是box盒子的左边线和body的中线对齐 要实现居中的话是需要box的中线和body的中线对齐 box的中线也是在自身宽度一半的位置 所以box还需要往移动自身宽度的一半才能实现居中 所以通过计算自身200一半的宽度是100 margin-left:-100px;往左边走100px让box中线和body中线对齐实现居中*/
+  			/*这种方式虽然可以实现居中 但是如果box盒子宽度不固定的情况下就不好计算margin-left的值了可能需要使用JS来获取box宽度来计算设置 这样就有一些时候不太方便 */
+        /*margin-left: -100px;*/
+        /*在CSS3里面新增了一种位移的方式 transform:translate();这种方式 也可以做位移 
+        /*所以使用translateX(-50%);往左移动自身宽度的一半就可以实现居中*/
+        /*transform: translateX(-50%);*/
+        /*如果要实现垂直居中也很简单 就top:50%; transform: translateY(-50%);*/
+        top:50%;
+        /*transform: translateY(-50%);*/
+        /*水平垂直都居中*/
+        transform: translate(-50%,-50%);
+    }
+    </style>
+</head>
+
+<body>
+    <!-- CSS3的2d位移可以做很多事情 最常用和典型就是实现定位元素的水平垂直居中 -->
+    <div class="box"></div>
+</body>
+
+</html>

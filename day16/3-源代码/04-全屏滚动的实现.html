@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <!-- 1. 引入fullpage的CSS文件 -->
+    <link rel="stylesheet" href="lib/fullpage/jquery.fullpage.css">
+</head>
+
+<body>
+    <!-- 4. 写页面结构 -->
+    <!-- 推荐父容器使用id id页面只有一个 js获取父容器的时候不会出错 -->
+    <ul id="menu">
+        <li data-menuanchor="menu1" class="active"><a href="#menu1">第一屏</a></li>
+        <li data-menuanchor="menu2"><a href="#menu2">第二屏</a></li>
+        <li data-menuanchor="menu3"><a href="#menu3">第三屏</a></li>
+        <li data-menuanchor="menu4"><a href="#menu4">第四屏</a></li>
+    </ul>
+    <div id="fullpage">
+        <!-- 里面就写每一屏  必须使用section类名（每个section就表示每一屏） 但是标签名可以任意-->
+        <section class="section">第一屏</section>
+        <section class="section">第二屏</section>
+        <section class="section">第三屏</section>
+        <section class="section">第四屏</section>
+        <section class="section">第五屏</section>
+    </div>
+    <!-- 2. 引入jQuery 插件依赖jQuery -->
+    <script src="lib/jquery/jquery.min.js"></script>
+    <!-- 3. 引入fullpage的JS文件 -->
+    <script src="lib/fullpage/jquery.fullpage.js"></script>
+    <script>
+    // 5. 初始化fullpage插件 获取父容器 调用fullpage方法
+    $('#fullpage').fullpage({
+        // 是否出现右侧的小圆点 默认是false不出现 true就出现
+        navigation: true,
+        continuousVertical: true,
+        anchors: ['men1', 'menu2', 'menu3', 'menu4', 'menu5']
+    });
+    </script>
+</body>
+
+</html>

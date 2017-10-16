@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/base.css">
+    <style>
+   
+    
+    .section1 {
+        background: #fadd67 url(images/bg1.png) center bottom no-repeat;
+    }
+    
+    .section1-icon {
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+        bottom: 150px;
+    }
+    
+    .section1-sofa {
+        position: absolute;
+        left: 50%;
+        transform: translateX(-200px);
+        bottom: 335px;
+        animation: sofaMove 2s linear infinite;
+    }
+    
+    .section1-fly {
+        position: absolute;
+        top: 20%;
+        right: 20%;        
+        animation: flyMove 3s linear infinite;
+    }
+
+    @keyframes sofaMove{
+        0%{
+            transform:translate(-200px,0px);
+        }
+        50%{
+            transform:translate(-200px,-50px);
+        }
+        100%{
+            transform:translate(-200px,0px);
+        }
+    }
+
+    @keyframes flyMove{
+         0%{
+            transform:translate(0,0px);
+        }
+        50%{
+            transform:translate(0,80px);
+        }
+        100%{
+            transform:translate(0,0px);
+        }
+    }
+    </style>
+</head>
+
+<body>
+    <!-- 第一屏 -->
+    <section class="section section1">
+        <!-- 第一屏的图标 -->
+        <img src="images/section1-icon.png" alt="" class="section1-icon">
+        <!-- 第一屏的沙发图片 -->
+        <img src="images/section1-sofa.png" alt="" class="section1-sofa">
+        <!-- 第一屏的飞机图片 -->
+        <img src="images/section1-fly.png" alt="" class="section1-fly">
+    </section>
+</body>
+
+</html>

@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/base.css">
+    <style>
+    .section8 {
+        background: url(images/bg8.png);
+    }
+    
+    .section8-begin {
+        width: 389px;
+        height: 160px;
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+        bottom: 356px;
+    }
+    
+    .section8-begin1,
+    .section8-begin2 {
+        position: absolute;
+        left: 0;
+        top: 0;
+    }
+    
+    .section8-begin2 {
+        display: none;
+    }
+    
+    .section8-hand {
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+        bottom: 0;
+    }
+    
+    .section8-again {
+        position: absolute;
+        bottom: 403px;
+        left: 50%;
+        margin-left: 240px;
+    }
+    </style>
+</head>
+
+<body>
+    <!-- 第八屏 -->
+    <section class="section section8">
+        <div class="section8-begin">
+            <!-- 第八屏的开始购物静态图片 -->
+            <img src="images/section8-begin1.png" alt="" class="section8-begin1">
+            <!-- 第八屏的开始购物动态图片 -->
+            <img src="images/section8-begin2.gif" alt="" class="section8-begin2">
+        </div>
+        <!-- 第八屏的手图片 -->
+        <img src="images/section8-hand.png" alt="" class="section8-hand">
+        <!-- 第八屏的再来一次图片 -->
+        <img src="images/section8-again.png" alt="" class="section8-again">
+    </section>
+    <script src="js/jquery.min.js"></script>
+    <script>
+    $(function() {
+        //当鼠标在页面移动的时候记录当前鼠标的X和Y轴的位置
+        $(document).on('mousemove', function(e) {
+            //为了让手和鼠标中间对齐让手再往右走20px
+            var x = e.pageX + 20;
+            var y = e.pageY;
+            // 把记录到当前鼠标的位置设置到手的定位left 和 top值上
+            $('.section8-hand').css({
+                'left': x,
+                'top': y
+            });
+        });
+        //当鼠标移动到开始购物的盒子的时候显示第二个动态图的开始购物覆盖之前的静态图
+        $('.section8-begin').on('mouseover', function() {
+            $('.section8-begin2').show();
+        });
+        //当鼠标离开开始购物的盒子的时候隐藏第二个动态图的开始购物 让静态图显示出来
+        $('.section8-begin').on('mouseleave', function() {
+            $('.section8-begin2').hide();
+        });
+    });
+    </script>
+</body>
+
+</html>
