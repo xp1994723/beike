@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<!-- 用来初始化页面的样式 -->
+	<link rel="stylesheet" href="css/base.css">
+	<style>
+		/*这些每个页面都会写的公共样式放到base.css*/
+		/**{
+			margin: 0px;
+			padding: 0px;
+		}
+		html{
+			height: 100%;
+		}
+		body{
+			height: 100%;
+		}*/
+		.section1{
+			/*背景图覆盖不到的区域 就使用背景颜色来覆盖*/
+			background: #fadd67 url(images/bg1.png) no-repeat center bottom;			
+			height: 100%;
+		}
+		.section1-icon{
+			position: absolute;
+			/*left:50%;相对于父容器的一半 往右走父容器宽度的一半 让子容器的左边贴着父容器的中间*/
+			left: 50%;
+			/*到了中间之后还要回去子容器自身宽度的一半 margin-left:-自身宽度的一半; 
+			translateX(-50%) 往X方向走-50%(是自身宽度50%) 正值往右 负值就往左*/
+			transform: translateX(-50%);
+			/*做全屏页面都是按照底部来对齐*/
+			bottom: 150px;
+		}
+		.section1-sofa{
+			position: absolute;
+			left: 50%;
+			transform: translateX(-200px);
+			bottom: 335px;
+			/*调用沙发动画*/
+			animation: section1SofaMove 2s linear infinite;
+		}
+		.section1-fly{
+			position: absolute;
+			right: 20%;
+			top: 20%;
+			/*调用飞机动画*/
+			animation: section1FlyMove 3s linear infinite;
+		}
+		
+		/*定义一个沙发动画  section1SofaMove 第一屏沙发动画*/
+		@keyframes section1SofaMove{
+			/*一开始Y轴的位移距离为0*/
+			0%{
+				transform: translate(-200px,0px);
+			}
+			/*50% 的时候往Y轴的负方向就是往上移动50px*/
+			50%{
+				transform: translate(-200px,-50px);
+			}
+			/*100%的时候往Y轴的正方向移动到0  就是回到原点*/
+			100%{
+				transform: translate(-200px,0px);
+			}
+		}
+
+		/*定义一个飞机动画 section1FlyMove 第一屏飞机的动画*/
+		@keyframes section1FlyMove{
+			/*一开始Y轴的位移距离为0*/
+			0%{
+				transform: translateY(0px);
+			}
+			/*50%的时候Y轴正方向向下移动80px*/
+			50%{
+				transform: translateY(80px);	
+			}
+			/*100%的时候 Y轴正方向移动到0px 回到原点*/
+			100%{
+				transform: translateY(0px);		
+			}
+		}
+	</style>
+</head>
+<body>
+	<!-- 第一屏 section是滚动插件必须要有的类名 section1是用来修饰当前第一屏的页面样式的类名-->
+	<section class="section section1">
+		<!-- 第一屏里面的icon图标 -->
+		<img src="images/section1-icon.png" alt="" class="section1-icon">
+		<!-- 第一屏的沙发 -->
+		<img src="images/section1-sofa.png" alt="" class="section1-sofa">
+		<!-- 第一屏的飞机 -->
+		<img src="images/section1-fly.png" alt="" class="section1-fly">
+	</section>
+</body>
+</html>

@@ -1,0 +1,633 @@
+/*
+* @Author: zhengwei
+* @Date:   2017-10-10 17:10:15
+* @Last Modified by:   zhengwei
+* @Last Modified time: 2017-10-11 12:26:54
+*/
+
+
+/*第一屏样式开始*/
+
+.section1 {
+    background: #fadd67 url(../images/bg1.png) center bottom no-repeat;
+}
+
+.section1-icon {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 150px;
+}
+
+.section1-sofa {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-200px);
+    bottom: 335px;
+    animation: sofaMove 2s linear infinite;
+}
+
+.section1-fly {
+    position: absolute;
+    top: 20%;
+    right: 20%;
+    animation: flyMove 3s linear infinite;
+}
+
+@keyframes sofaMove {
+    0% {
+        transform: translate(-200px, 0px);
+    }
+    50% {
+        transform: translate(-200px, -50px);
+    }
+    100% {
+        transform: translate(-200px, 0px);
+    }
+}
+
+@keyframes flyMove {
+    0% {
+        transform: translate(0, 0px);
+    }
+    50% {
+        transform: translate(0, 80px);
+    }
+    100% {
+        transform: translate(0, 0px);
+    }
+}
+
+
+/*第一屏样式结束*/
+
+.section2 {
+    background: #84a2d4 url(../images/bg2.png) no-repeat center bottom;
+}
+
+.section2-container {
+    width: 1050px;
+    height: 500px;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 0px;
+}
+
+.section2-words1,
+.section2-words2 {
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%);
+    bottom: 530px;
+}
+
+.section2-words2 {
+    opacity: 0;
+}
+
+.section2-search1 {
+    width: 222px;
+    height: 45px;
+    position: absolute;
+    background-image: url(../images/section2-search1.png);
+    right: 0;
+    bottom: 300px;
+    display: none;
+}
+
+.section2-search1 img {
+    position: absolute;
+    right: 20px;
+    top: 5px;
+    opacity: 0;
+}
+
+.section2-search2 {
+    position: absolute;
+    right: 370px;
+    bottom: 300px;
+    display: none;
+}
+
+.section2-sofas {
+    position: absolute;
+    right: 290px;
+    bottom: 220px;
+    width: 100px;
+    display: none;
+}
+
+.section2-sofa {
+    position: absolute;
+    width: 100px;
+    left: 434px;
+    bottom: 350px;
+    z-index: 10;
+    display: none;
+}
+
+.section2-sofa-mask {
+    position: absolute;
+    background-color: #fff;
+    width: 100px;
+    height: 81px;
+    left: 434px;
+    bottom: 350px;
+    z-index: 20;
+    display: none;
+}
+
+
+/*第二屏样式开始*/
+
+.section2 {
+    background: #84a2d4 url(../images/bg2.png) no-repeat center bottom;
+}
+
+.section2-container {
+    width: 1050px;
+    height: 500px;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 0px;
+}
+
+.section2-words1,
+.section2-words2 {
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%);
+    bottom: 530px;
+}
+
+.section2-words2 {
+    opacity: 0;
+}
+
+.section2-search1 {
+    width: 222px;
+    height: 45px;
+    position: absolute;
+    background-image: url(../images/section2-search1.png);
+    right: 0;
+    bottom: 300px;
+    display: none;
+}
+
+.section2-search1 img {
+    position: absolute;
+    right: 20px;
+    top: 5px;
+    opacity: 0;
+}
+
+.section2-search2 {
+    position: absolute;
+    right: 370px;
+    bottom: 300px;
+    display: none;
+}
+
+.section2-sofas {
+    position: absolute;
+    right: 290px;
+    bottom: 220px;
+    width: 100px;
+    display: none;
+}
+
+.section2-sofa {
+    position: absolute;
+    width: 100px;
+    left: 434px;
+    bottom: 350px;
+    z-index: 10;
+    display: none;
+}
+
+.section2-sofa-mask {
+    position: absolute;
+    background-color: #fff;
+    width: 100px;
+    height: 81px;
+    left: 434px;
+    bottom: 350px;
+    z-index: 20;
+    display: none;
+}
+
+
+/*第二屏样式结束*/
+
+
+/*第三屏样式开始*/
+
+.section3 {
+    background: #ef674d url(../images/bg3.png) no-repeat center bottom;
+}
+
+.section3-container {
+    position: absolute;
+    width: 700px;
+    left: 50%;
+    transform: translateX(-50%);
+    height: 550px;
+    bottom: 0;
+}
+
+.section3-select {
+    position: absolute;
+    width: 296px;
+    height: 250px;
+    right: 0;
+    bottom: 50px;
+}
+
+.section3-icon1 {
+    position: absolute;
+    top: 0;
+}
+
+.section3-icon2 {
+    position: absolute;
+    top: 0;
+    opacity: 0;
+}
+
+.section3-cart1 {
+    position: absolute;
+    bottom: 50px;
+}
+
+.section3-cart2 {
+    position: absolute;
+    bottom: 50px;
+    opacity: 0;
+}
+
+.section3-sofa {
+    position: absolute;
+    width: 100px;
+    /*width: 207px;*/
+    left: 115px;
+    bottom: 800px;
+    /*bottom: 250px;*/
+    display: none;
+}
+
+
+/*第三屏样式结束*/
+
+
+/*第四屏样式开始*/
+
+.section4 {
+    background: #fed url(../images/bg4.png) no-repeat center bottom;
+}
+
+.section4-cloud {
+    width: 882px;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    animation: section4Cloud 30s linear infinite;
+}
+
+.section4-words1,
+.section4-words2 {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 500px;
+}
+
+.section4-words2 {
+    opacity: 0;
+}
+
+.section4-cart {
+    position: absolute;
+    width: 500px;
+    height: 346px;
+    bottom: 50px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.section4-cart img:first-of-type {
+    position: absolute;
+    left: 150px;
+    bottom: 800px;
+    z-index: 10;
+    display: none;
+}
+
+.section4-cart img:last-of-type {
+    position: absolute;
+    z-index: 20;
+}
+
+.section4-address {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 180px;
+    display: none;
+}
+
+.section4-address img:first-of-type {
+    position: absolute;
+    left: 60px;
+    top: 60px;
+    opacity: 0;
+}
+
+@keyframes section4Cloud {
+    0% {
+        transform: translateX(-50%);
+    }
+    25% {
+        transform: translateX(-80%);
+    }
+    50% {
+        transform: translateX(-50%);
+    }
+    75% {
+        transform: translateX(-20%);
+    }
+    100% {
+        transform: translateX(-50%);
+    }
+}
+
+
+/*第四屏样式结束*/
+
+
+/*第五屏样式开始*/
+
+.section5 {
+    background: #d04759 url(../images/bg5.png) no-repeat center bottom;
+    perspective: 500px;
+}
+
+.section5-words {
+    position: absolute;
+    left: 20%;
+    top: 10%;
+    opacity: 0;
+}
+
+.section5-card {
+    position: absolute;
+    left: 20%;
+    bottom: 200px;
+    z-index: 20;
+}
+
+.section5-order {
+    position: absolute;
+    left: 27%;
+    /*bottom: 390px;*/
+    bottom: 270px;
+    display: none;
+}
+
+.section5-sofa {
+    position: absolute;
+    left: 25%;
+    /*bottom: 70px;*/
+    bottom: 800px;
+    display: none;
+}
+
+.section5-mouse-hand {
+    position: absolute;
+    right: 20%;
+    width: 170px;
+    height: 100%;
+    overflow: hidden;
+    top: 0;
+}
+
+.section5-mouse1,
+.section5-mouse2 {
+    position: absolute;
+    bottom: 200px;
+}
+
+.section5-mouse2 {
+    display: none;
+}
+
+.section5-hand {
+    position: absolute;
+    bottom: -375px;
+}
+
+.section5-words-rotate {
+    /*调用动画并且动画结束后停止在动画结束的状态*/
+    animation: section5WordsRotate 2s linear forwards;
+}
+
+@keyframes section5WordsRotate {
+    100% {
+        opacity: 1;
+        transform: translateZ(100px) rotateY(360deg);
+    }
+}
+
+
+/*第五屏样式结束*/
+
+
+/*第六屏样式开始*/
+
+.section6 {
+    background: #84d9ed url(../images/bg6.png) no-repeat left bottom;
+}
+
+.section6-cloud {
+    position: absolute;
+    left: 50%;
+    bottom: 500px;
+    transform: translateX(-50%);
+    animation: section6Cloud 30s linear infinite;
+}
+
+.section6-sofa {
+    width: 70px;
+    position: absolute;
+    left: 25%;
+    bottom: 800px;
+    display: none;
+}
+
+.section6-box {
+    position: absolute;
+    /*left: 23%;*/
+    bottom: 500px;
+    left: 123px;
+    z-index: 10;
+    display: none;
+}
+
+.section6-car {
+    position: absolute;
+    bottom: 0;
+    right: 50%;
+}
+
+.section6-street {
+    position: absolute;
+    right: 50%;
+    bottom: 122px;
+    display: none;
+}
+
+.section6-boy {
+    position: absolute;
+    bottom: 0;
+    height: 100px;
+    right: 50%;
+    display: none;
+}
+
+.section6-door {
+    position: absolute;
+    right: 285px;
+    bottom: 116px;
+    opacity: 0;
+}
+
+.section6-girl {
+    position: absolute;
+    height: 100px;
+    right: 315px;
+    bottom: 116px;
+    display: none;
+    z-index: 10;
+}
+
+.section6-receiving {
+    position: absolute;
+    right: 445px;
+    bottom: 400px;
+    z-index: 20;
+    display: none;
+}
+
+.section6-words {
+    position: absolute;
+    left: 0%;
+    bottom: 479px;
+    display: none;
+}
+
+.section6-bg-move {
+    animation: section6BgMove 4s linear forwards;
+}
+
+@keyframes section6BgMove {
+    0% {
+        background-position: left bottom;
+    }
+    100% {
+        background-position: right bottom;
+    }
+}
+
+@keyframes section6Cloud {
+    0% {
+        transform: translateX(-50%);
+    }
+    25% {
+        transform: translateX(-80%);
+    }
+    50% {
+        transform: translateX(-50%);
+    }
+    75% {
+        transform: translateX(-20%);
+    }
+    100% {
+        transform: translateX(-50%);
+    }
+}
+
+
+/*第六屏样式结束*/
+
+
+/*第七屏样式开始*/
+
+.section7 {
+    background: #8ac060 url('../images/bg7.png') no-repeat center bottom;
+}
+
+.section7-star {
+    position: absolute;
+    left: 50%;
+    margin-left: -295px;
+    bottom: 442px;
+    width: 0px;
+    height: 20px;
+    background-image: url(../images/section7-star.png);
+}
+
+.section7-good {
+    position: absolute;
+    bottom: 382px;
+    left: 50%;
+    margin-left: -289px;
+    display: none;
+}
+
+
+/*第七屏样式结束*/
+
+
+/*第八屏样式开始*/
+
+.section8 {
+    background: url(../images/bg8.png);
+}
+
+.section8-begin {
+    width: 389px;
+    height: 160px;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 356px;
+}
+
+.section8-begin1,
+.section8-begin2 {
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+
+.section8-begin2 {
+    display: none;
+}
+
+.section8-hand {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 0;
+}
+
+.section8-again {
+    position: absolute;
+    bottom: 403px;
+    left: 50%;
+    margin-left: 240px;
+}
+
+
+/*第八屏样式结束*/

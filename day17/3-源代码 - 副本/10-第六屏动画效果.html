@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<!-- 引入公共样式文件 -->
+	<link rel="stylesheet" href="css/base.css">
+	<style>
+		.section6{
+			background:#84d9ed  url(images/bg6.png) no-repeat left bottom;
+		}
+		.section6-sofa{
+			width: 70px;
+			position: absolute;
+			left: 20%;
+			bottom: 800px;
+		}
+		.section6-box{
+			position: absolute;
+			bottom: 500px;
+			left: 10%;
+		}
+	</style>
+</head>
+<body>
+	<!-- 第六屏 section是fullpage需要的  section6是修饰第六屏样式的-->
+	<section class="section section6">
+		<!-- 第六屏的沙发 -->
+		<img src="images/section5-sofa.png" alt="" class="section6-sofa">
+		<!-- 第六屏的装沙发的箱子 -->
+		<img src="images/section6-box.png" alt="" class="section6-box">
+	</section>
+	<!-- 引入jquery -->
+	<script src="js/jquery.min.js"></script>
+	<script>
+		$(function () {
+			/**
+			 * 1. 让沙发显示 从 left 20%的位置 到left 40%  bottom值 800px 到 500px
+			 * 2. 箱子 left 10%的位置 left 40% bottom ： 500px
+			 */
+			//让沙发从上往下掉下来
+			$('.section6-sofa').animate({
+				'left':'40%',
+				'bottom':'500px'
+			},1500,function () {
+				//当沙发装进箱子里面 隐藏沙发
+				$(this).hide();
+			});
+			//同时让箱子从左往右走到沙发的位置
+			$('.section6-box').animate({
+				'left':'38%'
+			},1500);
+		});
+	</script>
+</body>
+</html>

@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<link rel="stylesheet" href="css/base.css">
+	<style>
+		.section2{
+			background:#84a2d4  url(images/bg2.png) no-repeat center bottom;
+		}
+		.section2-container{
+			position: absolute;
+			bottom: 0;
+			width: 1050px;
+			height: 500px;
+			left:50%;
+			transform: translateX(-50%);
+			/*background-color: rgba(0,0,0,0.5);*/
+		}
+		.section2-words1,.section2-words2{
+			position: absolute;
+			left: 50%;
+			transform: translateX(-50%);
+			bottom: 530px;
+		}
+		.section2-words2{
+			opacity: 0;
+		}
+		.section2-search1{
+			position: absolute;
+			right: 0;
+			display: none;
+			/*变化到*/
+			/*right: 370px;*/
+			bottom: 300px;
+			width: 222px;
+			height: 45px;
+			background: url(images/section2-search1.png);
+		}
+		.section2-search1 img{
+			position: absolute;
+			right: 30px;
+			top: 3px;
+			opacity: 0;
+		}
+		.section2-search2{
+			position: absolute;
+			right: 370px;
+			bottom: 300px;
+			display: none;
+			/*变化到*/
+			/*right: 270px;
+			bottom: 452px;
+			height: 30px;*/
+		}
+		.section2-sofas{
+			position: absolute;
+			right: 290px;
+			width: 100px;
+			bottom: 220px;
+			display: none;
+			/*变化到*/
+			/*width:441px;*/
+		}
+	</style>
+</head>
+<body>
+	<!-- 第二屏 -->
+	<section class="section section2">
+		<!-- 第二屏容器 所有动画效果都在容器里面进行 -->
+		<div class="section2-container">
+			<!-- 第二屏的文字 -->
+			<img src="images/section2-words1.png" alt="" class="section2-words1">
+			<img src="images/section2-words2.png" alt="" class="section2-words2">
+			<div class="section2-search1">
+				<img src="images/section2-search-words.png" alt="">
+			</div>
+			<img src="images/section2-search2.png" alt="" class="section2-search2">
+			<img src="images/section2-sofas.png" alt="" class="section2-sofas">
+		</div>
+	</section>
+	<script src="js/jquery.min.js"></script>
+	<script>
+		$(function () {
+			$('.section2-search1').show().animate({
+				'right':'370px'
+			},1000,function () {
+				$('.section2-search1 img').animate({
+					opacity:1
+				},500,function () {
+					$('.section2-search1').hide();
+					$('.section2-search2').show().animate({
+						'right':'270px',
+						'bottom':'452px',
+						'height':'30px'
+					},1000);
+					$('.section2-sofas').show().animate({
+						'width':'441px'
+					},1000,function () {
+						$('.section2-words2').animate({
+							'opacity':1
+						},500);
+					});
+				});
+			});
+		});
+	</script>
+</body>
+</html>

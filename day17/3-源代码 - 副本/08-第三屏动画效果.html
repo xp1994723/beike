@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/base.css">
+    <style>
+    .section3 {
+        background: #ef674d url(images/bg3.png) no-repeat center bottom;
+    }
+    
+    .section3-container {
+        width: 700px;
+        height: 550px;
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+        bottom: 0px;
+    }
+    
+    .section3-sofa {
+        position: absolute;
+        left: 115px;
+        /*动画前*/
+        width: 100px;
+        bottom: 800px;
+        display: none;
+        /*动画后*/
+        /*width: 207px;
+			bottom: 250px;*/
+    }
+    
+    .section3-select {
+        position: absolute;
+        right: 0;
+        bottom: 100px;
+        width: 296px;
+        height: 200px;
+    }
+    
+    .section3-select img {
+        position: absolute;
+    }
+    
+    .section3-icon1,
+    .section3-icon2 {
+        top: 0;
+    }
+    
+    .section3-cart1,
+    .section3-cart2 {
+        bottom: 0;
+    }
+    
+    .section3-icon2 {
+        opacity: 0;
+    }
+    
+    .section3-cart2 {
+        opacity: 0;
+    }
+    </style>
+</head>
+
+<body>
+    <section class="section section3">
+        <div class="section3-container">
+            <img src="images/section3-sofa.png" alt="" class="section3-sofa">
+            <div class="section3-select">
+                <img src="images/section3-icon1.gif" alt="" class="section3-icon1">
+                <img src="images/section3-icon2.gif" alt="" class="section3-icon2">
+                <img src="images/section3-cart1.gif" alt="" class="section3-cart1">
+                <img src="images/section3-cart2.gif" alt="" class="section3-cart2">
+            </div>
+        </div>
+    </section>
+    <script src="js/jquery.min.js"></script>
+    <script>
+    $(function() {
+        //沙发从上往下掉下来 并且变大
+        $('.section3-sofa').show().animate({
+            'bottom': '250px',
+            'width': '207px'
+        }, 1500, function() {
+            //右侧的选择图标 尺码渐渐变成第二个  购物车渐渐由灰色变成白色那个
+            $('.section3-icon2').animate({
+                'opacity': 1
+            }, 500);
+            $('.section3-cart2').animate({
+                'opacity': 1
+            }, 500);
+        });
+    });
+    </script>
+</body>
+
+</html>

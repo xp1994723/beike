@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<link rel="stylesheet" href="css/base.css">
+	<style>
+		.section3{
+			background:#ef674d url(images/bg3.png) no-repeat center bottom;
+		}
+		.section3-container{
+			position: absolute;
+			width: 700px;
+			left:50%;
+			transform:translateX(-50%);
+			height: 550px;
+			bottom: 0;
+		}
+		.section3-select{
+			position: absolute;
+			width: 296px;
+			height: 250px;
+			right: 0;
+			bottom: 50px;
+		}
+		.section3-icon1{
+			position: absolute;
+			top: 0;
+		}
+		.section3-icon2{
+			position: absolute;
+			top: 0;
+			opacity: 0;
+		}
+		.section3-cart1{			
+			position: absolute;
+			bottom: 50px;
+		}
+		.section3-cart2{
+			position: absolute;
+			bottom: 50px;
+			opacity: 0;
+		}
+		.section3-sofa{
+			position: absolute;
+			width: 100px;
+			/*width: 207px;*/
+			left: 115px;
+			bottom: 800px;
+			/*bottom: 250px;*/
+			display: none;
+		}
+	</style>
+</head>
+<body>
+	<!-- 第三屏 -->
+	<section class="section section3">
+		<!-- 第三屏的容器 -->
+		<div class="section3-container">
+			<!-- 第三屏的沙发 -->
+			<img src="images/section3-sofa.png" alt="" class="section3-sofa">
+			<!-- 第三屏右侧的选择尺寸和购物车 -->
+			<div class="section3-select">
+				<!-- 选择尺寸的第一个图片 -->
+				<img src="images/section3-icon1.gif" alt="" class="section3-icon1">
+				<!-- 选择尺寸的第二个图片 -->
+				<img src="images/section3-icon2.gif" alt="" class="section3-icon2">
+				<!-- 第一个购物车 -->
+				<img src="images/section3-cart1.gif" alt="" class="section3-cart1">
+				<!-- 第二个购物车 -->
+				<img src="images/section3-cart2.gif" alt="" class="section3-cart2">
+			</div>
+		</div>
+	</section>
+	<script src="js/jquery.min.js"></script>
+	<script>
+		$(function () {
+			//让沙发变大从上往下掉下来
+			$('.section3-sofa').show().animate({
+				'bottom':'250px',
+				'width':'207px'
+			},1500,function () {
+				//让右侧选择尺寸的第二个图片渐渐显示
+				$('.section3-icon2').animate({
+					'opacity':1
+				},500);
+				//让右侧的白色购物车渐渐的显示
+				$('.section3-cart2').animate({
+					'opacity':1
+				},500);
+			});
+		})
+	</script>
+</body>
+</html>

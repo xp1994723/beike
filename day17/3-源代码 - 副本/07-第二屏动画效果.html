@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<!-- 引入公共样式 -->
+	<link rel="stylesheet" href="css/base.css">
+	<style>
+		.section2{
+			background: #84a2d4  url(images/bg2.png) no-repeat center bottom;
+		}
+		.section2-container{
+			width: 1050px;
+			height: 500px;
+			position: absolute;
+			bottom: 0;
+			left: 50%;
+			transform: translateX(-50%);
+		}
+		.section2-words1,.section2-words2{
+			position: absolute;
+			left: 50%;
+			transform: translateX(-50%);
+			bottom: 530px;
+		}
+		.section2-words2{
+			opacity: 0;
+		}
+		.section2-search1{
+			width: 222px;
+			height: 45px;
+			background: url(images/section2-search1.png);
+			position: absolute;
+			right: 0;
+			/*right: 370px;*/
+			bottom: 300px;
+			display: none;
+		}
+		.section2-search1 img{
+			position: absolute;
+			right: 30px;
+			top: 2px;
+			opacity: 0;
+		}
+		.section2-search2{
+			position: absolute;
+			right: 370px;
+			bottom: 300px;
+			display: none;
+			/*要运动到*/
+			/* right: 270px;
+			bottom:452px;
+			height: 30px; */
+		}
+		.section2-sofas{
+			position: absolute;
+			right: 290px;
+			bottom: 220px;
+			width: 100px;
+			display: none;
+			/*要运动到*/
+			/*width:441px;*/
+		}
+	</style>
+</head>
+<body>
+	<section class="section section2">
+		<div class="section2-container">
+			<img src="images/section2-words1.png" alt="" class="section2-words1">
+			<img src="images/section2-words2.png" alt="" class="section2-words2">
+			<div class="section2-search1">
+				<img src="images/section2-search-words.png" alt="">
+			</div>
+			<img src="images/section2-search2.png" alt="" class="section2-search2">
+			<img src="images/section2-sofas.png" alt="" class="section2-sofas">
+		</div>
+	</section>
+	<script src="js/jquery.min.js"></script>
+	<script>
+		$(function () {
+			//1. 让第一个搜索框显示 同时让他做动画到right:370px的位置
+			$('.section2-search1').show().animate({
+				'right':'370px'
+			},1000,function () {
+				//搜索框进来之后让搜索框里面的文字渐渐的显示
+				$('.section2-search1 img').animate({
+					'opacity':1
+				},500,function () {
+					// 搜索框进来了而且文字显示完毕了就隐藏第一个搜索框  显示第二个带文字的搜索框
+					$('.section2-search1').hide();
+					// 第二个搜索框显示出来之后往右上角移动
+					$('.section2-search2').show().animate({
+						'right':'270px',
+						'bottom':'452px',
+						'height':'30px'
+					},1000);
+					//同时让所有沙发的图片显示并且变大
+					$('.section2-sofas').show().animate({
+						'width':'441px'
+					},1000);
+				});
+			})
+		})
+	</script>
+</body>
+</html>
