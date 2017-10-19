@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/base.css">
+    <style>
+    html,
+    body {
+        height: 100%;
+        min-height: 600px;
+        position: relative;
+    }
+    
+    .section4 {
+        height: 100%;
+        min-height: 600px;
+        position: relative;
+        background: #fed url(images/bg4.png) no-repeat center bottom;
+    }
+    
+    .section4-clound {
+        width: 882px;
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+        animation: clound 60s linear infinite;
+    }
+    
+    .section4-clound img {
+        display: block;
+        width: 100%;
+    }
+    
+    .section4-words {
+        position: absolute;
+        width: 429px;
+        height: 31px;
+        left: 50%;
+        transform: translateX(-50%);
+        bottom: 500px;
+    }
+    
+    .section4-words img {
+        position: absolute;
+        left: 0;
+        top: 0;
+    }
+    
+    .section4-words img:last-of-type {
+        opacity: 0;
+    }
+    
+    .section4-cart {
+        width: 500px;
+        height: 346px;
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+        bottom: 50px;
+    }
+    
+    .section4-cart img {
+        position: absolute;
+    }
+    
+    .section4-cart img:first-of-type {
+        left: 150px;
+        bottom: 200px;
+    }
+    
+    .section4-cart img:first-of-type {}
+    
+    .section4-address {
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+        bottom: 180px;
+        display: none;
+    }
+    .section4-address img:first-of-type{
+        position: absolute;
+        left: 60px;
+        top: 60px;
+        opacity: 0;
+    }
+    .section4-address img:last-of-type{
+        opacity: 0;
+    }
+    
+    @keyframes clound {
+        0% {
+            left: 50%;
+        }
+        50% {
+            left: 20%;
+        }
+        100% {
+            left: 50%;
+        }
+    }
+    </style>
+</head>
+
+<body>
+    <div class="section4">
+        <div class="section4-clound">
+            <img src="images/section4-cloud.png" alt="">
+        </div>
+        <div class="section4-words">
+            <img src="images/section4-words1.png" alt="">
+            <img src="images/section4-words2.png" alt="">
+        </div>
+        <div class="section4-cart">
+            <img src="images/section4-sofa.png" alt="">
+            <img src="images/section4-cart.png" alt="">
+        </div>
+        <div class="section4-address">
+            <img src="images/section4-address.png" alt="">
+            <img src="images/section4-note.png" alt="">
+        </div>
+    </div>
+    <script src="js/jquery.min.js"></script>
+    <script>
+    </script>
+</body>
+
+</html>

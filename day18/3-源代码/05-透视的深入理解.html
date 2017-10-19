@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		.box{
+			width: 200px;
+			height: 200px;			
+			border:1px solid #ccc;
+			margin: 300px auto;
+			/*perspective透视距离 就是人的眼睛距离屏幕的距离多少px*/
+			/*如果是200px那么 当translateZ从里往外移动的时候移动到200px就完全呈现在眼前（即撑满整个屏幕）如果移动到100px就占满整个屏幕的一半 如果移动0px就没有变化 反之如果移动的距离是负值那么会移向远处会离眼睛越来越远 盒子就会越来越小*/
+			perspective: 200px;
+		}
+		.translateZ{
+			width: 200px;
+			height: 200px;
+			background-color: rgba(255,0,0,0.5);
+			transform: translateZ(-10000px);
+		}
+	</style>
+</head>
+<body>
+	<div class="box">
+		<div class="translateZ">从外里移动</div>
+	</div>
+</body>
+</html>
