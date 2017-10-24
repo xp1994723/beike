@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/base.css">
+    <style>
+    .section4 {
+        background: #fed url(images/bg4.png) no-repeat center bottom;
+    }
+    
+    .section4-words1,
+    .section4-words2 {
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+        bottom: 500px;
+    }
+    
+    .section4-words2 {
+        opacity: 0;
+    }
+    
+    .section4-cart {
+        width: 500px;
+        height: 346px;
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+        bottom: 0;
+    }
+    
+    .section4-sofa {
+        position: absolute;
+        left: 150px;
+        z-index: 10;
+        display: none;
+        bottom:800px;
+        /*变化后*/
+        /*bottom: 200px;*/
+    }
+    
+    .section4-car {
+        position: absolute;
+        bottom: 0;
+        z-index: 20;
+    }
+    
+    .section4-address {
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+        bottom: 180px;
+        width: 283px;
+        height: 270px;
+        background: url(images/section4-note.png);
+        display: none;
+    }
+    
+    .section4-address img {
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+        top: 60px;
+        opacity: 0;
+    }
+    
+    .section4-cloud {
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+        animation: cloud 30s linear infinite;
+    }
+    /*定义云的动画*/
+    
+    @keyframes cloud {
+    		/*一开始在居中的位置*/
+        0% {
+            transform: translateX(-50%);
+        }
+        /*0-25之间往左移动到-80%的位置*/
+        25% {
+            transform: translateX(-80%);
+        }
+        /*在25-50%之间移动到居中的位置*/
+        50% {
+            transform: translateX(-50%);
+        }
+        /*50-75之间移动到20%居右的位置*/
+        75% {
+            transform: translateX(-20%);
+        }
+        /*75-100之间往左移回居中的位置*/
+        100% {
+            transform: translateX(-50%);
+        }
+    }
+    </style>
+</head>
+
+<body>
+    <!-- 第四屏 -->
+    <section class="section section4">
+        <!-- 云彩 -->
+        <img src="images/section4-cloud.png" alt="" class="section4-cloud">
+        <!-- 文字 -->
+        <img src="images/section4-words1.png" alt="" class="section4-words1">
+        <img src="images/section4-words2.png" alt="" class="section4-words2">
+        <!-- 购物车 -->
+        <div class="section4-cart">
+            <!-- 购物车里面的沙发 -->
+            <img src="images/section4-sofa.png" alt="" class="section4-sofa">
+            <!-- 购物车身 -->
+            <img src="images/section4-cart.png" alt="" class="section4-car">
+        </div>
+        <!-- 收货地址 -->
+        <div class="section4-address">
+            <!-- 收货地址信息 -->
+            <img src="images/section4-address.png" alt="">
+        </div>
+    </section>
+    <script src="js/jquery.min.js"></script>
+    <script>
+    	
+    	$(function () {
+    		// 沙发从上往下掉下来
+    		$('.section4-sofa').show().animate({
+    			'bottom':'200px'
+    		},1000,function () {
+    			// 购物车接住沙发往前跑
+    			$('.section4-cart').animate({
+    				'left':'150%'
+    			},3000,function () {
+    				//跑完之后收货地址显示
+    				$('.section4-address').show();
+    				//收货地址里面的信息渐渐的显示
+    				$('.section4-address img').animate({
+    					'opacity':1
+    				},500,function () {
+    					//文字渐渐的显示第二个
+    					$('.section4-words2').animate({
+    						'opacity':1
+    					},1000);
+    				})
+    			});
+    		});
+    	});
+    </script>
+</body>
+
+</html>

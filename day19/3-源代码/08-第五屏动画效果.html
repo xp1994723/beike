@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/base.css">
+    <style>
+    .section5 {
+        background: #d04759 url(images/bg5.png) no-repeat center bottom;
+        overflow: hidden;
+        /*给文字的父元素加上视距1000px*/
+        perspective: 1000px;
+    }
+    
+    .section5-words {
+        position: absolute;
+        left: 20%;
+        top: 10%;
+    }
+    
+    .section5-card {
+        position: absolute;
+        left: 20%;
+        bottom: 200px;
+        z-index: 20;
+    }
+    
+    .section5-order {
+        position: absolute;
+        left: 27%;
+        /*bottom: 390px;*/
+        bottom: 270px;
+        display: none;
+        z-index: 10;
+    }
+    
+    .section5-sofa {
+        position: absolute;
+        left: 25%;
+        /*bottom: 70px;*/
+        display: none;
+        bottom: 800px;
+        width: 100px;
+    }
+    
+    .section5-mouse1,
+    .section5-mouse2 {
+        position: absolute;
+        right: 20%;
+        bottom: 200px;
+    }
+    
+    .section5-mouse2 {
+        display: none;
+    }
+    
+    .section5-hand {
+        position: absolute;
+        right: 20%;
+        bottom: 0px;
+        transform: translateX(-40px);
+    }
+    
+    .wordsMove {
+        /*给文字调用动画 动画结束后停留在动画结束的状态*/
+        animation: wordsMove 2s forwards;
+    }
+    /*创建一个文字的动画*/
+    
+    @keyframes wordsMove {
+        /*一开始的时候在默认位置*/
+        0% {
+            transform: rotateY(0deg) translateZ(0px);
+        }
+        /*100%的时候绕Y轴旋转360度 同时让文字离眼睛的距离近一点*/
+        100% {
+            transform: rotateY(360deg) translateZ(100px);
+        }
+    }
+    </style>
+</head>
+
+<body>
+    <!-- 第五屏 -->
+    <section class="section section5">
+        <!-- 第五屏的文字 -->
+        <img src="images/section5-words.png" alt="" class="section5-words">
+        <!-- 第五屏的银行卡 -->
+        <img src="images/section5-card.png" alt="" class="section5-card">
+        <!-- 第五屏的银行信息 -->
+        <img src="images/section5-order.png" alt="" class="section5-order">
+        <!-- 第五屏的沙发 -->
+        <img src="images/section5-sofa.png" alt="" class="section5-sofa">
+        <!-- 第五屏 第一个鼠标 -->
+        <img src="images/section5-mouse1.png" alt="" class="section5-mouse1">
+        <!-- 第五屏 第二个鼠标 -->
+        <img src="images/section5-mouse2.png" alt="" class="section5-mouse2">
+        <!-- 第五屏的手 -->
+        <img src="images/section5-hand.png" alt="" class="section5-hand">
+    </section>
+    <script src="js/jquery.min.js"></script>
+    <script>
+    $(function() {
+        // 沙发显示 从上往下掉
+        $('.section5-sofa').show().animate({
+            'bottom': '70px',
+            'width': '204px'
+        }, 1500, function() {
+            $('.section5-order').show().animate({
+                'bottom': '390px'
+            }, 1000, function() {
+                // 文字动画
+                $('.section5-words').addClass('wordsMove');
+            });
+        })
+    });
+    </script>
+</body>
+
+</html>

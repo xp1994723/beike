@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		.box{
+			width: 200px;
+			height: 200px;
+			border:1px solid #ccc;
+			margin: 0px auto;
+			perspective: 600px;
+		}
+		.rotateX{
+			width: 200px;
+			height: 200px;
+			background-color: rgba(255,0,0,0.4);
+			transform: rotateX(45deg);
+		}
+		.rotateY{
+			width: 200px;
+			height: 200px;
+			background-color: rgba(0,255,0,0.4);
+			transform: rotateY(45deg);
+		}
+		.rotateZ{
+			width: 200px;
+			height: 200px;
+			background-color: rgba(0,0,255,0.4);
+			transform: rotateZ(45deg);
+		}
+	</style>
+</head>
+<body>
+	<div class="box">
+		<div class="rotateX">rotateX正面推倒</div>
+	</div>
+	<div class="box">
+		<div class="rotateY">rotateX侧面欣赏</div>
+	</div>
+	<div class="box">
+		<div class="rotateZ">rotateZ倾斜着</div>
+	</div>
+</body>
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/base.css">
+    <style>
+    body {
+        background-color: pink;
+    }
+    
+    .box {
+        perspective: 600px;
+    }
+    
+    .img {
+        margin-top: 100px;
+        margin-left: 100px;
+        /*transition: all 1s;*/
+        /*forwards是当动画结束后停留在动画结束的状态*/
+        animation: move 1s linear forwards;
+    }
+    /*img:hover{
+			transform: rotateZ(360deg) translateZ(100px);
+		}*/
+    
+    @keyframes move {
+        0% {
+            transform: rotateZ(0deg) translateZ(0px);
+        }
+        100% {
+            transform: rotateZ(360deg) translateZ(100px);
+        }
+    }
+    </style>
+</head>
+
+<body>
+    <div class="box">
+        <img src="images/section5-words.png" alt="" class="img">
+    </div>
+</body>
+
+</html>

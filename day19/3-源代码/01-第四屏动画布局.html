@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<link rel="stylesheet" href="css/base.css">
+	<style>
+		.section4{
+			background:#fed url(images/bg4.png) no-repeat center bottom;
+		}
+		.section4-words1,.section4-words2{
+			position: absolute;
+			left: 50%;
+			transform: translateX(-50%);
+		}
+		.section4-words2{
+			opacity: 0;
+		}
+		.section4-cart{
+			width: 500px;
+			height: 346px;
+			position: absolute;
+			left: 50%;
+			transform: translateX(-50%);
+			bottom: 0;
+		}
+		.section4-sofa{
+			position: absolute;
+			left:150px;
+			z-index: 10;
+			bottom: 200px;
+		}
+		.section4-car{
+			position: absolute;
+			bottom: 0;
+			z-index: 20;
+		}
+		.section4-address{
+			position: absolute;
+			left: 50%;
+			transform: translateX(-50%);
+			bottom: 180px;
+			width: 283px;
+			height: 270px;
+			background: url(images/section4-note.png);
+			display: none;
+		}
+		.section4-address img{
+			position: absolute;
+			left: 50%;
+			transform: translateX(-50%);
+			top: 60px;
+		}
+	</style>
+</head>
+<body>
+	<!-- 第四屏 -->
+	<section class="section section4">
+		<!-- 云彩 -->
+		<img src="images/section4-cloud.png" alt="">
+		<!-- 文字 -->
+		<img src="images/section4-words1.png" alt="" class="section4-words1">
+		<img src="images/section4-words2.png" alt="" class="section4-words2">
+		<!-- 购物车 -->
+		<div class="section4-cart">
+			<!-- 购物车里面的沙发 -->
+			<img src="images/section4-sofa.png" alt="" class="section4-sofa">
+			<!-- 购物车身 -->
+			<img src="images/section4-cart.png" alt="" class="section4-car">
+		</div>
+		<!-- 收货地址 -->
+		<div class="section4-address">
+			<!-- 收货地址信息 -->
+			<img src="images/section4-address.png" alt="">
+		</div>		
+	</section>
+</body>
+</html>

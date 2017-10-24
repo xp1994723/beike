@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<link rel="stylesheet" href="css/base.css">
+	<style>
+		.section8{
+			background: url(images/bg8.png);
+		}
+		.section8-begin{
+			width: 389px;
+			height: 160px;
+			position: absolute;
+			left: 50%;
+			transform:translateX(-50%);
+			bottom: 356px;
+		}
+		.section8-begin img{
+			position: absolute;
+			left:0;
+			top: 0;
+		}
+		.section8-begin img:last-child{
+			display: none;
+		}
+		.section8-hand{
+			position: absolute;
+			left: 50%;
+			transform:translateX(-50%);
+			bottom: 0px;
+		}
+		.section8-again{
+			position: absolute;
+			bottom: 403px;
+			left:50%;
+			margin-left: 240px;
+		}
+	</style>
+</head>
+<body>
+	<!-- 第八屏 -->
+	<section class="section section8">
+		<!-- 第八屏的开始购物 -->
+		<div class="section8-begin">
+			<img src="images/section8-begin1.png" alt="">
+			<img src="images/section8-begin2.gif" alt="">
+		</div>
+		<!-- 第八屏的手 -->
+		<img src="images/section8-hand.png" alt="" class="section8-hand">
+		<!-- 第八屏的再来一次 -->
+		<img src="images/section8-again.png" alt="" class="section8-again">
+	</section>
+	<script src="js/jquery.min.js"></script>
+	<script>
+		$(function () {
+			//当鼠标移动的时候 手跟着动
+			$(document).on('mousemove',function (e) {
+				var x = e.pageX+20;
+				var y = e.pageY;
+				$('.section8-hand').css({
+					'left':x,
+					'top':y
+				});
+			});
+			//给开始购物添加鼠标上移事件
+			$('.section8-begin').on('mouseover',function () {
+				$('.section8-begin img').eq(0).hide();
+				$('.section8-begin img').eq(1).show();
+			});
+			//给开始购物添加鼠标离开事件
+			$('.section8-begin').on('mouseleave',function () {
+				$('.section8-begin img').eq(0).show();
+				$('.section8-begin img').eq(1).hide();
+			});
+		});
+	</script>
+</body>
+</html>
